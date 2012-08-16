@@ -1,0 +1,99 @@
+.kategori
+{
+    color: #A61300;
+    font-weight: bolder;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+}
+
+#peristiwa-container
+{
+    border-right: 2px solid #CCC;
+    padding: 5px;
+}
+
+#siaran-pers-container
+{
+    background: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+#utama
+{
+    max-height: 250px;
+    color: white;
+}
+
+#utama > #utama-content
+{
+    margin-top: 120px;
+    padding-left: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#utama-content > .post-info
+{
+    color: white;
+}
+
+#kategori-utama
+{
+    border-radius: 7px;
+    background: #BF4030;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+.post
+{
+    margin-bottom: 1.5em;
+}
+
+.post > img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
+    max-height: 160px;
+}
+
+.post > h1
+{
+    font-size: 22px;
+    line-height: 22px;
+    margin-top: .2em;
+    margin-bottom: .2em;
+}
+
+.post-info
+{
+    color: #999;
+}
+
+.post-summary
+{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.peristiwa
+{
+    border-bottom: 1px solid #DDD;
+}
+
+.read-more-story
+{
+    border-top: 1px solid red;
+    border-bottom: 4px double red;
+    color: #A65000;
+    display: block;
+    margin: 2em auto 2em auto;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 80%;
+}

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMI", "PMI\PMI.csproj", "{BF092A9B-CB5B-4849-8C02-B27EDF7C1874}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMI.Tests", "PMI.Tests\PMI.Tests.csproj", "{3AB150E2-54FD-49B5-81F8-F0B893888FB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF092A9B-CB5B-4849-8C02-B27EDF7C1874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF092A9B-CB5B-4849-8C02-B27EDF7C1874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF092A9B-CB5B-4849-8C02-B27EDF7C1874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF092A9B-CB5B-4849-8C02-B27EDF7C1874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB150E2-54FD-49B5-81F8-F0B893888FB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB150E2-54FD-49B5-81F8-F0B893888FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB150E2-54FD-49B5-81F8-F0B893888FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB150E2-54FD-49B5-81F8-F0B893888FB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

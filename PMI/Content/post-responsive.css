@@ -1,0 +1,32 @@
+/* Big Screen Desktop */
+@media (min-width: 1200px)
+{
+
+}
+
+/* Normal Desktop */
+@media (max-width: 979px)
+{
+    #utama > #utama-content
+    {
+        margin-top: 25px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 767px)
+{
+    #utama > #utama-content
+    {
+        margin-top: 10px;
+    }
+}
+
+/* Phone */
+@media (max-width: 480px)
+{
+    #utama > #utama-content
+    {
+        margin-top: 0;
+    }
+}

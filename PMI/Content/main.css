@@ -1,0 +1,84 @@
+#site-logo
+{
+    width: 200px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.nav-pmi
+{
+    border-bottom: 1px solid #FF1E00;
+}
+
+.nav-pmi::before, .nav-pmi::after
+{
+    display: table;
+    content: "";
+}
+
+.nav-pmi::after
+{
+    clear: both;
+}
+
+.nav-pmi > li
+{
+    float: left;
+    line-height: 18px;
+}
+
+.nav-pmi > li.active
+{
+    border-bottom: 5px double red;
+}
+
+.nav-pmi > li > a
+{
+    color: #555;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+.nav-pmi > li.active > a
+{
+    font-weight: bold;
+}
+
+.nav-pmi > li > a:hover, .nav-pmi > li.active > a:hover
+{
+    border-radius: 7px;
+}
+
+/* ASP.net MVC Form Errors style */
+.validation-summary-errors
+{
+    color: Red;
+}
+/* ASP.net MVC Form Errors style ends */
+
+.footer
+{
+    background: rgba(255, 182, 115, 0.1);
+    margin-top: 3em;
+    padding: 1.5em 0 1.5em 0;
+}
+
+.footer h2
+{
+    font-size: 20px;
+    margin-left: 1.5em;
+}
+
+.footer h3
+{
+    font-size: 16px;
+}
+
+.footer h2, .footer h3
+{
+    text-transform: uppercase;
+}
