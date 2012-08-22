@@ -1,48 +1,33 @@
 ﻿@model PMI.Models.Post
 
-@{
-    ViewBag.Title = "Delete";
+@section stylesheet{
+    <link href="@Url.Content("~/Content/singlepost.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/Content/singlepost-responsive.css")" rel="stylesheet" type="text/css">
 }
 
-<h2>Delete</h2>
+@{
+    ViewBag.Title = "Menghapus tulisan " + @Model.title;
+}
 
-<h3>Are you sure you want to delete this?</h3>
+<h2>Penghapusan</h2>
+
+<h3>Apakah anda yakin mau menghapus "@Model.title"?</h3>
 <fieldset>
-    <legend>Post</legend>
-
-    <div class="display-label">title</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.title)
-    </div>
-
-    <div class="display-label">created</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.created)
-    </div>
-
-    <div class="display-label">updated</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.updated)
-    </div>
-
-    <div class="display-label">Category1</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Category1.desc)
-    </div>
-
-    <div class="display-label">aspnet_Users</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.aspnet_Users.UserName)
-    </div>
-
-    <div class="display-label">content</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.content)
+    <legend>Isi tulisan:</legend>
+        <div id="single-post" class="span8">
+        <h1>@Html.DisplayFor(model => model.title)</h1>
+        <span id="single-post-info">
+            ditulis: @Html.DisplayFor(model => model.created) | diperbaharui: @Html.DisplayFor(model => model.updated)
+            <span class="post-category">@Html.DisplayFor(model => model.Category1.desc)</span>
+        </span>
+        <div id="single-post-content">
+            @Html.Raw(Model.SanitizedContent)
+        </div>
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-danger">Hapus tulisan</button>
+        @Html.ActionLink("Kembali ke daftar tulisan", "Index", "Post", new { @class = "btn" })
+    </div>
 }

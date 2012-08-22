@@ -81,6 +81,7 @@ namespace PMI.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(post).State = EntityState.Modified;
+                post.writer = (Guid)Membership.GetUser().ProviderUserKey;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

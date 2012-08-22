@@ -1,5 +1,14 @@
 ﻿@model IEnumerable<PMI.Models.Post>
 
+@section stylesheet {
+    <style type="text/css">
+        #post-list td, #post-list th
+        {
+            max-width: 80px;
+        }
+    </style>
+}
+
 @{
     ViewBag.Title = "Index";
 }
@@ -10,7 +19,7 @@
     @Html.ActionLink("Tambah Baru", "Create", "Post", new { @class = "btn btn-info" })
 </p>
 
-<table class="table">
+<table class="table" id="post-list">
 <thead>
     <tr>
         <th>
@@ -53,12 +62,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.aspnet_Users.UserName)
         </td>
-        <td>
+        <td nowrap="wrap" style="width: 300px">
             @Html.Raw(item.getContentSummary())
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Detil", "Details", new { id=item.id }) |
+            @Html.ActionLink("Tampilkan", "Details", new { id=item.id }) |
             @Html.ActionLink("Hapus", "Delete", new { id=item.id })
         </td>
     </tr>
