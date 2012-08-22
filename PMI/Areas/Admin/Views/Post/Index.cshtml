@@ -4,34 +4,38 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Daftar Tulisan</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tambah Baru", "Create", "Post", new { @class = "btn btn-info" })
 </p>
-<table>
+
+<table class="table">
+<thead>
     <tr>
         <th>
-            title
+            Judul Berita
         </th>
         <th>
-            created
+            Waktu Penulisan
         </th>
         <th>
-            updated
+            Update Terakhir
         </th>
         <th>
-            Category1
+            Kategori
         </th>
         <th>
-            aspnet_Users
+            Penulis
         </th>
         <th>
-            content
+            Isi
         </th>
         <th></th>
     </tr>
+</thead>
 
+<tbody>
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -54,10 +58,10 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Detil", "Details", new { id=item.id }) |
+            @Html.ActionLink("Hapus", "Delete", new { id=item.id })
         </td>
     </tr>
 }
-
+</tbody>
 </table>

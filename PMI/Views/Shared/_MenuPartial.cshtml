@@ -22,4 +22,20 @@
         </div>
         </form>
     </li>
+    <li class="pull-right">&nbsp;</li>
+    @if (Request.IsAuthenticated && HttpContext.Current.User.IsInRole("CanPostNews"))
+    { 
+        <li class="pull-right">
+            <div class="btn-group">
+                <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                    Admin
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Berita", "Index", "Post", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Kategori", "Index", "Category", new { area = "Admin" }, null)</li>
+                </ul>
+            </div>
+        </li>
+    }
 </ul>
