@@ -19,7 +19,7 @@ namespace PMI.Models
             : base("name=pmiEntities")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

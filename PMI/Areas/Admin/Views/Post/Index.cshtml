@@ -54,7 +54,7 @@
             @Html.DisplayFor(modelItem => item.aspnet_Users.UserName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.content)
+            @Html.Raw(item.getContentSummary())
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
