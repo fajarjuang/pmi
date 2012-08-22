@@ -1,0 +1,45 @@
+﻿@model PMI.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Post</legend>
+
+    <div class="display-label">title</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.title)
+    </div>
+
+    <div class="display-label">created</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.created)
+    </div>
+
+    <div class="display-label">updated</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.updated)
+    </div>
+
+    <div class="display-label">Category1</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category1.desc)
+    </div>
+
+    <div class="display-label">aspnet_Users</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.aspnet_Users.UserName)
+    </div>
+
+    <div class="display-label">content</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.content)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

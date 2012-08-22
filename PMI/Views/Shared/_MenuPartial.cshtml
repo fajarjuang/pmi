@@ -7,11 +7,11 @@
     <li>
         @if (Request.IsAuthenticated)
         { 
-            @Html.ActionLink("Logout", "LogOff", "Account")
+            @Html.ActionLink("Logout", "LogOff", "Account", new { area = "" }, null)
         }
         else
         {
-            @Html.ActionLink("Login", "LogOn", "Account")
+            @Html.ActionLink("Login", "LogOn", "Account", new { area = "" }, null)
         }
     </li>
     <li class="pull-right">
