@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using PMI.Models;
 
 namespace PMI.Areas.Admin.Controllers
@@ -37,7 +38,6 @@ namespace PMI.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.writer = new SelectList(db.aspnet_Users, "UserId", "UserName");
             ViewBag.category = new SelectList(db.Categories, "id", "desc");
             return View();
         } 
@@ -50,6 +50,7 @@ namespace PMI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                post.writer = (Guid)Membership.GetUser().ProviderUserKey;
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
