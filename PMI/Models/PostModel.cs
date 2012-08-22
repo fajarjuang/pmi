@@ -19,6 +19,7 @@ namespace PMI.Models
     internal class PostMetadata
     {
         [StringLength(255)]
+        [DisplayName("Judul Tulisan")]
         public string title { get; set; }
 
         [DisplayFormat(DataFormatString="{0:dd MMMM yyyy HH:mm:ss}")]
@@ -26,5 +27,12 @@ namespace PMI.Models
 
         [DisplayFormat(DataFormatString="{0:dd MMMM yyyy HH:mm:ss}")]
         public System.DateTime updated { get; set; }
+
+        [DisplayName("Kategori")]
+        public long category { get; set; }
+
+        [AllowHtml]
+        [DisplayName("Isi")]
+        public string content { get; set; }
     }
 }

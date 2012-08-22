@@ -23,7 +23,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.category, "Category1")
+            @Html.LabelFor(model => model.category)
         </div>
         <div class="editor-field">
             @Html.DropDownList("category", String.Empty)
@@ -31,7 +31,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.writer, "aspnet_Users")
+            @Html.LabelFor(model => model.writer)
         </div>
         <div class="editor-field">
             @Html.DropDownList("writer", String.Empty)
@@ -42,7 +42,7 @@
             @Html.LabelFor(model => model.content)
         </div>
         <div class="editor-field">
-            @Html.TextAreaFor(model => model.content, new { @id = "content-editor" })
+            @Html.TextAreaFor(model => model.content, new { @id = "content-editor", @width = "100%" })
             @Html.ValidationMessageFor(model => model.content)
         </div>
 
@@ -56,7 +56,9 @@
     <script type="text/javascript">
         tinyMCE.init({
             mode: "textareas",
-            theme: "advanced"
+            theme: "advanced",
+            width: "640",
+            height: "480"
         });
     </script>
 }
