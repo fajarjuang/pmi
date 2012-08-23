@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using PMI.Models;
+using PagedList;
 
 namespace PMI.Areas.Admin.Controllers
 { 
@@ -14,41 +15,51 @@ namespace PMI.Areas.Admin.Controllers
     public class PostController : Controller
     {
         private pmiEntities db = new pmiEntities();
+        private const int POST_PER_PAGE = 5;
 
         //
         // GET: /Admin/Post/
 
-        public ViewResult Index(string sort)
+        public ViewResult Index(string sort, int? page)
         {
             ViewBag.UpdatedSort = String.IsNullOrEmpty(sort) ? "updated-asc" : "";
             ViewBag.CreatedSort = sort == "created-desc" ? "created-asc" : "created-desc";
             ViewBag.TitleSort = sort == "title-desc" ? "title-asc" : "title-desc";
 
             var posts = db.Posts.Include(p => p.aspnet_Users).Include(p => p.Category1);
+            posts = sortPost(sort, posts);
 
-            switch (sort)
+            var pageNumber = page ?? 1;
+            return View(posts.ToPagedList(pageNumber, POST_PER_PAGE));
+        }
+
+        private IQueryable<Post> sortPost(string sortOrder, IQueryable<Post> posts)
+        {
+            IQueryable<Post> result;
+            
+            switch (sortOrder)
             {
                 case "updated-asc":
-                    posts = posts.OrderBy(p => p.updated);
+                    result = posts.OrderBy(p => p.updated);
                     break;
                 case "created-desc":
-                    posts = posts.OrderByDescending(p => p.created);
+                    result = posts.OrderByDescending(p => p.created);
                     break;
                 case "created-asc":
-                    posts = posts.OrderBy(p => p.created);
+                    result = posts.OrderBy(p => p.created);
                     break;
                 case "title-desc":
-                    posts = posts.OrderByDescending(p => p.title);
+                    result = posts.OrderByDescending(p => p.title);
                     break;
                 case "title-asc":
-                    posts = posts.OrderBy(p => p.title);
+                    result = posts.OrderBy(p => p.title);
                     break;
                 default:
-                    posts = posts.OrderByDescending(p => p.updated);
+                    result = posts.OrderByDescending(p => p.updated);
                     break;
             }
 
-            return View(posts.ToList());
+            return result;
         }
 
         //
