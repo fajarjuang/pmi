@@ -67,8 +67,12 @@ namespace PMI.Areas.Admin.Controllers
         public ActionResult Edit(long id)
         {
             Post post = db.Posts.Find(id);
-            ViewBag.writer = new SelectList(db.aspnet_Users, "UserId", "UserName", post.writer);
             ViewBag.category = new SelectList(db.Categories, "id", "desc", post.category);
+
+            // if someone got here, they're trying to hack. No need to be nice.
+            if (post.writer != (Guid)Membership.GetUser().ProviderUserKey) 
+                throw new HttpException(503, "Tidak boleh melakukan edit terhadap tulisan yang dibuat oleh orang lain");
+
             return View(post);
         }
 
@@ -81,7 +85,6 @@ namespace PMI.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(post).State = EntityState.Modified;
-                post.writer = (Guid)Membership.GetUser().ProviderUserKey;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
