@@ -16,18 +16,10 @@ namespace PMI.Models
     [MetadataTypeAttribute(typeof(PostMetadata))]
     public partial class Post
     {
-        public string SanitizedContent
-        {
-            get
-            {
-                return HtmlUtility.SanitizeHtml(content);
-            }
-        }
-
         public string getContentSummary()
         {
             HtmlDocument doc = new HtmlDocument();
-            doc.LoadHtml(this.SanitizedContent);
+            doc.LoadHtml(this.content);
 
             try
             {
@@ -36,7 +28,7 @@ namespace PMI.Models
             }
             catch (Exception)
             {
-                return this.SanitizedContent;
+                return this.content;
             }
         }
     }

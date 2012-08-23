@@ -63,7 +63,7 @@
             @Html.DisplayFor(modelItem => item.aspnet_Users.UserName)
         </td>
         <td nowrap="wrap" style="width: 300px">
-            @Html.Raw(item.getContentSummary())
+            @Html.Raw(PMI.Utils.HtmlUtility.SanitizeHtml(item.getContentSummary()))
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
