@@ -1,5 +1,10 @@
-﻿<ul class="nav nav-pmi">
-    <li class="active"><a href="#">Berita</a></li>
+﻿@{string[] menus = { "Berita", "Partisipasi", "Program", "Informasi", "Komunitas" };}
+<ul class="nav nav-pmi">
+    @foreach (var item in menus)
+    {
+        
+    }
+    <li>@Html.ActionLink("Berita", "Index", "Home", new { area = "" }, null)</li>
     <li><a href="#">Partisipasi</a></li>
     <li><a href="#">Program</a></li>
     <li><a href="#">Informasi</a></li>
