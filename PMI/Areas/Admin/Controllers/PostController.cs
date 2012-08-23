@@ -18,9 +18,36 @@ namespace PMI.Areas.Admin.Controllers
         //
         // GET: /Admin/Post/
 
-        public ViewResult Index()
+        public ViewResult Index(string sort)
         {
+            ViewBag.UpdatedSort = String.IsNullOrEmpty(sort) ? "updated-asc" : "";
+            ViewBag.CreatedSort = sort == "created-desc" ? "created-asc" : "created-desc";
+            ViewBag.TitleSort = sort == "title-desc" ? "title-asc" : "title-desc";
+
             var posts = db.Posts.Include(p => p.aspnet_Users).Include(p => p.Category1);
+
+            switch (sort)
+            {
+                case "updated-asc":
+                    posts = posts.OrderBy(p => p.updated);
+                    break;
+                case "created-desc":
+                    posts = posts.OrderByDescending(p => p.created);
+                    break;
+                case "created-asc":
+                    posts = posts.OrderBy(p => p.created);
+                    break;
+                case "title-desc":
+                    posts = posts.OrderByDescending(p => p.title);
+                    break;
+                case "title-asc":
+                    posts = posts.OrderBy(p => p.title);
+                    break;
+                default:
+                    posts = posts.OrderByDescending(p => p.updated);
+                    break;
+            }
+
             return View(posts.ToList());
         }
 

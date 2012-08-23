@@ -2,6 +2,9 @@
 
 @{
     ViewBag.Title = "Index";
+    string titleSort = ViewBag.TitleSort == "title-desc" ? "\u25BC" : "\u25B2";
+    string createdSort = ViewBag.CreatedSort == "created-desc" ? "\u25BC" : "\u25B2";
+    string updatedSort = ViewBag.UpdatedSort == "updated-asc" ? "\u25B2" : "\u25BC";
 }
 
 <h2>Daftar Tulisan</h2>
@@ -14,12 +17,15 @@
 <thead>
     <tr>
         <th>
+            @Html.ActionLink(titleSort, "Index", new { sort = ViewBag.TitleSort })
             Judul Berita
         </th>
         <th>
+            @Html.ActionLink(createdSort, "Index", new { sort = ViewBag.CreatedSort })
             Waktu Penulisan
         </th>
         <th>
+            @Html.ActionLink(updatedSort, "Index", new { sort = ViewBag.UpdatedSort })
             Update Terakhir
         </th>
         <th>
