@@ -1,22 +1,26 @@
 ﻿@model IEnumerable<PMI.Models.Category>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Daftar Kategori";
 }
 
-<h2>Index</h2>
+<h2>Daftar Kategori</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tambah Kategori Baru", "Create", null, new { @class = "btn btn-primary" })
 </p>
-<table>
+
+<table class="table">
+<thead>
     <tr>
         <th>
-            desc
+            Kategori
         </th>
         <th></th>
     </tr>
+</thead>
 
+<tbody>
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -24,10 +28,9 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
 }
-
+</tbody>
 </table>

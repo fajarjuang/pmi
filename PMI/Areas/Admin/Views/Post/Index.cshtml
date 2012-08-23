@@ -1,14 +1,5 @@
 ﻿@model IEnumerable<PMI.Models.Post>
 
-@section stylesheet {
-    <style type="text/css">
-        #post-list td, #post-list th
-        {
-            max-width: 80px;
-        }
-    </style>
-}
-
 @{
     ViewBag.Title = "Index";
 }
@@ -19,7 +10,7 @@
     @Html.ActionLink("Tambah Baru", "Create", "Post", new { @class = "btn btn-info" })
 </p>
 
-<table class="table" id="post-list">
+<table class="table">
 <thead>
     <tr>
         <th>

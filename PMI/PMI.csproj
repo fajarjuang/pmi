@@ -88,6 +88,7 @@
     <Compile Include="Models\Category.cs">
       <DependentUpon>PMIModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\PMIEntities.cs" />
     <Compile Include="Models\PMIEntities.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -485,7 +486,6 @@
     <Content Include="Areas\Admin\Views\Post\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Category\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Delete.cshtml" />

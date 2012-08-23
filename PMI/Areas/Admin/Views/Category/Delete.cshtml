@@ -1,23 +1,15 @@
 ﻿@model PMI.Models.Category
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Hapus kategori " + @Model.desc;
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
 <fieldset>
-    <legend>Category</legend>
-
-    <div class="display-label">desc</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.desc)
-    </div>
+    <legend>Anda yakin mau menghapus kateogri "@Html.DisplayFor(model => model.desc)" ?</legend>
 </fieldset>
 @using (Html.BeginForm()) {
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-danger">Hapus Kategori</button>
+        @Html.ActionLink("Kembali ke daftar kategori", "Index", null, new { @class = "btn" })
+    </div>
 }

@@ -23,15 +23,6 @@ namespace PMI.Areas.Admin.Controllers
         }
 
         //
-        // GET: /Admin/Category/Details/5
-
-        public ViewResult Details(long id)
-        {
-            Category category = db.Categories.Find(id);
-            return View(category);
-        }
-
-        //
         // GET: /Admin/Category/Create
 
         public ActionResult Create()

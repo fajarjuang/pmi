@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Web;
+using System.Web.Mvc;
+using HtmlAgilityPack;
+using PMI.Utils;
 
 namespace PMI.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
-    using HtmlAgilityPack;
-    using PMI.Utils;
-
     [MetadataTypeAttribute(typeof(PostMetadata))]
     public partial class Post
     {
@@ -39,10 +36,10 @@ namespace PMI.Models
         [DisplayName("Judul Tulisan")]
         public string title { get; set; }
 
-        [DisplayFormat(DataFormatString="{0:dd MMMM yyyy HH:mm:ss}")]
+        [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy HH:mm:ss}")]
         public System.DateTime created { get; set; }
 
-        [DisplayFormat(DataFormatString="{0:dd MMMM yyyy HH:mm:ss}")]
+        [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy HH:mm:ss}")]
         public System.DateTime updated { get; set; }
 
         [DisplayName("Kategori")]
