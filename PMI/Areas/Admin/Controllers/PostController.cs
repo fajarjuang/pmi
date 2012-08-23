@@ -20,14 +20,27 @@ namespace PMI.Areas.Admin.Controllers
         //
         // GET: /Admin/Post/
 
-        public ViewResult Index(string sort, int? page)
+        public ViewResult Index(string sort, string currentFilter, string filter, int? page)
         {
             ViewBag.UpdatedSort = String.IsNullOrEmpty(sort) ? "updated-asc" : "";
             ViewBag.CreatedSort = sort == "created-desc" ? "created-asc" : "created-desc";
             ViewBag.TitleSort = sort == "title-desc" ? "title-asc" : "title-desc";
+            ViewBag.CurrentSort = sort;
+
+            if (Request.HttpMethod == "GET")
+            {
+                filter = currentFilter;
+            }
+            else
+            {
+                page = 1;
+            }
+            ViewBag.CurrentFilter = filter;
 
             var posts = db.Posts.Include(p => p.aspnet_Users).Include(p => p.Category1);
             posts = sortPost(sort, posts);
+            if(!String.IsNullOrEmpty(filter))
+                posts = posts.Where(p => p.title.Contains(filter));
 
             var pageNumber = page ?? 1;
             return View(posts.ToPagedList(pageNumber, POST_PER_PAGE));

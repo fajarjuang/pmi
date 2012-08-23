@@ -10,22 +10,32 @@
 <h2>Daftar Tulisan</h2>
 
 <p>
-    @Html.ActionLink("Tambah Baru", "Create", "Post", new { @class = "btn btn-info" })
+    @Html.ActionLink("Tambah Baru", "Create", "Post", new { @class = "btn btn-primary" })
 </p>
 
 <table class="table">
 <thead>
     <tr>
+        <th colspan="7">
+        @using (Html.BeginForm("Index", "Post", FormMethod.Post, new { @class = "form-search" }))
+        { 
+            @Html.TextBox("filter", ViewBag.CurrentFilter as string, new { @class = "search-query", placeholder = "berdasarkan judul" })
+            <button type="submit" class="btn btn-info">Cari</button>
+            @Html.ActionLink("Bersihkan Filter", "Index", new { page = Request.Params["page"], sort = ViewBag.CurrentSort }, new { @class = "btn" })
+        }
+        </th>
+    </tr>
+    <tr>
         <th>
-            @Html.ActionLink(titleSort, "Index", new { sort = ViewBag.TitleSort })
+            @Html.ActionLink(titleSort, "Index", new { sort = ViewBag.TitleSort, currentFilter = ViewBag.CurrentFilter })
             Judul Berita
         </th>
         <th>
-            @Html.ActionLink(createdSort, "Index", new { sort = ViewBag.CreatedSort })
+            @Html.ActionLink(createdSort, "Index", new { sort = ViewBag.CreatedSort, currentFilter = ViewBag.CurrentFilter })
             Waktu Penulisan
         </th>
         <th>
-            @Html.ActionLink(updatedSort, "Index", new { sort = ViewBag.UpdatedSort })
+            @Html.ActionLink(updatedSort, "Index", new { sort = ViewBag.UpdatedSort, currentFitler = ViewBag.CurrentFitler })
             Update Terakhir
         </th>
         <th>
@@ -72,7 +82,7 @@
 </tbody>
 <tfoot>
     <tr>
-        <td colspan="7">@Html.PagedListPager(Model, page => Url.Action("Index", new {page}))</td>
+        <td colspan="7">@Html.PagedListPager(Model, page => Url.Action("Index", new {page, currentFilter = ViewBag.CurrentFilter, sort = ViewBag.CurrentSort}))</td>
     </tr>
 </tfoot>
 </table>
