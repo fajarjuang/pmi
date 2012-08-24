@@ -19,8 +19,9 @@
         <th colspan="7">
         @using (Html.BeginForm("Index", "Post", FormMethod.Post, new { @class = "form-search" }))
         { 
-            @Html.TextBox("filter", ViewBag.CurrentFilter as string, new { @class = "search-query", placeholder = "berdasarkan judul" })
-            <button type="submit" class="btn btn-info">Cari</button>
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-search"></i></span>@Html.TextBox("filter", ViewBag.CurrentFilter as string, new { @id = "prependInput", @class = "search-query", @placeholder = "berdasarkan judul" })
+            </div>
             @Html.ActionLink("Bersihkan Filter", "Index", new { page = Request.Params["page"], sort = ViewBag.CurrentSort }, new { @class = "btn" })
         }
         </th>
