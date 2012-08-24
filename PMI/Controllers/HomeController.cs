@@ -14,10 +14,14 @@ namespace PMI.Controllers
     {
         private pmiEntities db = new pmiEntities();
 
+        private const int CATEGORY_PER_PAGE = 5;
+
         public ActionResult Index()
         {
-            var posts = db.Posts.Include(p => p.Category1);
-            return View(posts);
+            var posts = from p in db.Posts.Include(p => p.Category1)
+                        group p by p.Category1 into cat
+                        select cat.OrderByDescending(p => p.created).Take(CATEGORY_PER_PAGE);
+            return View(posts.SelectMany(p => p));
         }
 
         public ActionResult News(long id)
