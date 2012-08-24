@@ -1,0 +1,18 @@
+﻿@model PMI.Models.Post
+
+@section stylesheet{
+    <link href="@Url.Content("~/Content/singlepost.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/Content/singlepost-responsive.css")" rel="stylesheet" type="text/css">
+}
+
+@{
+    ViewBag.Title = "Baca ";
+}
+
+<div class="span8" id="single-post">
+    <h1>@Model.title</h1>
+    <span id="single-post-info">@Model.created</span>
+    <div id="single-post-content">
+        @Html.SanitizeHTML(Model.content)
+    </div>
+</div>

@@ -20,6 +20,12 @@ namespace PMI.Controllers
             return View(posts);
         }
 
+        public ActionResult News(long id)
+        {
+            var post = db.Posts.Find(id);
+            return View(post);
+        }
+
         public ActionResult About()
         {
             return View();

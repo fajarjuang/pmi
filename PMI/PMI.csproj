@@ -506,6 +506,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PMIModels.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Home\News.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
