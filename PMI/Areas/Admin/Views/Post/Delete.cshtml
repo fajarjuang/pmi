@@ -22,7 +22,7 @@
             <span class="post-category">@Html.DisplayFor(model => model.Category1.desc)</span>
         </span>
         <div id="single-post-content">
-            @Html.Raw(PMI.Utils.HtmlUtility.SanitizeHtml(Model.content))
+            @Html.SanitizeHTML(Model.content)
         </div>
     </div>
 </fieldset>

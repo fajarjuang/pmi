@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+using PMI.Models;
 
 namespace PMI.Controllers
 {
     public class HomeController : Controller
     {
+        private pmiEntities db = new pmiEntities();
+
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
-
-            return View();
+            var posts = db.Posts.Include(p => p.Category1);
+            return View(posts);
         }
 
         public ActionResult About()

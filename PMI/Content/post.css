@@ -23,19 +23,14 @@
 #utama
 {
     max-height: 250px;
-    color: white;
 }
 
 #utama > #utama-content
 {
-    margin-top: 120px;
-    padding-left: 15px;
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 #utama-content > .post-info
 {
-    color: white;
 }
 
 #kategori-utama
