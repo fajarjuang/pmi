@@ -122,6 +122,10 @@
     <Compile Include="ViewHelper\Sanitizer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\pmi.mdf" />
+    <Content Include="App_Data\pmi_log.ldf">
+      <DependentUpon>pmi.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\gabung.css" />
     <Content Include="Content\images\logo-pmi.png" />
     <Content Include="Content\main-responsive.css" />
@@ -468,7 +472,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
