@@ -21,7 +21,7 @@
         <a href="@Url.Action("Index", "Home")">
             <img src="@Url.Content("~/Content/images/logo-pmi.png")" id="site-logo" title="Palang Merah Indonesia"></a>
 
-        @Html.Partial("_MenuPartial")
+            @Html.Action("Menu", "Navigation", new { controller = ViewContext.Controller.ValueProvider.GetValue("controller").RawValue, action = ViewContext.Controller.ValueProvider.GetValue("action").RawValue, area = "" })
         
         <div class="row-fluid">
             @RenderBody()
