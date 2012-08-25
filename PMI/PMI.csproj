@@ -79,6 +79,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Mvc\PMIViewEngine.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
@@ -459,29 +460,14 @@
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\ChangePassword.cshtml" />
-    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
-    <Content Include="Views\Account\LogOn.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Themes\Default\Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_FooterPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -493,17 +479,6 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\Web.config" />
-    <Content Include="Areas\Admin\Views\Post\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Category\Delete.cshtml" />
     <None Include="Models\PMIModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PMIModels.Context.cs</LastGenOutput>
@@ -512,8 +487,32 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PMIModels.cs</LastGenOutput>
     </None>
-    <Content Include="Views\Home\News.cshtml" />
-    <Content Include="Views\Navigation\Menu.cshtml" />
+    <Content Include="Themes\Default\Views\_ViewStart.cshtml" />
+    <Content Include="Themes\Default\Views\Account\ChangePassword.cshtml" />
+    <Content Include="Themes\Default\Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Themes\Default\Views\Account\LogOn.cshtml" />
+    <Content Include="Themes\Default\Views\Account\Register.cshtml" />
+    <Content Include="Themes\Default\Views\Home\About.cshtml" />
+    <Content Include="Themes\Default\Views\Home\Index.cshtml" />
+    <Content Include="Themes\Default\Views\Home\News.cshtml" />
+    <Content Include="Themes\Default\Views\Navigation\Menu.cshtml" />
+    <Content Include="Themes\Default\Views\Shared\_FooterPartial.cshtml" />
+    <Content Include="Themes\Default\Views\Shared\_Layout.cshtml" />
+    <Content Include="Themes\Default\Views\Shared\Error.cshtml" />
+    <Content Include="Themes\Default\Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Themes\Default\Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Themes\Default\Areas\Admin\Views\Category\Create.cshtml" />
+    <Content Include="Themes\Default\Areas\Admin\Views\Category\Delete.cshtml" />
+    <Content Include="Themes\Default\Areas\Admin\Views\Category\Edit.cshtml" />
+    <Content Include="Themes\Default\Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Themes\Default\Areas\Admin\Views\Post\Create.cshtml" />
+    <Content Include="Themes\Default\Areas\Admin\Views\Post\Delete.cshtml" />
+    <Content Include="Themes\Default\Areas\Admin\Views\Post\Details.cshtml" />
+    <Content Include="Themes\Default\Areas\Admin\Views\Post\Edit.cshtml" />
+    <Content Include="Themes\Default\Areas\Admin\Views\Post\Index.cshtml" />
+    <Content Include="Themes\Default\Areas\Admin\Views\Web.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

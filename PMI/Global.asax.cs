@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Routing;
+using PMI.Application.Mvc;
 
 namespace PMI
 {
@@ -29,12 +31,22 @@ namespace PMI
 
         }
 
+        public static void RegisterViewEngine(ViewEngineCollection viewEngines)
+        {
+            viewEngines.Clear();
+
+            var PMIViewEngine = new PMIViewEngine { theme = WebConfigurationManager.AppSettings["webpages:Theme"] };
+
+            viewEngines.Add(PMIViewEngine);
+        }
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+            RegisterViewEngine(ViewEngines.Engines);
         }
     }
 }
