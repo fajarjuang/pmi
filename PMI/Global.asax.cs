@@ -35,7 +35,7 @@ namespace PMI
         {
             viewEngines.Clear();
 
-            var PMIViewEngine = new PMIViewEngine { theme = WebConfigurationManager.AppSettings["webpages:Theme"] };
+            var PMIViewEngine = new PMIViewEngine();
 
             viewEngines.Add(PMIViewEngine);
         }

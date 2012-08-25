@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 
 namespace PMI.Application.Mvc
@@ -14,6 +15,7 @@ namespace PMI.Application.Mvc
         private RazorViewEngine CreatePMIViewEngine()
         {
             var pmiViewEngine = new RazorViewEngine();
+            this.theme = WebConfigurationManager.AppSettings["webpages:Theme"];
 
             pmiViewEngine.PartialViewLocationFormats = new []
                 {
