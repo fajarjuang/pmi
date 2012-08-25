@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\Mvc\PMIViewEngine.cs" />
+    <Compile Include="Application\ViewHelper\UrlHelperExtension.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
@@ -127,15 +128,15 @@
     <Content Include="App_Data\pmi_log.ldf">
       <DependentUpon>pmi.mdf</DependentUpon>
     </Content>
-    <Content Include="Content\gabung.css" />
+    <Content Include="Themes\Default\Content\gabung.css" />
     <Content Include="Content\images\logo-pmi.png" />
-    <Content Include="Content\main-responsive.css" />
-    <Content Include="Content\main.css" />
-    <Content Include="Content\PagedList.css" />
-    <Content Include="Content\post-responsive.css" />
-    <Content Include="Content\post.css" />
-    <Content Include="Content\singlepost-responsive.css" />
-    <Content Include="Content\singlepost.css" />
+    <Content Include="Themes\Default\Content\main-responsive.css" />
+    <Content Include="Themes\Default\Content\main.css" />
+    <Content Include="Themes\Default\Content\PagedList.css" />
+    <Content Include="Themes\Default\Content\post-responsive.css" />
+    <Content Include="Themes\Default\Content\post.css" />
+    <Content Include="Themes\Default\Content\singlepost-responsive.css" />
+    <Content Include="Themes\Default\Content\singlepost.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
