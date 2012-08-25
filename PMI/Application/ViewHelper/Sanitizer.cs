@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using PMI.Utils;
+using PMI.Application.Utils;
 
-namespace PMI.ViewHelper
+namespace PMI.Application.ViewHelper
 {
     public static class Sanitizer
     {

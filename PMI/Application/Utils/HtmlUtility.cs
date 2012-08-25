@@ -5,7 +5,7 @@ using System.Web;
 using HtmlAgilityPack;
 using System.Text;
 
-namespace PMI.Utils
+namespace PMI.Application.Utils
 {
     public static class HtmlUtility
     {
