@@ -1,0 +1,12 @@
+﻿#single-post h1 
+{
+    margin-bottom: 0;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+#single-post-info 
+{
+    line-height: 48px;
+    color: Gray;
+}

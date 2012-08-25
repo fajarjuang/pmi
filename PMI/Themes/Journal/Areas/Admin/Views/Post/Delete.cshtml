@@ -1,0 +1,34 @@
+﻿@model PMI.Models.Post
+
+@section stylesheet{
+    <link href="@Url.ThemeContent("~/Content/singlepost.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.ThemeContent("~/Content/singlepost-responsive.css")" rel="stylesheet" type="text/css">
+}
+
+@{
+    ViewBag.Title = "Menghapus tulisan " + @Model.title;
+}
+
+<h2>Penghapusan</h2>
+
+<h3>Apakah anda yakin mau menghapus "@Model.title"?</h3>
+<fieldset>
+    <legend>Isi tulisan:</legend>
+    
+    <div id="single-post" class="span8">
+        <h1>@Html.DisplayFor(model => model.title)</h1>
+        <span id="single-post-info">
+            ditulis: @Html.DisplayFor(model => model.created) | diperbaharui: @Html.DisplayFor(model => model.updated)
+            <span class="post-category">@Html.DisplayFor(model => model.Category1.desc)</span>
+        </span>
+        <div id="single-post-content">
+            @Html.SanitizeHTML(Model.content)
+        </div>
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <div class="form-actions">
+        <button type="submit" class="btn btn-danger">Hapus tulisan</button>
+        @Html.ActionLink("Kembali ke daftar tulisan", "Index", "Post", new { @class = "btn" })
+    </div>
+}

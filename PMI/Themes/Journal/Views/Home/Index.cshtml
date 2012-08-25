@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PMI.Models.Post>
+
+@section stylesheet{
+    <link href="@Url.ThemeContent("~/Content/post.css")" rel="stylesheet" type="text/css">
+}
+
+@section javascripts {
+    <script src="@Url.ThemeContent("~/Scripts/jshowoff/jquery.jshowoff.min.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#utama-container").jshowoff({ effect: 'slideLeft', controls: false, links: false });
+        });
+    </script>
+}
+
+@{
+    ViewBag.Title = "Palang Merah Indonesia";
+
+    var peristiwa = Model.Where(p => p.Category1.desc.Equals("Peristiwa"));
+    var utama = Model.Where(p => p.Category1.desc.Equals("Berita Utama"));
+    var pers = Model.Where(p => p.Category1.desc.Equals("Siaran Pers"));
+}
+<div class="row=fluid">
+    <div id="utama-container">
+        @foreach (var post in utama)
+        {
+            <div class="post utama" title=".">
+                <h1>@post.title</h1>
+                <span class="post-info">@post.created | @post.Category1.desc</span>
+                <div class="post-summary">
+                    @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more"})
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span6 hidden-phone" id="peristiwa-container">
+        @foreach (var post in peristiwa)
+        {
+            <div class="post peristiwa">
+                <h1>@post.title</h1>
+                <span class="post-info">@post.created | @post.Category1.desc</span>
+                <div class="post-summary">
+                    @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="span6 hidden-phone" id="siaran-pers-container">
+        @foreach (var post in pers)
+        {
+            <div class="post siaran-pers">
+                <h1>@post.title</h1>
+                <span class="post-info">@post.created | @post.Category1.desc</span>
+                <div class="post-summary">
+                    @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })
+                </div>
+            </div>
+        }
+    </div>
+</div>

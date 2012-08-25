@@ -1,0 +1,11 @@
+﻿#site-logo
+{
+    width: 200px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.dropdown-menu .active > a
+{
+    color: White;
+}

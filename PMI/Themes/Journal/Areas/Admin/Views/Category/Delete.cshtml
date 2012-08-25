@@ -1,0 +1,15 @@
+﻿@model PMI.Models.Category
+
+@{
+    ViewBag.Title = "Hapus kategori " + @Model.desc;
+}
+
+<fieldset>
+    <legend>Anda yakin mau menghapus kateogri "@Html.DisplayFor(model => model.desc)" ?</legend>
+</fieldset>
+@using (Html.BeginForm()) {
+    <div class="form-actions">
+        <button type="submit" class="btn btn-danger">Hapus Kategori</button>
+        @Html.ActionLink("Kembali ke daftar kategori", "Index", null, new { @class = "btn" })
+    </div>
+}

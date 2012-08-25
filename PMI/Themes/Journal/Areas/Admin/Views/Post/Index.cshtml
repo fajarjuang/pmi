@@ -1,0 +1,89 @@
+﻿@model IPagedList<PMI.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+    string titleSort = ViewBag.TitleSort == "title-desc" ? "\u25BC" : "\u25B2";
+    string createdSort = ViewBag.CreatedSort == "created-desc" ? "\u25BC" : "\u25B2";
+    string updatedSort = ViewBag.UpdatedSort == "updated-asc" ? "\u25B2" : "\u25BC";
+}
+
+<h2>Daftar Tulisan</h2>
+
+<p>
+    @Html.ActionLink("Tambah Baru", "Create", "Post", new { @class = "btn btn-primary" })
+</p>
+
+<table class="table">
+<thead>
+    <tr>
+        <th colspan="7">
+        @using (Html.BeginForm("Index", "Post", FormMethod.Post, new { @class = "form-search" }))
+        { 
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-search"></i></span>@Html.TextBox("filter", ViewBag.CurrentFilter as string, new { @id = "prependInput", @class = "search-query", @placeholder = "berdasarkan judul" })
+            </div>
+            @Html.ActionLink("Bersihkan Filter", "Index", new { page = Request.Params["page"], sort = ViewBag.CurrentSort }, new { @class = "btn" })
+        }
+        </th>
+    </tr>
+    <tr>
+        <th>
+            @Html.ActionLink(titleSort, "Index", new { sort = ViewBag.TitleSort, currentFilter = ViewBag.CurrentFilter })
+            Judul Berita
+        </th>
+        <th>
+            @Html.ActionLink(createdSort, "Index", new { sort = ViewBag.CreatedSort, currentFilter = ViewBag.CurrentFilter })
+            Waktu Penulisan
+        </th>
+        <th>
+            @Html.ActionLink(updatedSort, "Index", new { sort = ViewBag.UpdatedSort, currentFitler = ViewBag.CurrentFitler })
+            Update Terakhir
+        </th>
+        <th>
+            Kategori
+        </th>
+        <th>
+            Penulis
+        </th>
+        <th>
+            Isi
+        </th>
+        <th></th>
+    </tr>
+</thead>
+
+<tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.created)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.updated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category1.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aspnet_Users.UserName)
+        </td>
+        <td nowrap="wrap" style="width: 300px">
+            @Html.SanitizeHTML(item.getContentSummary())
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Tampilkan", "Details", new { id=item.id }) |
+            @Html.ActionLink("Hapus", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+</tbody>
+<tfoot>
+    <tr>
+        <td colspan="7">@Html.PagedListPager(Model, page => Url.Action("Index", new {page, currentFilter = ViewBag.CurrentFilter, sort = ViewBag.CurrentSort}))</td>
+    </tr>
+</tfoot>
+</table>
