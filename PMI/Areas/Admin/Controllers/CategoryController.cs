@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -38,9 +39,18 @@ namespace PMI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
-                db.SaveChanges();
-                return RedirectToAction("Index");  
+                try
+                {
+                    db.Categories.Add(category);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");  
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    // see: PostController.Create (POST)
+                    var errors = ex.EntityValidationErrors.First().ValidationErrors.First();
+                    this.ModelState.AddModelError(errors.PropertyName, errors.ErrorMessage);
+                }
             }
 
             return View(category);
@@ -63,10 +73,20 @@ namespace PMI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.Entry(category).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    
+                    var errors = ex.EntityValidationErrors.First().ValidationErrors.First();
+                    this.ModelState.AddModelError(errors.PropertyName, errors.ErrorMessage);
+                }
             }
+
             return View(category);
         }
 

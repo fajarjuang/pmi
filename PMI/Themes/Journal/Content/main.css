@@ -9,3 +9,10 @@
 {
     color: White;
 }
+
+/* ASP.net MVC Form Errors style */
+.validation-summary-errors, .field-validation-error
+{
+    color: Red;
+}
+/* ASP.net MVC Form Errors style ends */

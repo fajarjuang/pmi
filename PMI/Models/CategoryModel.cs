@@ -18,6 +18,7 @@ namespace PMI.Models
     internal class CategoryMetadata
     {
         [StringLength(255)]
+        [Required(ErrorMessage = "Kategori tidak boleh kosong.")]
         [DisplayName("Kategori")]
         public string desc { get; set; }
     }

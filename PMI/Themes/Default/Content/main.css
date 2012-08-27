@@ -54,7 +54,7 @@
 }
 
 /* ASP.net MVC Form Errors style */
-.validation-summary-errors
+.validation-summary-errors, .field-validation-error
 {
     color: Red;
 }

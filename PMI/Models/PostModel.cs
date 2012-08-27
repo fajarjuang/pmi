@@ -11,7 +11,7 @@ using PMI.Application.Utils;
 namespace PMI.Models
 {
     [MetadataTypeAttribute(typeof(PostMetadata))]
-    public partial class Post
+    public partial class Post : IValidatableObject
     {
         public string getContentSummary()
         {
@@ -28,11 +28,31 @@ namespace PMI.Models
                 return this.content;
             }
         }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var db = new pmiEntities();
+            var currentPost = db.Posts.Where(p => p.id == this.id).FirstOrDefault();
+
+            if (currentPost != null)
+            {
+                this.updated = DateTime.Now;
+
+                if (this.writer != currentPost.writer)
+                    yield return new ValidationResult("Penulis tidak sama dengan penulis awal.", new[] { "Title" });
+            }
+            else
+            {
+                this.created = DateTime.Now;
+                this.updated = DateTime.Now;
+            }
+        }
     }
 
     internal class PostMetadata
     {
         [StringLength(255)]
+        [Required(ErrorMessage = "Judul tulisan harus diisi.")]
         [DisplayName("Judul Tulisan")]
         public string title { get; set; }
 
@@ -42,10 +62,12 @@ namespace PMI.Models
         [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy HH:mm:ss}")]
         public System.DateTime updated { get; set; }
 
+        [Required(ErrorMessage = "Kategori harus dipilih.")]
         [DisplayName("Kategori")]
         public long category { get; set; }
 
         [AllowHtml]
+        [Required(ErrorMessage = "Isi tulisan tidak boleh kosong.")]
         [DisplayName("Isi")]
         public string content { get; set; }
     }

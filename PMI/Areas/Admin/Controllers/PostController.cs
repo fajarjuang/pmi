@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -101,10 +102,20 @@ namespace PMI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                post.writer = (Guid)Membership.GetUser().ProviderUserKey;
-                db.Posts.Add(post);
-                db.SaveChanges();
-                return RedirectToAction("Index");  
+                try
+                {
+                    post.writer = (Guid)Membership.GetUser().ProviderUserKey;
+                    db.Posts.Add(post);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");  
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    // ingat, setelah ini akan langsung keluar dari blok (sampai lewat if)
+                    // dan jadinya otomatis error tersimpan di model. Tidak perlu return di sini.
+                    var errors = ex.EntityValidationErrors.First().ValidationErrors.First();
+                    this.ModelState.AddModelError(errors.PropertyName, errors.ErrorMessage);
+                }
             }
 
             ViewBag.writer = new SelectList(db.aspnet_Users, "UserId", "UserName", post.writer);
@@ -135,9 +146,18 @@ namespace PMI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(post).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.Entry(post).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    // see: Create (POST)
+                    var errors = ex.EntityValidationErrors.First().ValidationErrors.First();
+                    this.ModelState.AddModelError(errors.PropertyName, errors.ErrorMessage);
+                }
             }
             ViewBag.writer = new SelectList(db.aspnet_Users, "UserId", "UserName", post.writer);
             ViewBag.category = new SelectList(db.Categories, "id", "desc", post.category);
