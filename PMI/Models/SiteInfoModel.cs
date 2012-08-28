@@ -15,10 +15,12 @@ namespace PMI.Models
 
     internal class SiteInfoMetadata
     {
+        [Required(ErrorMessage = "Tema harus dipilih!")]
         [DisplayName("Tema")]
         public string theme { get; set; }
 
         [AllowHtml]
+        [Required(ErrorMessage = "Footer harus diisi!")]
         [DisplayName("Footer Situs")]
         public string footer { get; set; }
     }

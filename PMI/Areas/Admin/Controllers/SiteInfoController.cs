@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -43,10 +44,20 @@ namespace PMI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(siteinfo).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.Entry(siteinfo).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    var errors = ex.EntityValidationErrors.First().ValidationErrors.First();
+                    this.ModelState.AddModelError(errors.PropertyName, errors.ErrorMessage);
+                }
             }
+
+            ViewBag.theme = getThemeList(siteinfo.theme);
             return View(siteinfo);
         }
 
