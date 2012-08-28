@@ -1,4 +1,9 @@
-﻿#site-logo
+﻿body 
+{
+    background: url("Images/retina_wood.png");
+}
+
+#site-logo
 {
     width: 200px;
     margin-top: 15px;
