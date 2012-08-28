@@ -30,7 +30,7 @@
             @RenderBody()
         </div>
         <div class="row-fluid footer">
-            @Html.Partial("_FooterPartial")
+            @Html.Action("Footer", "Navigation", new { controller = ViewContext.Controller.ValueProvider.GetValue("controller").RawValue, action = ViewContext.Controller.ValueProvider.GetValue("action").RawValue, area = "" })
         </div>
     </div>
 </body>

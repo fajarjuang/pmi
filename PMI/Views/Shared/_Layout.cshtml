@@ -15,6 +15,11 @@
     <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Content/bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
+
+    @if (IsSectionDefined("javascripts"))
+    { 
+        @RenderSection("javascripts", false)
+    }
 </head>
 <body>
     <div class="container-fluid">
@@ -27,7 +32,7 @@
             @RenderBody()
         </div>
         <div class="row-fluid footer">
-            @Html.Partial("_FooterPartial")
+            @Html.Action("Footer", "Navigation", new { controller = ViewContext.Controller.ValueProvider.GetValue("controller").RawValue, action = ViewContext.Controller.ValueProvider.GetValue("action").RawValue, area = "" })
         </div>
     </div>
 </body>

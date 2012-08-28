@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using HtmlAgilityPack;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace PMI.Application.Utils
 {
@@ -62,6 +63,9 @@ namespace PMI.Application.Utils
             {"ins", new string[]        {"style", "class"}}
         };
 
+        // declare an array to mark which characters are to be encoded.
+        private static string[] encodedCharacters = new string[256];
+
         /// <summary>
         /// Takes raw HTML input and cleans against a whitelist
         /// </summary>
@@ -105,9 +109,7 @@ namespace PMI.Application.Utils
                         }
                         else
                         {
-                            // AntiXss
-                            a.Value =
-                                Microsoft.Security.Application.Encoder.UrlPathEncode(a.Value);
+                            CleanAttributeValues(a);
                         }
                     }
                 }
@@ -164,6 +166,69 @@ namespace PMI.Application.Utils
         {
             for (int i = parent.ChildNodes.Count - 1; i >= 0; i--)
                 CleanNodes(parent.ChildNodes[i], whitelist);
+        }
+
+        /// <summary>
+        /// This removes the vulnerable keywords and make values safe by html encoding and html character escaping.
+        /// </summary>        
+        /// <param name="attribute">Attribute that contain values that need to check and clean.</param>
+        private static void CleanAttributeValues(HtmlAttribute attribute)
+        {
+
+            attribute.Value = HttpUtility.HtmlEncode(attribute.Value);
+
+            attribute.Value = Regex.Replace(attribute.Value, @"\s*j\s*a\s*v\s*a\s*s\s*c\s*r\s*i\s*p\s*t\s*", "", RegexOptions.IgnoreCase);
+            attribute.Value = Regex.Replace(attribute.Value, @"\s*s\s*c\s*r\s*i\s*p\s*t\s*", "", RegexOptions.IgnoreCase);
+
+            if (attribute.Name.ToLower() == "style")
+            {
+                attribute.Value = Regex.Replace(attribute.Value, @"\s*e\s*x\s*p\s*r\s*e\s*s\s*s\s*i\s*o\s*n\s*", "", RegexOptions.IgnoreCase);
+                attribute.Value = Regex.Replace(attribute.Value, @"\s*b\s*e\s*h\s*a\s*v\s*i\s*o\s*r\s*", "", RegexOptions.IgnoreCase);
+            }
+
+            if (attribute.Name.ToLower() == "href" || attribute.Name.ToLower() == "src")
+            {
+                //if (!attribute.Value.StartsWith("http://") || attribute.Value.StartsWith("/"))
+                //    attribute.Value = "";
+                attribute.Value = Regex.Replace(attribute.Value, @"\s*m\s*o\s*c\s*h\s*a\s*", "", RegexOptions.IgnoreCase);
+            }
+
+            // HtmlEntity Escape
+            StringBuilder sbAttriuteValue = new StringBuilder();
+            foreach (char c in attribute.Value.ToCharArray())
+            {
+                sbAttriuteValue.Append(EncodeCharacterToHtmlEntityEscape(c));
+            }
+
+            attribute.Value = sbAttriuteValue.ToString();
+
+        }
+
+        /// <summary>
+        /// To encode html attribute characters to hex format except alphanumeric characters. 
+        /// </summary>
+        /// <param name="c">Character from the attribute value</param>
+        /// <returns>Hex formatted string.</returns>
+        private static string EncodeCharacterToHtmlEntityEscape(char c)
+        {
+            string hex;
+            // check for alphnumeric characters
+            if (c < 0xFF)
+            {
+                hex = encodedCharacters[c];
+                if (hex == null)
+                    return "" + c;
+            }
+            else
+                hex = ((int)(c)).ToString("X2");
+
+            // check for illegal characters
+            if ((c <= 0x1f && c != '\t' && c != '\n' && c != '\r') || (c >= 0x7f && c <= 0x9f))
+            {
+                hex = "fffd"; // Let's entity encode this instead of returning it
+            }
+
+            return "&#x" + hex + ";";
         }
 
         /// <summary>
