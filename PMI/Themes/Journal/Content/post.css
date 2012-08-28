@@ -9,3 +9,16 @@
     line-height: 48px;
     color: Gray;
 }
+
+.utama 
+{
+    margin-bottom: 2em;
+}
+
+.gambar-utama
+{
+    display: inline;
+    float: left;
+    margin-right: 15px;
+    vertical-align: text-top;
+}

@@ -28,6 +28,10 @@
                 <h1>@post.title</h1>
                 <span class="post-info">@post.created | @post.Category1.desc</span>
                 <div class="post-summary">
+                    @if (post.image != null)
+                    {
+                        <img class="gambar-utama" src="@Url.Content(post.image)" />
+                    }
                     @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more"})
                 </div>
             </div>
@@ -35,11 +39,17 @@
     </div>
 </div>
 
+<div class="clearfix"></div>
+
 <div class="row-fluid">
     <div class="span6 hidden-phone" id="peristiwa-container">
         @foreach (var post in peristiwa)
         {
             <div class="post peristiwa">
+                @if (post.image != null)
+                {
+                    <img src="@Url.Content(post.image)" />
+                }
                 <h1>@post.title</h1>
                 <span class="post-info">@post.created | @post.Category1.desc</span>
                 <div class="post-summary">
@@ -53,6 +63,10 @@
         @foreach (var post in pers)
         {
             <div class="post siaran-pers">
+                @if (post.image != null)
+                {
+                    <img src="@Url.Content(post.image)" />
+                }
                 <h1>@post.title</h1>
                 <span class="post-info">@post.created | @post.Category1.desc</span>
                 <div class="post-summary">

@@ -19,6 +19,10 @@
     @foreach (var post in peristiwa)
     {
         <div class="post peristiwa">
+            @if (post.image != null)
+            {
+                <img src="@Url.Content(post.image)" />
+            }
             <h1>@post.title</h1>
             <span class="post-info">@post.created</span>
             <div class="post-summary">
@@ -31,6 +35,10 @@
 <div id="utama" class="span8 post">
     <div class="kategori" id="kategori-utama">Berita Utama</div>
     <div id="utama-content">
+        @if (headline.image != null)
+        {
+            <img src="@Url.Content(headline.image)" />
+        }
         <h1>@headline.title</h1>
         <span class="post-info">@headline.created</span>
         <div class="post-summary">
@@ -44,6 +52,10 @@
     @foreach (var post in pers)
     {
         <div class="post siaran-pers">
+            @if (post.image != null)
+            {
+                <img src="@Url.Content(post.image)" />
+            }
             <h1>@post.title</h1>
             <span class="post-info">@post.created</span>
             <div class="post-summary">
@@ -58,6 +70,10 @@
     @foreach (var post in utama)
     {
         <div class="post utama">
+            @if (post.image != null)
+            {
+                <img src="@Url.Content(post.image)" />
+            }
             <h1>@post.title</h1>
             <span class="post-info">@post.created</span>
             <div class="post-summary">

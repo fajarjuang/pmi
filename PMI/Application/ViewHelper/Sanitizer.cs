@@ -7,7 +7,7 @@ namespace PMI.Application.ViewHelper
     {
         public static MvcHtmlString SanitizeHTML(this HtmlHelper helper, string html)
         {
-            return new MvcHtmlString(HtmlUtility.SanitizeHtml(html));
+            return new MvcHtmlString(HtmlUtils.SanitizeHtml(html));
         }
     }
 }

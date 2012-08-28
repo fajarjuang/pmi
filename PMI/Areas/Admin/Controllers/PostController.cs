@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using PMI.Models;
+using PMI.Application.Utils;
 using PagedList;
 
 namespace PMI.Areas.Admin.Controllers
@@ -98,12 +101,15 @@ namespace PMI.Areas.Admin.Controllers
         // POST: /Admin/Post/Create
 
         [HttpPost]
-        public ActionResult Create(Post post)
+        public ActionResult Create(Post post, HttpPostedFileBase postImage)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
+                    var path = CopyUploadedPostImage(postImage, post.title);
+                    post.image = path;
+
                     post.writer = (Guid)Membership.GetUser().ProviderUserKey;
                     db.Posts.Add(post);
                     db.SaveChanges();
@@ -142,12 +148,15 @@ namespace PMI.Areas.Admin.Controllers
         // POST: /Admin/Post/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Post post)
+        public ActionResult Edit(Post post, HttpPostedFileBase postImage)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
+                    var path = CopyUploadedPostImage(postImage, post.title);
+                    post.image = path;
+
                     db.Entry(post).State = EntityState.Modified;
                     db.SaveChanges();
                     return RedirectToAction("Index");
@@ -189,6 +198,36 @@ namespace PMI.Areas.Admin.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        private string CopyUploadedPostImage(HttpPostedFileBase file, string title)
+        {
+            var path = "";
+            if (file.ContentLength > 0)
+            {
+                var filename = TextUtils.MD5(title) + Path.GetFileName(file.FileName);
+                var savePath = Server.MapPath("~/Images/Uploads/Post");
+                CreateDirectory(savePath);
+                
+                path = Path.Combine(savePath, filename);
+                file.SaveAs(path);
+            }
+
+            return ReverseMapPath(path);
+        }
+
+        public string ReverseMapPath(string path)
+        {
+            string appPath = Server.MapPath("~");
+            string res = String.Format("~/{0}", path.Replace(appPath, "").Replace("\\", "/"));
+            return res;
+        }
+
+        private void CreateDirectory(string path)
+        {
+            var dir = new DirectoryInfo(path);
+            if (!dir.Exists)
+                dir.Create();
         }
     }
 }

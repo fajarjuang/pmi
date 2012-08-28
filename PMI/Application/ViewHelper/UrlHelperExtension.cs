@@ -6,6 +6,8 @@ namespace PMI.Application.ViewHelper
 {
     public static class UrlHelperExtension
     {
+        public static readonly string ThemePath = "~/Themes/";
+
         public static string ThemeContent(this UrlHelper url, string path)
         {
             var db = new pmiEntities();

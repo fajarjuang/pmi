@@ -22,7 +22,7 @@
 
 #utama
 {
-    max-height: 250px;
+    
 }
 
 #utama > #utama-content
@@ -31,6 +31,11 @@
 
 #utama-content > .post-info
 {
+}
+
+#utama img 
+{
+    width: 100%;
 }
 
 #kategori-utama

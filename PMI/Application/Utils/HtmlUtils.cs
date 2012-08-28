@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace PMI.Application.Utils
 {
-    public static class HtmlUtility
+    public static class HtmlUtils
     {
         // Original list courtesy of Robert Beal :
         // http://www.robertbeal.com/37/sanitising-html

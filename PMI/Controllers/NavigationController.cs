@@ -32,7 +32,7 @@ namespace PMI.Controllers
         public PartialViewResult Footer(string controller, string action)
         {
             var footer = db.SiteInfoes.FirstOrDefault().footer;
-            ViewBag.footer = HtmlUtility.SanitizeHtml(footer); // because you can't call extension method from partial view
+            ViewBag.footer = HtmlUtils.SanitizeHtml(footer); // because you can't call extension method from partial view
 
             return PartialView();
         }
