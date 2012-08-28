@@ -19,7 +19,7 @@ namespace PMI.Models
             : base("name=pmiEntities")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -28,5 +28,6 @@ namespace PMI.Models
         public DbSet<aspnet_Users> aspnet_Users { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<SiteInfo> SiteInfoes { get; set; }
     }
 }

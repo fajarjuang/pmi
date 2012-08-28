@@ -12,17 +12,10 @@ namespace PMI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Post
+    public partial class SiteInfo
     {
-        public long id { get; set; }
-        public string title { get; set; }
-        public System.DateTime created { get; set; }
-        public System.DateTime updated { get; set; }
-        public long category { get; set; }
-        public System.Guid writer { get; set; }
-        public string content { get; set; }
-    
-        public virtual aspnet_Users aspnet_Users { get; set; }
-        public virtual Category Category1 { get; set; }
+        public string theme { get; set; }
+        public string footer { get; set; }
+        public int id { get; set; }
     }
 }

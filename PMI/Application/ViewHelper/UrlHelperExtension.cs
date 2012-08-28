@@ -1,6 +1,6 @@
 ﻿using System.Web;
-using System.Web.Configuration;
 using System.Web.Mvc;
+using PMI.Models;
 
 namespace PMI.Application.ViewHelper
 {
@@ -8,7 +8,9 @@ namespace PMI.Application.ViewHelper
     {
         public static string ThemeContent(this UrlHelper url, string path)
         {
-            var theme = WebConfigurationManager.AppSettings["webpages:Theme"];
+            var db = new pmiEntities();
+            var theme = db.SiteInfoes.Find(1).theme; // there wouldn't be any other key than 1. If there is, something's wrong!
+
             var finalPath = "~/Themes/";
 
             if (string.IsNullOrEmpty(theme))

@@ -12,5 +12,5 @@ namespace PMI.Models
     using System.Data.Entity.Validation;
 
     public partial class pmiEntities : DbContext
-    {}
+    { }
 }

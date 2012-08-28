@@ -30,7 +30,7 @@ namespace PMI.Models
             var adminMenu = new List<MenuItem>();
             adminMenu.Add(new MenuItem { Text = "Tulisan", Controller = "Post", Action = "Index", Active = false, Area = "Admin" });
             adminMenu.Add(new MenuItem { Text = "Kategori", Controller = "Category", Action = "Index", Active = false, Area = "Admin" });
-            adminMenu.Add(new MenuItem { Text = "Pengaturan Situs", Controller = "ThemeSelector", Action = "Index", Active = false, Area = "Admin" });
+            adminMenu.Add(new MenuItem { Text = "Pengaturan Situs", Controller = "SiteInfo", Action = "Index", Active = false, Area = "Admin" });
 
             return adminMenu;
         }
