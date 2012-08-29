@@ -12,6 +12,7 @@ using PMI.Models;
 
 namespace PMI.Areas.Admin.Controllers
 { 
+    [Authorize(Roles="CanPostNews")]
     public class SiteInfoController : Controller
     {
         private pmiEntities db = new pmiEntities();
