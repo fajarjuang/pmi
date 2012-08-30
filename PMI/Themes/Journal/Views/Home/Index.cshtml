@@ -28,7 +28,7 @@
                 <h1>@post.title</h1>
                 <span class="post-info">@post.created | @post.Category1.desc</span>
                 <div class="post-summary">
-                    @if (post.image != null)
+                    @if (!String.IsNullOrEmpty(post.image))
                     {
                         <img class="gambar-utama" src="@Url.Content(post.image)" />
                     }
@@ -46,9 +46,9 @@
         @foreach (var post in peristiwa)
         {
             <div class="post peristiwa">
-                @if (post.image != null)
+                @if (!String.IsNullOrEmpty(post.image))
                 {
-                    <img src="@Url.Content(post.image)" />
+                    <img src="@Url.Content(post.image)" class="gambar-post" />
                 }
                 <h1>@post.title</h1>
                 <span class="post-info">@post.created | @post.Category1.desc</span>
@@ -63,9 +63,9 @@
         @foreach (var post in pers)
         {
             <div class="post siaran-pers">
-                @if (post.image != null)
+                @if (!String.IsNullOrEmpty(post.image))
                 {
-                    <img src="@Url.Content(post.image)" />
+                    <img src="@Url.Content(post.image)" class="gambar-post" />
                 }
                 <h1>@post.title</h1>
                 <span class="post-info">@post.created | @post.Category1.desc</span>

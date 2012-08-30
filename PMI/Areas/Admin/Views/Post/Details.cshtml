@@ -26,6 +26,10 @@
             <span class="post-category">@Html.DisplayFor(model => model.Category1.desc)</span>
         </span>
         <div id="single-post-content">
+            @if (!String.IsNullOrEmpty(Model.image))
+            {
+                <img src="@Url.Content(Model.image)" class="gambar-post" />
+            }
             @Html.SanitizeHTML(Model.content)
         </div>
     </div>

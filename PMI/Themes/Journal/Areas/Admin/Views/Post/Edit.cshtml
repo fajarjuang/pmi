@@ -40,7 +40,10 @@
         </div>
         <div class="editor-field">
             <input type="file" name="postImage" id="postImage" /><br />
-            <img src="@Url.Content(Model.image)" />
+            @if (!String.IsNullOrEmpty(Model.image))
+            {
+                <img src="@Url.Content(Model.image)" class="gambar-post" />
+            }
         </div>
 
         <div class="editor-label">

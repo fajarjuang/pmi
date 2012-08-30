@@ -13,6 +13,12 @@
     <h1>@Model.title</h1>
     <span id="single-post-info">@Model.created</span>
     <div id="single-post-content">
+        @if (!String.IsNullOrEmpty(Model.image))
+        {
+            <div id="post-main-image">
+                <img class="gambar-post" src="@Url.Content(Model.image)" />
+            </div>
+        }
         @Html.SanitizeHTML(Model.content)
     </div>
 </div>
