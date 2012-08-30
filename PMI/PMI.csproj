@@ -79,6 +79,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Mvc\Controller\Extension\ServerExtension.cs" />
     <Compile Include="Application\Mvc\PMIViewEngine.cs" />
     <Compile Include="Application\Utils\TextUtils.cs" />
     <Compile Include="Application\ViewHelper\UrlHelperExtension.cs" />

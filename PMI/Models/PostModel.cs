@@ -3,9 +3,11 @@ using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Web;
 using System.Web.Mvc;
 using HtmlAgilityPack;
+using PMI.Application.Mvc.Controller;
 using PMI.Application.Utils;
 
 namespace PMI.Models
@@ -13,6 +15,8 @@ namespace PMI.Models
     [MetadataTypeAttribute(typeof(PostMetadata))]
     public partial class Post : IValidatableObject
     {
+        private const string UPLOAD_PATH = "~/Images/Uploads/Post";
+
         public string getContentSummary()
         {
             HtmlDocument doc = new HtmlDocument();
@@ -27,6 +31,33 @@ namespace PMI.Models
             {
                 return this.content;
             }
+        }
+
+        public void SaveImage(HttpPostedFileBase image)
+        {
+            var path = "";
+            if (image.ContentLength > 0)
+            {
+                var filename = TextUtils.MD5(title) + Path.GetFileName(image.FileName);
+                var savePath = HttpContext.Current.Server.MapPath(UPLOAD_PATH);
+                CreateDirectory(savePath);
+                
+                path = Path.Combine(savePath, filename);
+                image.SaveAs(path);
+                this.image = UPLOAD_PATH + "/" + filename;
+            }
+        }
+
+        // This method will be used only here, while creating the directory.
+        // We don't want it to be too complicated so let's do a YAGNI here
+        // and forget about the Single Responsibility Principle.
+        // Please remember to throw this one out to a new class if you ever
+        // need more than one FileSystem IO functionality one day.
+        private void CreateDirectory(string path)
+        {
+            var dir = new DirectoryInfo(path);
+            if (!dir.Exists)
+                dir.Create();
         }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

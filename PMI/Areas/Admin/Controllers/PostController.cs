@@ -11,6 +11,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using PMI.Models;
 using PMI.Application.Utils;
+using PMI.Application.Mvc.Controller.Extension;
 using PagedList;
 
 namespace PMI.Areas.Admin.Controllers
@@ -107,9 +108,7 @@ namespace PMI.Areas.Admin.Controllers
             {
                 try
                 {
-                    var path = CopyUploadedPostImage(postImage, post.title);
-                    post.image = path;
-
+                    post.SaveImage(postImage);
                     post.writer = (Guid)Membership.GetUser().ProviderUserKey;
                     db.Posts.Add(post);
                     db.SaveChanges();
@@ -154,9 +153,7 @@ namespace PMI.Areas.Admin.Controllers
             {
                 try
                 {
-                    var path = CopyUploadedPostImage(postImage, post.title);
-                    post.image = path;
-
+                    post.SaveImage(postImage);
                     db.Entry(post).State = EntityState.Modified;
                     db.SaveChanges();
                     return RedirectToAction("Index");
@@ -198,36 +195,6 @@ namespace PMI.Areas.Admin.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
-        }
-
-        private string CopyUploadedPostImage(HttpPostedFileBase file, string title)
-        {
-            var path = "";
-            if (file.ContentLength > 0)
-            {
-                var filename = TextUtils.MD5(title) + Path.GetFileName(file.FileName);
-                var savePath = Server.MapPath("~/Images/Uploads/Post");
-                CreateDirectory(savePath);
-                
-                path = Path.Combine(savePath, filename);
-                file.SaveAs(path);
-            }
-
-            return ReverseMapPath(path);
-        }
-
-        public string ReverseMapPath(string path)
-        {
-            string appPath = Server.MapPath("~");
-            string res = String.Format("~/{0}", path.Replace(appPath, "").Replace("\\", "/"));
-            return res;
-        }
-
-        private void CreateDirectory(string path)
-        {
-            var dir = new DirectoryInfo(path);
-            if (!dir.Exists)
-                dir.Create();
         }
     }
 }
