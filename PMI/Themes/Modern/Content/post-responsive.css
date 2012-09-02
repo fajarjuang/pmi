@@ -1,0 +1,26 @@
+﻿/* Normal Desktop */
+@media (max-width: 979px)
+{
+
+}
+
+/* Big Screen Desktop */
+@media (min-width: 1200px)
+{
+
+}
+
+/* Tablet */
+@media (max-width: 767px)
+{}
+
+/* Phone */
+@media (max-width: 480px)
+{    .slider-viewport 
+    { 
+        width: 400px; 
+        height: 250px; 
+        overflow: hidden; 
+        margin: 0 auto; 
+    }
+}

@@ -1,0 +1,88 @@
+﻿.slider-viewport 
+{ 
+    width: 560px; 
+    height: 300px; 
+    overflow: hidden; 
+    margin: 0 auto; 
+ }
+
+.berita-lain  
+{
+    margin-top: 2em; 
+}
+.post img  
+{
+    margin: 0 auto; 
+    display: block; 
+}
+
+.gambar-post 
+{
+     margin: 0 auto; 
+}
+
+#content-box > figure  
+{
+    opacity: 0; 
+    filter: alpha(opacity = 0); 
+    text-align: center; 
+}
+
+#content-box > figure img  
+{
+    max-height: 275px; 
+}
+
+
+#content-box figcaption  
+{
+    margin-top: 5px; 
+    text-align: center; 
+    font-size: 20px; 
+    font-weight: bold; 
+    text-transform: capitalize; 
+}
+
+#content-box figcaption > small  
+{
+    color: #555; 
+    font-size: 14px; 
+}
+
+#content-box h2, #content-box p  
+{
+    text-align: justify; 
+}
+
+#content-box h2  
+{
+    text-transform: capitalize; 
+}
+
+
+.controls  
+{
+    margin: 0 auto; 
+    width: 560px; 
+    text-align: center; 
+    position: relative; 
+}
+
+
+.kategori  
+{
+    padding-top: 1em; 
+    padding-bottom: 1em; 
+    margin-bottom: 1em; 
+    text-align: center; 
+    text-transform: uppercase; 
+    color: #FF1100; 
+    font-weight: bold; 
+    font-size: 16px; 
+}
+
+#peristiwa-container  
+{
+    background: rgba(85, 85, 85, 0.1); 
+    padding: 0 2em 2em 2em; 
+}
