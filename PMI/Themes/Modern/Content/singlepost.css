@@ -1,0 +1,16 @@
+﻿#post-main-image
+{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.gambar-post
+{
+    margin: 0 auto;
+}
+
+#single-post-content 
+{
+    text-align: justify;
+}

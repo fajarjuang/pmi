@@ -1,0 +1,22 @@
+﻿@model PMI.Models.Post
+
+@section stylesheet{
+    <link href="@Url.ThemeContent("~/Content/singlepost.css")" rel="stylesheet" type="text/css">
+}
+
+@{
+    ViewBag.Title = "Baca ";
+}
+
+<div class="span8" id="single-post">
+    <h1>@Model.title <small>@Model.created</small></h1>
+    <div id="single-post-content">
+        @if (!String.IsNullOrEmpty(Model.image))
+        {
+            <div id="post-main-image">
+                <img class="gambar-post" src="@Url.Content(Model.image)" />
+            </div>
+        }
+        @Html.SanitizeHTML(Model.content)
+    </div>
+</div>

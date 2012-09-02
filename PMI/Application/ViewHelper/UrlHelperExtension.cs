@@ -13,7 +13,7 @@ namespace PMI.Application.ViewHelper
             var db = new pmiEntities();
             var theme = db.SiteInfoes.Find(1).theme; // there wouldn't be any other key than 1. If there is, something's wrong!
 
-            var finalPath = "~/Themes/";
+            var finalPath = ThemePath;
 
             if (string.IsNullOrEmpty(theme))
                 finalPath = finalPath + "Default/";
@@ -31,6 +31,23 @@ namespace PMI.Application.ViewHelper
             finalPath = finalPath + path;
 
             return VirtualPathUtility.ToAbsolute(finalPath);
+        }
+
+        public static string ThemeLayout(this UrlHelper url)
+        {
+            var defaultPath = "~/Views/Shared/_Layout.cshtml";
+
+            var themeLayout = defaultPath;
+            var db = new pmiEntities();
+            var theme = db.SiteInfoes.Find(1).theme;
+
+            if (!string.IsNullOrEmpty(theme))
+                themeLayout = ThemePath + theme + "/Views/Shared/_Layout.cshtml";
+
+            if (!System.IO.File.Exists(HttpContext.Current.Server.MapPath(themeLayout)))
+                themeLayout = defaultPath;
+
+            return themeLayout;
         }
     }
 }
