@@ -456,6 +456,7 @@
     <Content Include="Themes\Journal\Content\singlepost.css" />
     <Content Include="Themes\Journal\Scripts\jshowoff\jquery.jshowoff.min.js" />
     <Content Include="Themes\Journal\Scripts\jshowoff\jshowoff.css" />
+    <Content Include="Themes\Modern\Content\singlepost.css" />
     <Content Include="Themes\Modern\Content\post-responsive.css" />
     <Content Include="Themes\Modern\Content\post.css" />
     <Content Include="Themes\Modern\Content\main.css" />
@@ -583,6 +584,7 @@
     <None Include="Themes\Modern\Scripts\jquery-box-slider\css\config.rb" />
     <None Include="Themes\Modern\Scripts\jquery-box-slider\css\sass\screen.scss" />
     <None Include="Themes\Modern\Scripts\jquery-box-slider\css\sass\_base.scss" />
+    <Content Include="Themes\Modern\Views\Home\News.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
