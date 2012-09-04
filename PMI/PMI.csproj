@@ -574,7 +574,6 @@
     <Folder Include="App_Code\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Themes\Journal\Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -636,18 +635,6 @@
     <Content Include="Themes\Journal\Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Themes\Journal\Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Themes\Journal\Areas\Admin\Views\Category\Create.cshtml" />
-    <Content Include="Themes\Journal\Areas\Admin\Views\Category\Delete.cshtml" />
-    <Content Include="Themes\Journal\Areas\Admin\Views\Category\Edit.cshtml" />
-    <Content Include="Themes\Journal\Areas\Admin\Views\Category\Index.cshtml" />
-    <Content Include="Themes\Journal\Areas\Admin\Views\Post\Create.cshtml" />
-    <Content Include="Themes\Journal\Areas\Admin\Views\Post\Delete.cshtml" />
-    <Content Include="Themes\Journal\Areas\Admin\Views\Post\Details.cshtml" />
-    <Content Include="Themes\Journal\Areas\Admin\Views\Post\Edit.cshtml" />
-    <Content Include="Themes\Journal\Areas\Admin\Views\Post\Index.cshtml" />
-    <Content Include="Themes\Journal\Areas\Admin\Views\Web.config" />
-    <Content Include="Themes\Journal\Areas\Admin\Views\SiteInfo\Index.cshtml" />
     <Content Include="Views\Navigation\Footer.cshtml" />
     <Content Include="Themes\Modern\Views\Web.config">
       <SubType>Designer</SubType>

@@ -9,7 +9,7 @@
 
 <div class="navbar">
     <div class="navbar-inner">
-        <a href="@Url.Action("Index", "Home", new { area = "" })" class="brand">Palang Merah Indonesia</a>
+        <a href="@Url.Action("Index", "Home", new { area = "" })" class="brand">@GlobalResources.SiteTitle</a>
         <ul class="nav">
             @foreach (var item in Model.Where(p => p.Area == ""))
             {
