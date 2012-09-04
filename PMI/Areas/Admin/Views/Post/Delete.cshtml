@@ -6,19 +6,17 @@
 }
 
 @{
-    ViewBag.Title = "Menghapus tulisan " + @Model.title;
+    ViewBag.Title = @PostAdminResources.PostDeletionTitle + @Model.title;
 }
 
-<h2>Penghapusan</h2>
-
-<h3>Apakah anda yakin mau menghapus "@Model.title"?</h3>
+<h3>@PostAdminResources.PostDeletionMessage "@Model.title"?</h3>
 <fieldset>
-    <legend>Isi tulisan:</legend>
+    <legend>@PostAdminResources.PostContent:</legend>
     
     <div id="single-post" class="span8">
         <h1>@Html.DisplayFor(model => model.title)</h1>
         <span id="single-post-info">
-            ditulis: @Html.DisplayFor(model => model.created) | diperbaharui: @Html.DisplayFor(model => model.updated)
+            @PostAdminResources.PostCreated: @Html.DisplayFor(model => model.created) | @PostAdminResources.PostUpdated: @Html.DisplayFor(model => model.updated)
             <span class="post-category">@Html.DisplayFor(model => model.Category1.desc)</span>
         </span>
         <div id="single-post-content">
@@ -28,7 +26,7 @@
 </fieldset>
 @using (Html.BeginForm()) {
     <div class="form-actions">
-        <button type="submit" class="btn btn-danger">Hapus tulisan</button>
-        @Html.ActionLink("Kembali ke daftar tulisan", "Index", "Post", new { @class = "btn" })
+        <button type="submit" class="btn btn-danger">@PostAdminResources.ButtonDelete</button>
+        @Html.ActionLink(@PostAdminResources.ButtonBackToList, "Index", "Post", new { @class = "btn" })
     </div>
 }

@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using HtmlAgilityPack;
 using PMI.Application.Mvc.Controller;
 using PMI.Application.Utils;
+using PMI.Resources.Model;
 
 namespace PMI.Models
 {
@@ -73,7 +74,7 @@ namespace PMI.Models
                 this.updated = DateTime.Now;
 
                 if (this.writer != currentPost.writer)
-                    yield return new ValidationResult("Penulis tidak sama dengan penulis awal.", new[] { "Title" });
+                    yield return new ValidationResult(PostModelResources.WriterError, new[] { "Title" });
             }
             else
             {
@@ -86,8 +87,8 @@ namespace PMI.Models
     internal class PostMetadata
     {
         [StringLength(255)]
-        [Required(ErrorMessage = "Judul tulisan harus diisi.")]
-        [DisplayName("Judul Tulisan")]
+        [Required(ErrorMessageResourceName = "TitleError", ErrorMessageResourceType = typeof(PostModelResources))]
+        [Display(Name = "Title", ResourceType = typeof(PostModelResources))]
         public string title { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy HH:mm:ss}")]
@@ -96,13 +97,13 @@ namespace PMI.Models
         [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy HH:mm:ss}")]
         public System.DateTime updated { get; set; }
 
-        [Required(ErrorMessage = "Kategori harus dipilih.")]
-        [DisplayName("Kategori")]
+        [Required(ErrorMessageResourceName = "CategoryError", ErrorMessageResourceType = typeof(PostModelResources))]
+        [Display(Name = "Category", ResourceType = typeof(PostModelResources))]
         public long category { get; set; }
 
         [AllowHtml]
-        [Required(ErrorMessage = "Isi tulisan tidak boleh kosong.")]
-        [DisplayName("Isi")]
+        [Required(ErrorMessageResourceName = "ContentError", ErrorMessageResourceType = typeof(PostModelResources))]
+        [Display(Name = "Content", ResourceType = typeof(PostModelResources))]
         public string content { get; set; }
     }
 }
