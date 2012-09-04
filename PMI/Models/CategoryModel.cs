@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using HtmlAgilityPack;
 using PMI.Application.Utils;
+using PMI.Resources.Model;
 
 namespace PMI.Models
 {
@@ -18,8 +19,8 @@ namespace PMI.Models
     internal class CategoryMetadata
     {
         [StringLength(255)]
-        [Required(ErrorMessage = "Kategori tidak boleh kosong.")]
-        [DisplayName("Kategori")]
+        [Required(ErrorMessageResourceName = "DescriptionError", ErrorMessageResourceType = typeof(CategoryModelResources))]
+        [Display(Name = "Description", ResourceType = typeof(CategoryModelResources))]
         public string desc { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿@model PMI.Models.Category
 
 @{
-    ViewBag.Title = "Tambah Kategori Baru";
+    ViewBag.Title = @CategoryAdminResources.CategoryCreateTitle;
 }
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
@@ -10,7 +10,7 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Tambah Kategori</legend>
+        <legend>@CategoryAdminResources.CategoryCreateTitle</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.desc)
@@ -21,8 +21,8 @@
         </div>
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Simpan</button>
-            @Html.ActionLink("Kembali ke daftar kategori", "Index", null, new { @class = "btn" })
+            <button type="submit" class="btn btn-primary">@CategoryAdminResources.ButtonNewCategory</button>
+            @Html.ActionLink(@CategoryAdminResources.ButtonBackToList, "Index", null, new { @class = "btn" })
         </div>
     </fieldset>
 }

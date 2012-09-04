@@ -1,20 +1,20 @@
 ﻿@model IEnumerable<PMI.Models.Category>
 
 @{
-    ViewBag.Title = "Daftar Kategori";
+    ViewBag.Title = @CategoryAdminResources.ListTitle;
 }
 
-<h2>Daftar Kategori</h2>
+<h2>@CategoryAdminResources.ListTitle</h2>
 
 <p>
-    @Html.ActionLink("Tambah Kategori Baru", "Create", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink(@CategoryAdminResources.ButtonNewCategory, "Create", null, new { @class = "btn btn-primary" })
 </p>
 
 <table class="table">
 <thead>
     <tr>
         <th>
-            Kategori
+            @CategoryAdminResources.CategoryDescription
         </th>
         <th></th>
     </tr>
@@ -27,8 +27,8 @@
             @Html.DisplayFor(modelItem => item.desc)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink(@CategoryAdminResources.ActionEdit, "Edit", new { id=item.id }) |
+            @Html.ActionLink(@CategoryAdminResources.ActionDelete, "Delete", new { id=item.id })
         </td>
     </tr>
 }
