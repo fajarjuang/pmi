@@ -37,6 +37,9 @@
     <Reference Include="AntiXssLibrary">
       <HintPath>..\packages\AntiXSS.4.2.1\lib\net40\AntiXssLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="Contrib.Regex">
+      <HintPath>..\packages\Lucene.Net.Contrib.2.9.4.1\lib\net40\Contrib.Regex.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
@@ -45,6 +48,39 @@
     </Reference>
     <Reference Include="HtmlSanitizationLibrary">
       <HintPath>..\packages\AntiXSS.4.2.1\lib\net40\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Analyzers">
+      <HintPath>..\packages\Lucene.Net.Contrib.2.9.4.1\lib\net40\Lucene.Net.Contrib.Analyzers.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Core">
+      <HintPath>..\packages\Lucene.Net.Contrib.2.9.4.1\lib\net40\Lucene.Net.Contrib.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Highlighter">
+      <HintPath>..\packages\Lucene.Net.Contrib.2.9.4.1\lib\net40\Lucene.Net.Contrib.Highlighter.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Queries">
+      <HintPath>..\packages\Lucene.Net.Contrib.2.9.4.1\lib\net40\Lucene.Net.Contrib.Queries.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Snowball">
+      <HintPath>..\packages\Lucene.Net.Contrib.2.9.4.1\lib\net40\Lucene.Net.Contrib.Snowball.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Spatial">
+      <HintPath>..\packages\Lucene.Net.Contrib.2.9.4.1\lib\net40\Lucene.Net.Contrib.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SpellChecker">
+      <HintPath>..\packages\Lucene.Net.Contrib.2.9.4.1\lib\net40\Lucene.Net.Contrib.SpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.FastVectorHighlighter">
+      <HintPath>..\packages\Lucene.Net.Contrib.2.9.4.1\lib\net40\Lucene.Net.FastVectorHighlighter.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Search.SimpleFacetedSearch">
+      <HintPath>..\packages\Lucene.Net.Contrib.2.9.4.1\lib\net40\Lucene.Net.Search.SimpleFacetedSearch.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList">

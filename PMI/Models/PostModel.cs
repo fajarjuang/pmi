@@ -35,6 +35,9 @@ namespace PMI.Models
 
         public void SaveImage(HttpPostedFileBase image)
         {
+            if (image == null)
+                return;
+
             var path = "";
             if (image.ContentLength > 0)
             {
