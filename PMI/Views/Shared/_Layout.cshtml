@@ -24,7 +24,7 @@
 <body>
     <div class="container-fluid">
         <a href="@Url.Action("Index", "Home", new { area = "" })">
-            <img src="@Url.Content("~/Content/images/logo-pmi.png")" id="site-logo" title="Palang Merah Indonesia"></a>
+            <img src="@Url.Content("~/Content/images/logo-pmi.png")" id="site-logo" title="@GlobalResources.SiteTitle"></a>
 
             @Html.Action("Menu", "Navigation", new { controller = ViewContext.Controller.ValueProvider.GetValue("controller").RawValue, action = ViewContext.Controller.ValueProvider.GetValue("action").RawValue, area = "" })
         

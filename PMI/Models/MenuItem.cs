@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using PMI.Resources.Global;
 
 namespace PMI.Models
 {
@@ -16,11 +17,11 @@ namespace PMI.Models
         public static List<MenuItem> MainMenu()
         {
             var mainMenu = new List<MenuItem>();
-            mainMenu.Add(new MenuItem { Text = "Berita", Controller = "Home", Action = "Index", Active = false, Area = "" });
-            mainMenu.Add(new MenuItem { Text = "Partisipasi", Controller = "Home", Action = "About", Active = false, Area = "" });
-            mainMenu.Add(new MenuItem { Text = "Program", Controller = "Home", Action = "About", Active = false, Area = "" });
-            mainMenu.Add(new MenuItem { Text = "Informasi", Controller = "Home", Action = "About", Active = false, Area = "" });
-            mainMenu.Add(new MenuItem { Text = "Komunitas", Controller = "Home", Action = "About", Active = false, Area = "" });
+            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuBerita, Controller = "Home", Action = "Index", Active = false, Area = "" });
+            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuPartisipasi, Controller = "Home", Action = "About", Active = false, Area = "" });
+            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuProgram, Controller = "Home", Action = "About", Active = false, Area = "" });
+            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuInformasi, Controller = "Home", Action = "About", Active = false, Area = "" });
+            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuKomunitas, Controller = "Home", Action = "About", Active = false, Area = "" });
 
             return mainMenu;
         }
@@ -28,9 +29,9 @@ namespace PMI.Models
         public static List<MenuItem> AdminMenu()
         {
             var adminMenu = new List<MenuItem>();
-            adminMenu.Add(new MenuItem { Text = "Tulisan", Controller = "Post", Action = "Index", Active = false, Area = "Admin" });
-            adminMenu.Add(new MenuItem { Text = "Kategori", Controller = "Category", Action = "Index", Active = false, Area = "Admin" });
-            adminMenu.Add(new MenuItem { Text = "Pengaturan Situs", Controller = "SiteInfo", Action = "Index", Active = false, Area = "Admin" });
+            adminMenu.Add(new MenuItem { Text = GlobalResources.MenuTulisan, Controller = "Post", Action = "Index", Active = false, Area = "Admin" });
+            adminMenu.Add(new MenuItem { Text = GlobalResources.MenuKategori, Controller = "Category", Action = "Index", Active = false, Area = "Admin" });
+            adminMenu.Add(new MenuItem { Text = GlobalResources.MenuPengaturan, Controller = "SiteInfo", Action = "Index", Active = false, Area = "Admin" });
 
             return adminMenu;
         }

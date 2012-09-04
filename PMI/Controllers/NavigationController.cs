@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PMI.Models;
 using PMI.Application.Utils;
+using PMI.Models;
+using PMI.Resources.Global;
 
 namespace PMI.Controllers
 {
@@ -41,11 +42,11 @@ namespace PMI.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return new MenuItem { Text = "Logout", Controller = "Account", Action = "LogOff", Area = "", Active = false };
+                return new MenuItem { Text = GlobalResources.MenuLogout, Controller = "Account", Action = "LogOff", Area = "", Active = false };
             }
             else
             {
-                return new MenuItem { Text = "Login", Controller = "Account", Action = "LogOn", Area = "", Active = false };
+                return new MenuItem { Text = GlobalResources.MenuLogin, Controller = "Account", Action = "LogOn", Area = "", Active = false };
             }
         }
     }
