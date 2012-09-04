@@ -11,13 +11,14 @@ using System.Web.Mvc;
 using System.Web.Security;
 using PMI.Models;
 using PMI.Application.Utils;
+using PMI.Application.Mvc.Controller;
 using PMI.Application.Mvc.Controller.Extension;
 using PagedList;
 
 namespace PMI.Areas.Admin.Controllers
 { 
     [Authorize(Roles="CanPostNews")]
-    public class PostController : Controller
+    public class PostController : PMIController
     {
         private pmiEntities db = new pmiEntities();
         private const int POST_PER_PAGE = 5;

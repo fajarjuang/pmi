@@ -6,12 +6,13 @@ using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PMI.Application.Mvc.Controller;
 using PMI.Models;
 
 namespace PMI.Areas.Admin.Controllers
 { 
     [Authorize(Roles="CanPostNews")]
-    public class CategoryController : Controller
+    public class CategoryController : PMIController
     {
         private pmiEntities db = new pmiEntities();
 

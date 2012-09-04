@@ -8,12 +8,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
+using PMI.Application.Mvc.Controller;
 using PMI.Models;
 
 namespace PMI.Areas.Admin.Controllers
 { 
     [Authorize(Roles="CanPostNews")]
-    public class SiteInfoController : Controller
+    public class SiteInfoController : PMIController
     {
         private pmiEntities db = new pmiEntities();
 

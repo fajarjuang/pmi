@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PMI.Application.Mvc.Controller;
 using PMI.Application.Utils;
 using PMI.Models;
 using PMI.Resources.Global;
@@ -10,7 +11,7 @@ using PMI.Resources.Global;
 namespace PMI.Controllers
 {
     [ChildActionOnly]
-    public class NavigationController : Controller
+    public class NavigationController : PMIController
     {
         private pmiEntities db = new pmiEntities();
 

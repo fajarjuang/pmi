@@ -12,6 +12,9 @@
     }
 
     <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.23.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-i18n.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.cookie.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Content/bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
 
@@ -29,6 +32,32 @@
         </div>
 
         <div class="row-fluid footer">
+            <select id="lang-change">
+                <option value="id">Indonesian</option>
+                <option value="en">English</option>
+            </select>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var cult = $.cookie("_culture");
+
+                    if (cult == undefined) {
+                        // I HATE IE! :(
+                        if (navigator.language != undefined) {
+                            cult = navigator.language.substring(0, 2);
+                        } else {
+                            cult = navigator.userLanguage.substring(0, 2);
+                        }
+                    }
+
+                    $("#lang-change").val(cult);
+                });
+                $("#lang-change").change(function () {
+                    var chosenLang = $(this).val();
+                    $.cookie("_culture", chosenLang, { expires: 365, path: '/' });
+                    window.location.reload();
+                });
+            </script>
+
             @Html.Action("Footer", "Navigation", new { controller = ViewContext.Controller.ValueProvider.GetValue("controller").RawValue, action = ViewContext.Controller.ValueProvider.GetValue("action").RawValue, area = "" })
         </div>
     </div>

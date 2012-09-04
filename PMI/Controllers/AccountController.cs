@@ -5,11 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
+using PMI.Application.Mvc.Controller;
 using PMI.Models;
 
 namespace PMI.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : PMIController
     {
 
         //

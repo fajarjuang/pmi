@@ -6,11 +6,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using PMI.Application.Mvc.Controller;
 using PMI.Models;
 
 namespace PMI.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : PMIController
     {
         private pmiEntities db = new pmiEntities();
 
