@@ -1,7 +1,7 @@
 ﻿@model PMI.Models.SiteInfo
 
 @{
-    ViewBag.Title = "Ubah Konfigurasi Situs";
+    ViewBag.Title = @SiteInfoAdminResources.Title;
 }
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
@@ -10,7 +10,7 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Ganti konfigurasi yang ingin diubah.</legend>
+        <legend>@SiteInfoAdminResources.Title</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.theme)
@@ -31,7 +31,7 @@
         @Html.HiddenFor(model => model.id)
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+            <button type="submit" class="btn btn-primary">@SiteInfoAdminResources.ButtonSaveChanges</button>
         </div>
     </fieldset>
 }
