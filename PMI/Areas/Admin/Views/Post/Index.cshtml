@@ -56,7 +56,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.title)
+            @Html.DisplayFor(modelItem => item.culturedTitle)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.created)
@@ -65,7 +65,7 @@
             @Html.DisplayFor(modelItem => item.updated)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Category1.desc)
+            @Html.DisplayFor(modelItem => item.Category1.culturedDesc)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.aspnet_Users.UserName)

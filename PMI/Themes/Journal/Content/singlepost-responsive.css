@@ -1,0 +1,20 @@
+/* Big Screen Desktop */
+@media (min-width: 1200px)
+{
+
+}
+
+/* Normal Desktop */
+@media (min-width: 979px)
+{
+}
+
+/* Tablet */
+@media (max-width: 767px)
+{
+}
+
+/* Phone */
+@media (max-width: 480px)
+{
+}

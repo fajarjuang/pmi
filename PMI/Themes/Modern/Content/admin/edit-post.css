@@ -1,0 +1,11 @@
+﻿#post-panel 
+{
+    position: relative;
+}
+
+#en-panel
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

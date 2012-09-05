@@ -6,11 +6,11 @@
 }
 
 @{
-    ViewBag.Title = @PostAdminResources.ViewTitle + @Model.title;
+    ViewBag.Title = @PostAdminResources.ViewTitle + " " + @Model.culturedTitle;
 }
 
 <fieldset>
-    <legend>@PostAdminResources.ViewTitle "@Model.title"</legend>
+    <legend>@PostAdminResources.ViewTitle "@Model.culturedTitle"</legend>
 
     <div class="form-actions">
         @Html.ActionLink(@PostAdminResources.ButtonBackToList, "Index", "Post", new { @class = "btn btn-primary" }) |
@@ -18,17 +18,17 @@
     </div>
 
     <div id="single-post" class="span8">
-        <h1>@Html.DisplayFor(model => model.title)</h1>
+        <h1>@Html.DisplayFor(model => model.culturedTitle)</h1>
         <span id="single-post-info">
             @PostAdminResources.PostCreated: @Html.DisplayFor(model => model.created) | @PostAdminResources.PostUpdated: @Html.DisplayFor(model => model.updated)
-            <span class="post-category">@Html.DisplayFor(model => model.Category1.desc)</span>
+            <span class="post-category">@Html.DisplayFor(model => model.Category1.culturedDesc)</span>
         </span>
         <div id="single-post-content">
             @if (!String.IsNullOrEmpty(Model.image))
             {
                 <img src="@Url.Content(Model.image)" class="gambar-post" />
             }
-            @Html.SanitizeHTML(Model.content)
+            @Html.SanitizeHTML(Model.culturedContent)
         </div>
     </div>
 </fieldset>

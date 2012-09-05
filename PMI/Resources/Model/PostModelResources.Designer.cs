@@ -97,6 +97,24 @@ namespace PMI.Resources.Model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Isi (dalam bahasa Inggris).
+        /// </summary>
+        public static string EnglishContent {
+            get {
+                return ResourceManager.GetString("EnglishContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Judul Tulisan (dalam bahasa Inggris).
+        /// </summary>
+        public static string EnglishTitle {
+            get {
+                return ResourceManager.GetString("EnglishTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Judul Tulisan.
         /// </summary>
         public static string Title {

@@ -95,7 +95,7 @@ namespace PMI.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.category = new SelectList(db.Categories, "id", "desc");
+            ViewBag.category = new SelectList(db.Categories, "id", "culturedDesc");
             return View();
         } 
 
@@ -125,7 +125,7 @@ namespace PMI.Areas.Admin.Controllers
             }
 
             ViewBag.writer = new SelectList(db.aspnet_Users, "UserId", "UserName", post.writer);
-            ViewBag.category = new SelectList(db.Categories, "id", "desc", post.category);
+            ViewBag.category = new SelectList(db.Categories, "id", "culturedDesc", post.category);
             return View(post);
         }
         
@@ -135,7 +135,7 @@ namespace PMI.Areas.Admin.Controllers
         public ActionResult Edit(long id)
         {
             Post post = db.Posts.Find(id);
-            ViewBag.category = new SelectList(db.Categories, "id", "desc", post.category);
+            ViewBag.category = new SelectList(db.Categories, "id", "culturedDesc", post.category);
 
             // if someone got here, they're trying to hack. No need to be nice.
             if (post.writer != (Guid)Membership.GetUser().ProviderUserKey) 
@@ -167,7 +167,7 @@ namespace PMI.Areas.Admin.Controllers
                 }
             }
             ViewBag.writer = new SelectList(db.aspnet_Users, "UserId", "UserName", post.writer);
-            ViewBag.category = new SelectList(db.Categories, "id", "desc", post.category);
+            ViewBag.category = new SelectList(db.Categories, "id", "culturedDesc", post.category);
             return View(post);
         }
 

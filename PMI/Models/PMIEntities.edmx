@@ -51,6 +51,8 @@
           <Property Name="writer" Type="uniqueidentifier" Nullable="false" />
           <Property Name="content" Type="text" Nullable="false" />
           <Property Name="image" Type="text" />
+          <Property Name="englishTitle" Type="varchar" MaxLength="255" />
+          <Property Name="englishContent" Type="text" />
         </EntityType>
         <EntityType Name="SiteInfo">
           <Key>
@@ -138,6 +140,8 @@
           <NavigationProperty Name="aspnet_Users" Relationship="pmiModel.FK_Post_aspnet_Users" FromRole="Post" ToRole="aspnet_Users" />
           <NavigationProperty Name="Category1" Relationship="pmiModel.FK_Post_Category" FromRole="Post" ToRole="Category" />
           <Property Type="String" Name="image" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="englishTitle" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="englishContent" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Post_aspnet_Users">
           <End Role="aspnet_Users" Type="pmiModel.aspnet_Users" Multiplicity="1" />
@@ -192,7 +196,9 @@
             <ScalarProperty Name="desc" ColumnName="desc" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Posts"><EntityTypeMapping TypeName="pmiModel.Post"><MappingFragment StoreEntitySet="Post">
-            <ScalarProperty Name="image" ColumnName="image" />
+            <ScalarProperty Name="englishContent" ColumnName="englishContent" />
+                <ScalarProperty Name="englishTitle" ColumnName="englishTitle" />
+                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="title" ColumnName="title" />
             <ScalarProperty Name="created" ColumnName="created" />

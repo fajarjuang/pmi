@@ -22,6 +22,8 @@ namespace PMI.Models
         public System.Guid writer { get; set; }
         public string content { get; set; }
         public string image { get; set; }
+        public string englishTitle { get; set; }
+        public string englishContent { get; set; }
     
         public virtual aspnet_Users aspnet_Users { get; set; }
         public virtual Category Category1 { get; set; }

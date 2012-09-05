@@ -298,6 +298,8 @@
     <Content Include="Scripts\jquery-ui-i18n.js" />
     <Content Include="Scripts\jquery-ui-i18n.min.js" />
     <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Themes\Default\Content\admin\edit-post.responsive.css" />
+    <Content Include="Themes\Default\Content\admin\edit-post.css" />
     <Content Include="Themes\Default\Content\gabung.css" />
     <Content Include="Content\images\logo-pmi.png" />
     <Content Include="Themes\Default\Content\main-responsive.css" />
@@ -599,6 +601,8 @@
     <Content Include="Scripts\tiny_mce\utils\form_utils.js" />
     <Content Include="Scripts\tiny_mce\utils\mctabs.js" />
     <Content Include="Scripts\tiny_mce\utils\validate.js" />
+    <Content Include="Themes\Journal\Content\admin\edit-post.css" />
+    <Content Include="Themes\Journal\Content\admin\edit-post.responsive.css" />
     <Content Include="Themes\Journal\Content\Images\retina_wood.png" />
     <Content Include="Themes\Journal\Content\post.css" />
     <Content Include="Themes\Journal\Content\bootstrap.min.css" />
@@ -606,6 +610,8 @@
     <Content Include="Themes\Journal\Content\singlepost.css" />
     <Content Include="Themes\Journal\Scripts\jshowoff\jquery.jshowoff.min.js" />
     <Content Include="Themes\Journal\Scripts\jshowoff\jshowoff.css" />
+    <Content Include="Themes\Modern\Content\admin\edit-post.css" />
+    <Content Include="Themes\Modern\Content\admin\edit-post.responsive.css" />
     <Content Include="Themes\Modern\Content\singlepost.css" />
     <Content Include="Themes\Modern\Content\post-responsive.css" />
     <Content Include="Themes\Modern\Content\post.css" />
@@ -625,6 +631,7 @@
     <Content Include="Themes\Modern\Scripts\jquery-box-slider\js\effects\box-slider-fx-scroll.js" />
     <Content Include="Themes\Modern\Scripts\jquery-box-slider\js\lib\jquery-1.7.2.min.js" />
     <Content Include="Themes\Modern\Scripts\jquery-box-slider\js\lib\modernizr.min.js" />
+    <Content Include="Themes\Modern\singlepost-responsive.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

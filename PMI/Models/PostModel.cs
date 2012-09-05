@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using HtmlAgilityPack;
 using PMI.Application.Mvc.Controller;
+using PMI.Application.Helper;
 using PMI.Application.Utils;
 using PMI.Resources.Model;
 
@@ -18,19 +19,62 @@ namespace PMI.Models
     {
         private const string UPLOAD_PATH = "~/Images/Uploads/Post";
 
+        public string culturedTitle
+        {
+            private set { this.culturedTitle = value; }
+            get
+            {
+                var culture = CultureHelper.GetCurrentNeutralCulture();
+                var culturedTitle = "";
+
+                if (culture == "id")
+                {
+                    culturedTitle = title;
+                }
+                else
+                {
+                    culturedTitle = string.IsNullOrEmpty(englishTitle) ? title : englishTitle;
+                }
+
+                return culturedTitle;
+            }
+        }
+
+        public string culturedContent
+        {
+            private set { this.culturedContent = value; }
+            get
+            {
+                var culture = CultureHelper.GetCurrentNeutralCulture();
+                var culturedContent = "";
+
+                if (culture == "id")
+                {
+                    culturedContent = content;
+                }
+                else
+                {
+                    culturedContent = string.IsNullOrEmpty(englishContent) ? content : englishContent;
+                }
+
+                return culturedContent;
+            }
+        
+        }
+
         public string getContentSummary()
         {
             HtmlDocument doc = new HtmlDocument();
-            doc.LoadHtml(this.content);
 
             try
             {
+                doc.LoadHtml(this.culturedContent);
                 HtmlNode firstParagraph = doc.DocumentNode.SelectNodes("//p[1]").First();
                 return firstParagraph.InnerHtml;
             }
             catch (Exception)
             {
-                return this.content;
+                return this.culturedContent;
             }
         }
 
@@ -91,6 +135,10 @@ namespace PMI.Models
         [Display(Name = "Title", ResourceType = typeof(PostModelResources))]
         public string title { get; set; }
 
+        [StringLength(255)]
+        [Display(Name = "EnglishTitle", ResourceType = typeof(PostModelResources))]
+        public string englishTitle { get; set; }
+
         [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy HH:mm:ss}")]
         public System.DateTime created { get; set; }
 
@@ -105,5 +153,9 @@ namespace PMI.Models
         [Required(ErrorMessageResourceName = "ContentError", ErrorMessageResourceType = typeof(PostModelResources))]
         [Display(Name = "Content", ResourceType = typeof(PostModelResources))]
         public string content { get; set; }
+
+        [AllowHtml]
+        [Display(Name = "EnglishContent", ResourceType = typeof(PostModelResources))]
+        public string englishContent { get; set; }
     }
 }
