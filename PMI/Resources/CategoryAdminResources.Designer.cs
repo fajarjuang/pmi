@@ -160,6 +160,15 @@ namespace PMI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kategori (dalam bahasa Inggris).
+        /// </summary>
+        public static string EnglishCategoryDescription {
+            get {
+                return ResourceManager.GetString("EnglishCategoryDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Daftar Kategori.
         /// </summary>
         public static string ListTitle {

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Palang Merah Indonesia";
+    ViewBag.Title = GlobalResources.SiteTitle;
 
     var peristiwa = Model.Where(p => p.Category1.desc.Equals("Peristiwa"));
     var utama = Model.Where(p => p.Category1.desc.Equals("Berita Utama"));
@@ -16,6 +16,7 @@
 @section javascripts{}
 
 <div class="row berita-utama">
+    <div class="kategori"><h1>@ViewBag.Headline</h1></div>
     <div class="slider-viewport row">
         <div id="content-box">
             @foreach (var post in utama)
@@ -47,7 +48,7 @@
 
 <div class="row-fluid berita-lain">
     <div class="span6 hidden-phone" id="peristiwa-container">
-        <div class="kategori">Peristiwa</div>
+        <div class="kategori">@ViewBag.Event</div>
         @foreach (var post in peristiwa)
         {
             <div class="post peristiwa">
@@ -66,7 +67,7 @@
     </div>
 
     <div class="span6 hidden-phone" id="siaran-pers-container">
-        <div class="kategori">Siaran Pers</div>
+        <div class="kategori">@ViewBag.PressRelease</div>
         @foreach (var post in pers)
         {
             <div class="post siaran-pers">

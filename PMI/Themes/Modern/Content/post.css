@@ -75,7 +75,7 @@
     padding-bottom: 1em; 
     margin-bottom: 1em; 
     text-align: center; 
-    text-transform: uppercase; 
+    text-transform: capitalize; 
     color: #FF1100; 
     font-weight: bold; 
     font-size: 16px; 

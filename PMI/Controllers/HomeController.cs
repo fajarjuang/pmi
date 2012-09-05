@@ -19,6 +19,19 @@ namespace PMI.Controllers
 
         public ActionResult Index()
         {
+            var categories = from c in db.Categories
+                             select c;
+
+            ViewBag.Headline = (from cat in categories
+                                where cat.englishDesc == "Headline News"
+                                select cat).FirstOrDefault().culturedDesc;
+            ViewBag.Event = (from cat in categories
+                             where cat.englishDesc == "Events"
+                             select cat).FirstOrDefault().culturedDesc;
+            ViewBag.PressRelease = (from cat in categories
+                                    where cat.englishDesc == "Press Release"
+                                    select cat).FirstOrDefault().culturedDesc;
+
             var posts = from p in db.Posts.Include(p => p.Category1)
                         group p by p.Category1 into cat
                         select cat.OrderByDescending(p => p.created).Take(CATEGORY_PER_PAGE);

@@ -6,7 +6,7 @@
 }
 
 @{
-    ViewBag.Title = "Palang Merah Indonesia";
+    ViewBag.Title = GlobalResources.SiteTitle;
 
     var peristiwa = Model.Where(p => p.Category1.desc.Equals("Peristiwa"));
     var headline = Model.Where(p => p.Category1.desc.Equals("Berita Utama")).FirstOrDefault();
@@ -15,7 +15,7 @@
 }
 
 <div class="span4 hidden-phone" id="peristiwa-container">
-    <div class="kategori">Peristiwa</div>
+    <div class="kategori">@ViewBag.Event</div>
     @foreach (var post in peristiwa)
     {
         <div class="post peristiwa">
@@ -33,7 +33,7 @@
 </div>
 
 <div id="utama" class="span8 post">
-    <div class="kategori" id="kategori-utama">Berita Utama</div>
+    <div class="kategori" id="kategori-utama">@ViewBag.Headline</div>
     <div id="utama-content">
         @if (!String.IsNullOrEmpty(headline.image))
         {
@@ -48,7 +48,7 @@
 </div>
 
 <div class="span4 hidden-phone" id="siaran-pers-container">
-    <div class="kategori">Siaran Pers</div>
+    <div class="kategori">@ViewBag.PressRelease</div>
     @foreach (var post in pers)
     {
         <div class="post siaran-pers">
@@ -66,7 +66,7 @@
 </div>
 
 <div class="span4" id="utama-container">
-    <div class="kategori">Berita Utama</div>
+    <div class="kategori">@ViewBag.Headline</div>
     @foreach (var post in utama)
     {
         <div class="post utama">

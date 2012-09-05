@@ -145,10 +145,13 @@
     <value>Delete Category</value>
   </data>
   <data name="CategoryDescription" xml:space="preserve">
-    <value>Category</value>
+    <value>Category (in Indonesian)</value>
   </data>
   <data name="CategoryEditTitle" xml:space="preserve">
     <value>Edit Category</value>
+  </data>
+  <data name="EnglishCategoryDescription" xml:space="preserve">
+    <value>Category</value>
   </data>
   <data name="ListTitle" xml:space="preserve">
     <value>Category List</value>

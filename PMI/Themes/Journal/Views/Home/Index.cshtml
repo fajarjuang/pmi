@@ -14,7 +14,7 @@
 }
 
 @{
-    ViewBag.Title = "Palang Merah Indonesia";
+    ViewBag.Title = GlobalResources.SiteTitle;
 
     var peristiwa = Model.Where(p => p.Category1.desc.Equals("Peristiwa"));
     var utama = Model.Where(p => p.Category1.desc.Equals("Berita Utama"));

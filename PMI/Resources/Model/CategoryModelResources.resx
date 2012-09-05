@@ -123,4 +123,7 @@
   <data name="DescriptionError" xml:space="preserve">
     <value>Deskripsi Kategori tidak boleh kosong.</value>
   </data>
+  <data name="EnglishDescription" xml:space="preserve">
+    <value>Deskripsi (dalam bahasa Inggris)</value>
+  </data>
 </root>

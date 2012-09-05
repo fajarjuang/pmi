@@ -77,5 +77,14 @@ namespace PMI.Resources.Model {
                 return ResourceManager.GetString("DescriptionError", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deskripsi (dalam bahasa Inggris).
+        /// </summary>
+        public static string EnglishDescription {
+            get {
+                return ResourceManager.GetString("EnglishDescription", resourceCulture);
+            }
+        }
     }
 }

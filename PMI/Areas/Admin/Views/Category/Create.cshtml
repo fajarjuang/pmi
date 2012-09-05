@@ -20,6 +20,14 @@
             @Html.ValidationMessageFor(model => model.desc)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.englishDesc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.englishDesc)
+            @Html.ValidationMessageFor(model => model.englishDesc)
+        </div>
+
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">@CategoryAdminResources.ButtonNewCategory</button>
             @Html.ActionLink(@CategoryAdminResources.ButtonBackToList, "Index", null, new { @class = "btn" })

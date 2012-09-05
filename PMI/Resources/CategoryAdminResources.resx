@@ -150,6 +150,9 @@
   <data name="CategoryEditTitle" xml:space="preserve">
     <value>Edit Kategori </value>
   </data>
+  <data name="EnglishCategoryDescription" xml:space="preserve">
+    <value>Kategori (dalam bahasa Inggris)</value>
+  </data>
   <data name="ListTitle" xml:space="preserve">
     <value>Daftar Kategori</value>
   </data>

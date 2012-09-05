@@ -37,6 +37,7 @@
           </Key>
           <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="desc" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="englishDesc" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Post">
           <Key>
@@ -121,6 +122,7 @@
           <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="desc" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Posts" Relationship="pmiModel.FK_Post_Category" FromRole="Category" ToRole="Post" />
+          <Property Type="String" Name="englishDesc" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Post">
           <Key>
@@ -185,7 +187,8 @@
             <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Categories"><EntityTypeMapping TypeName="pmiModel.Category"><MappingFragment StoreEntitySet="Category">
-            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="englishDesc" ColumnName="englishDesc" />
+                <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="desc" ColumnName="desc" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Posts"><EntityTypeMapping TypeName="pmiModel.Post"><MappingFragment StoreEntitySet="Post">

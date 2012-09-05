@@ -16,6 +16,9 @@
         <th>
             @CategoryAdminResources.CategoryDescription
         </th>
+        <th>
+            @CategoryAdminResources.EnglishCategoryDescription
+        </th>
         <th></th>
     </tr>
 </thead>
@@ -25,6 +28,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.englishDesc)
         </td>
         <td>
             @Html.ActionLink(@CategoryAdminResources.ActionEdit, "Edit", new { id=item.id }) |

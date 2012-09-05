@@ -1,11 +1,11 @@
 ﻿@model PMI.Models.Category
 
 @{
-    ViewBag.Title = @CategoryAdminResources.CategoryDeleteTitle + @Model.desc;
+    ViewBag.Title = @CategoryAdminResources.CategoryDeleteTitle + @Model.culturedDesc;
 }
 
 <fieldset>
-    <legend>@CategoryAdminResources.CategoryDeleteMessage "@Html.DisplayFor(model => model.desc)" ?</legend>
+    <legend>@CategoryAdminResources.CategoryDeleteMessage "@Html.DisplayFor(model => model.culturedDesc)" ?</legend>
 </fieldset>
 @using (Html.BeginForm()) {
     <div class="form-actions">

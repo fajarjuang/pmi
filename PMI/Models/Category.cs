@@ -21,6 +21,7 @@ namespace PMI.Models
     
         public long id { get; set; }
         public string desc { get; set; }
+        public string englishDesc { get; set; }
     
         public virtual ICollection<Post> Posts { get; set; }
     }

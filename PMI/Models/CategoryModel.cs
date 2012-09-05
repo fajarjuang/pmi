@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Web;
 using System.Web.Mvc;
 using HtmlAgilityPack;
+using PMI.Application.Helper;
 using PMI.Application.Utils;
 using PMI.Resources.Model;
 
@@ -14,6 +15,26 @@ namespace PMI.Models
     [MetadataTypeAttribute(typeof(CategoryMetadata))]
     public partial class Category
     {
+        public string culturedDesc
+        {
+            private set { this.culturedDesc = value; }
+
+            get
+            {
+                var culture = CultureHelper.GetCurrentNeutralCulture();
+                var culturedDesc = "";
+                if (culture == "id")
+                {
+                    culturedDesc = this.desc;
+                }
+                else
+                {
+                    culturedDesc = this.englishDesc;
+                }
+
+                return culturedDesc;
+            }
+        }
     }
 
     internal class CategoryMetadata
@@ -22,5 +43,9 @@ namespace PMI.Models
         [Required(ErrorMessageResourceName = "DescriptionError", ErrorMessageResourceType = typeof(CategoryModelResources))]
         [Display(Name = "Description", ResourceType = typeof(CategoryModelResources))]
         public string desc { get; set; }
+
+        [StringLength(255)]
+        [Display(Name = "EnglishDescription", ResourceType = typeof(CategoryModelResources))]
+        public string englishDesc { get; set; }
     }
 }
