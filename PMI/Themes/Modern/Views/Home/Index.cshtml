@@ -26,11 +26,11 @@
                     {
                         <img src="@Url.Content(post.image)" class="gambar-post" />
                         <figcaption>
-                            @post.title <small>@Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })</small>
+                            @post.culturedTitle <small>@Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })</small>
                         </figcaption>
                     } else
                     {
-                        <h2>@post.title</h2>
+                        <h2>@post.culturedTitle</h2>
                         <p>@post.getContentSummary() @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })</p>
                     }
                 </figure>
@@ -56,7 +56,7 @@
                 {
                     <img src="@Url.Content(post.image)" class="gambar-post" />
                 }
-                <h3>@post.title <small>@post.created</small></h3>
+                <h3>@post.culturedTitle <small>@Html.DisplayFor(modelItem => post.created)</small></h3>
                 <div class="post-summary">
                     @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })
                 </div>
@@ -75,7 +75,7 @@
                 {
                     <img src="@Url.Content(post.image)" class="gambar-post" />
                 }
-                <h3>@post.title <small>@post.created</small></h3>
+                <h3>@post.culturedTitle <small>@Html.DisplayFor(modelItem => post.created)</small></h3>
                 <div class="post-summary">
                     @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })
                 </div>

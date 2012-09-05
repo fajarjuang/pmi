@@ -9,7 +9,7 @@
 }
 
 <div class="span8" id="single-post">
-    <h1>@Model.title <small>@Model.created</small></h1>
+    <h1>@Model.culturedTitle <small>@Html.DisplayFor(modelItem => Model.created)</small></h1>
     <div id="single-post-content">
         @if (!String.IsNullOrEmpty(Model.image))
         {
@@ -17,6 +17,6 @@
                 <img class="gambar-post" src="@Url.Content(Model.image)" />
             </div>
         }
-        @Html.SanitizeHTML(Model.content)
+        @Html.SanitizeHTML(Model.culturedContent)
     </div>
 </div>

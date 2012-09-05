@@ -113,14 +113,21 @@ namespace PMI.Models
             var db = new pmiEntities();
             var currentPost = db.Posts.Where(p => p.id == this.id).FirstOrDefault();
 
+            // edit post
             if (currentPost != null)
             {
+                // case where there's no image change
+                if (!string.IsNullOrEmpty(currentPost.image))
+                {
+                    this.image = currentPost.image;
+                }
+
                 this.updated = DateTime.Now;
 
                 if (this.writer != currentPost.writer)
                     yield return new ValidationResult(PostModelResources.WriterError, new[] { "Title" });
             }
-            else
+            else // new post
             {
                 this.created = DateTime.Now;
                 this.updated = DateTime.Now;
