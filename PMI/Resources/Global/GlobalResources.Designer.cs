@@ -70,6 +70,33 @@ namespace PMI.Resources.Global {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inggris.
+        /// </summary>
+        public static string English {
+            get {
+                return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indonesia.
+        /// </summary>
+        public static string Indonesian {
+            get {
+                return ResourceManager.GetString("Indonesian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pilih Bahasa.
+        /// </summary>
+        public static string LanguageSelection {
+            get {
+                return ResourceManager.GetString("LanguageSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Administrasi Situs.
         /// </summary>
         public static string MenuAdmin {

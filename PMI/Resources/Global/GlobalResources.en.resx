@@ -120,6 +120,15 @@
   <data name="Cari" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Indonesian" xml:space="preserve">
+    <value>Indonesian</value>
+  </data>
+  <data name="LanguageSelection" xml:space="preserve">
+    <value>Select Site Language</value>
+  </data>
   <data name="MenuAdmin" xml:space="preserve">
     <value>Site Administration</value>
   </data>

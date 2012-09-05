@@ -12,3 +12,15 @@ body
 {
     padding: 60px 0;
 }
+
+.footer
+{
+    border-top: 1px solid #DDD;
+    margin-top: 2em;
+    padding-top: 2em;
+}
+
+#language-selection 
+{
+    text-align: center;
+}
