@@ -610,7 +610,7 @@
     <Content Include="Themes\Modern\Content\post-responsive.css" />
     <Content Include="Themes\Modern\Content\post.css" />
     <Content Include="Themes\Modern\Content\main.css" />
-    <Content Include="Themes\Modern\Scripts\language-selector.js" />
+    <Content Include="Scripts\pmi\language-selector.js" />
     <Content Include="Themes\Modern\Scripts\jquery-box-slider\css\img\box-shadow.png" />
     <Content Include="Themes\Modern\Scripts\jquery-box-slider\css\img\next-prev-sprite-hover.png" />
     <Content Include="Themes\Modern\Scripts\jquery-box-slider\css\img\next-prev-sprite.png" />
