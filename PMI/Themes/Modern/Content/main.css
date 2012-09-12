@@ -8,6 +8,13 @@
     max-height: 20px;
 }
 
+#title 
+{
+    color: Red;
+    margin-bottom: 0;
+    text-align: center;
+}
+
 body
 {
     padding: 60px 0;

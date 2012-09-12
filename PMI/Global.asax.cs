@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.Security;
 using PMI.Application.Mvc;
 
 namespace PMI
@@ -42,6 +43,15 @@ namespace PMI
 
         protected void Application_Start()
         {
+            if (!Roles.RoleExists("CanPostNews"))
+                Roles.CreateRole("CanPostNews");
+
+            if (Membership.GetUser("admin") == null)
+            {
+                Membership.CreateUser("admin", "admin@pmi.co.id", "admin@pmi.co.id");
+                Roles.AddUserToRole("admin", "CanPostNews");
+            }
+
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);

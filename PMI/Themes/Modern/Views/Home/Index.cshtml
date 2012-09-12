@@ -16,7 +16,8 @@
 @section javascripts{}
 
 <div class="row berita-utama">
-    <div class="kategori"><h1>@ViewBag.Headline</h1></div>
+    <h1 id="title">@GlobalResources.SiteTitle</h1>
+
     <div class="slider-viewport row">
         <div id="content-box">
             @foreach (var post in utama)
