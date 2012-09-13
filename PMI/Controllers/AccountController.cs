@@ -13,6 +13,12 @@ namespace PMI.Controllers
     public class AccountController : PMIController
     {
 
+        // Because somehow ASP.Net MVC always wants this route on unauthenticated user.
+        public ActionResult Login()
+        {
+            return View("Logon");
+        }
+
         //
         // GET: /Account/LogOn
 
@@ -65,6 +71,7 @@ namespace PMI.Controllers
         //
         // GET: /Account/Register
 
+        [Authorize(Roles="CanPostNews")]
         public ActionResult Register()
         {
             return View();
@@ -73,6 +80,8 @@ namespace PMI.Controllers
         //
         // POST: /Account/Register
 
+
+        [Authorize(Roles="CanPostNews")]
         [HttpPost]
         public ActionResult Register(RegisterModel model)
         {

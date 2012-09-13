@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PMI.Resources {
+namespace PMI.Resources.Model {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace PMI.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class AccountResources {
+    public class AccountModelResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AccountResources() {
+        internal AccountModelResources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace PMI.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PMI.Resources.AccountResources", typeof(AccountResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PMI.Resources.Model.AccountModelResources", typeof(AccountModelResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,79 +61,70 @@ namespace PMI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gunakan formulir di bawah untuk mengganti password anda..
+        ///   Looks up a localized string similar to Konfirmasi Password Baru.
         /// </summary>
-        public static string ChangePasswordDesc {
+        public static string ConfirmPassword {
             get {
-                return ResourceManager.GetString("ChangePasswordDesc", resourceCulture);
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Perubahan password gagal. Silahkan lihat kesalahan dan coba lagi..
+        ///   Looks up a localized string similar to Password baru dan konfirmasi tidak sama..
         /// </summary>
-        public static string ChangePasswordError {
+        public static string ConfirmPasswordError {
             get {
-                return ResourceManager.GetString("ChangePasswordError", resourceCulture);
+                return ResourceManager.GetString("ConfirmPasswordError", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Informasi Password.
+        ///   Looks up a localized string similar to Alamat Email.
         /// </summary>
-        public static string ChangePasswordLegend {
+        public static string Email {
             get {
-                return ResourceManager.GetString("ChangePasswordLegend", resourceCulture);
+                return ResourceManager.GetString("Email", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ganti Password.
+        ///   Looks up a localized string similar to Password Baru.
         /// </summary>
-        public static string ChangePasswordSubmit {
+        public static string NewPassword {
             get {
-                return ResourceManager.GetString("ChangePasswordSubmit", resourceCulture);
+                return ResourceManager.GetString("NewPassword", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password anda telah berhasil diganti..
+        ///   Looks up a localized string similar to {0} harus memiliki setidaknya {2} karakter..
         /// </summary>
-        public static string ChangePasswordSuccessDesc {
+        public static string NewPasswordError {
             get {
-                return ResourceManager.GetString("ChangePasswordSuccessDesc", resourceCulture);
+                return ResourceManager.GetString("NewPasswordError", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ganti Password.
+        ///   Looks up a localized string similar to Password Sekarang.
         /// </summary>
-        public static string ChangePasswordSuccessTitle {
+        public static string OldPassword {
             get {
-                return ResourceManager.GetString("ChangePasswordSuccessTitle", resourceCulture);
+                return ResourceManager.GetString("OldPassword", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ganti Password.
+        ///   Looks up a localized string similar to Password.
         /// </summary>
-        public static string ChangePasswordTitle {
+        public static string Password {
             get {
-                return ResourceManager.GetString("ChangePasswordTitle", resourceCulture);
+                return ResourceManager.GetString("Password", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Masukkan informasi akun anda.
-        /// </summary>
-        public static string LoginTitle {
-            get {
-                return ResourceManager.GetString("LoginTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ingat saya?.
+        ///   Looks up a localized string similar to Ingat Saya?.
         /// </summary>
         public static string RememberMe {
             get {
@@ -142,11 +133,11 @@ namespace PMI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login gagal. Silahkan perbaiki kesalahan yang ada dan coba lagi..
+        ///   Looks up a localized string similar to Nama Pengguna.
         /// </summary>
-        public static string ValidationSummary {
+        public static string UserName {
             get {
-                return ResourceManager.GetString("ValidationSummary", resourceCulture);
+                return ResourceManager.GetString("UserName", resourceCulture);
             }
         }
     }

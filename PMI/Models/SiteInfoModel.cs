@@ -16,12 +16,12 @@ namespace PMI.Models
 
     internal class SiteInfoMetadata
     {
-        [Required(ErrorMessageResourceName = "ThemeError", ErrorMessageResourceType = typeof(SiteInfoResources))]
+        [Required(ErrorMessageResourceName = "RequiredField", ErrorMessageResourceType = typeof(GlobalModelResources))]
         [Display(Name = "Theme", ResourceType = typeof(SiteInfoResources))]
         public string theme { get; set; }
 
         [AllowHtml]
-        [Required(ErrorMessageResourceName = "FooterError", ErrorMessageResourceType = typeof(SiteInfoResources))]
+        [Required(ErrorMessageResourceName = "RequiredField", ErrorMessageResourceType = typeof(GlobalModelResources))]
         [Display(Name = "Footer", ResourceType = typeof(SiteInfoResources))]
         public string footer { get; set; }
     }

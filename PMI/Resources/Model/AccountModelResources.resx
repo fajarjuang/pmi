@@ -117,34 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ChangePasswordDesc" xml:space="preserve">
-    <value>Use the form below to change your password.</value>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Konfirmasi Password Baru</value>
   </data>
-  <data name="ChangePasswordError" xml:space="preserve">
-    <value>Password change was unsuccessful. Please correct the errors and try again.</value>
+  <data name="ConfirmPasswordError" xml:space="preserve">
+    <value>Password baru dan konfirmasi tidak sama.</value>
   </data>
-  <data name="ChangePasswordLegend" xml:space="preserve">
-    <value>Password Information</value>
+  <data name="Email" xml:space="preserve">
+    <value>Alamat Email</value>
   </data>
-  <data name="ChangePasswordSubmit" xml:space="preserve">
-    <value>Change Password</value>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Password Baru</value>
   </data>
-  <data name="ChangePasswordSuccessDesc" xml:space="preserve">
-    <value>Your password has been changed succesfully.</value>
+  <data name="NewPasswordError" xml:space="preserve">
+    <value>{0} harus memiliki setidaknya {2} karakter.</value>
   </data>
-  <data name="ChangePasswordSuccessTitle" xml:space="preserve">
-    <value>Change Password</value>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Password Sekarang</value>
   </data>
-  <data name="ChangePasswordTitle" xml:space="preserve">
-    <value>Change Password</value>
-  </data>
-  <data name="LoginTitle" xml:space="preserve">
-    <value>Insert your account information</value>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
-    <value>Remember me?</value>
+    <value>Ingat Saya?</value>
   </data>
-  <data name="ValidationSummary" xml:space="preserve">
-    <value>Login failed. Please fix the error and try again.</value>
+  <data name="UserName" xml:space="preserve">
+    <value>Nama Pengguna</value>
   </data>
 </root>

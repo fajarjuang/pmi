@@ -138,7 +138,7 @@ namespace PMI.Models
     internal class PostMetadata
     {
         [StringLength(255)]
-        [Required(ErrorMessageResourceName = "TitleError", ErrorMessageResourceType = typeof(PostModelResources))]
+        [Required(ErrorMessageResourceName = "RequiredField", ErrorMessageResourceType = typeof(GlobalModelResources))]
         [Display(Name = "Title", ResourceType = typeof(PostModelResources))]
         public string title { get; set; }
 
@@ -152,12 +152,12 @@ namespace PMI.Models
         [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy HH:mm:ss}")]
         public System.DateTime updated { get; set; }
 
-        [Required(ErrorMessageResourceName = "CategoryError", ErrorMessageResourceType = typeof(PostModelResources))]
+        [Required(ErrorMessageResourceName = "RequiredField", ErrorMessageResourceType = typeof(GlobalModelResources))]
         [Display(Name = "Category", ResourceType = typeof(PostModelResources))]
         public long category { get; set; }
 
         [AllowHtml]
-        [Required(ErrorMessageResourceName = "ContentError", ErrorMessageResourceType = typeof(PostModelResources))]
+        [Required(ErrorMessageResourceName = "RequiredField", ErrorMessageResourceType = typeof(GlobalModelResources))]
         [Display(Name = "Content", ResourceType = typeof(PostModelResources))]
         public string content { get; set; }
 

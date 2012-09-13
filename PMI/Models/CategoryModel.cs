@@ -40,7 +40,7 @@ namespace PMI.Models
     internal class CategoryMetadata
     {
         [StringLength(255)]
-        [Required(ErrorMessageResourceName = "DescriptionError", ErrorMessageResourceType = typeof(CategoryModelResources))]
+        [Required(ErrorMessageResourceName = "RequiredField", ErrorMessageResourceType = typeof(GlobalModelResources))]
         [Display(Name = "Description", ResourceType = typeof(CategoryModelResources))]
         public string desc { get; set; }
 

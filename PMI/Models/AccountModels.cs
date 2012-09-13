@@ -4,64 +4,67 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
+using PMI.Resources.Model;
 
 namespace PMI.Models
 {
 
     public class ChangePasswordModel
     {
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(GlobalModelResources), ErrorMessageResourceName = "RequiredField")]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "OldPassword", ResourceType = typeof(AccountModelResources))]
         public string OldPassword { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessageResourceType = typeof(GlobalModelResources), ErrorMessageResourceName = "RequiredField")]
+        [StringLength(100, ErrorMessageResourceName = "NewPasswordError", ErrorMessageResourceType = typeof(AccountModelResources), MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "NewPassword", ResourceType = typeof(AccountModelResources))]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(AccountModelResources))]
+        [Required(ErrorMessageResourceType = typeof(GlobalModelResources), ErrorMessageResourceName = "RequiredField")]
+        [Compare("NewPassword", ErrorMessageResourceName = "ConfirmPasswordError", ErrorMessageResourceType = typeof(AccountModelResources))]
         public string ConfirmPassword { get; set; }
     }
 
     public class LogOnModel
     {
-        [Required]
-        [Display(Name = "User name")]
+        [Required(ErrorMessageResourceType = typeof(GlobalModelResources), ErrorMessageResourceName = "RequiredField")]
+        [Display(Name = "UserName", ResourceType = typeof(AccountModelResources))]
         public string UserName { get; set; }
 
-        [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Required(ErrorMessageResourceType = typeof(GlobalModelResources), ErrorMessageResourceName = "RequiredField")]
+        [Display(Name = "Password", ResourceType = typeof(AccountModelResources))]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "RememberMe", ResourceType = typeof(AccountModelResources))]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterModel
     {
-        [Required]
-        [Display(Name = "User name")]
+        [Required(ErrorMessageResourceType = typeof(GlobalModelResources), ErrorMessageResourceName = "RequiredField")]
+        [Display(Name = "UserName", ResourceType = typeof(AccountModelResources))]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(GlobalModelResources), ErrorMessageResourceName = "RequiredField")]
         [DataType(DataType.EmailAddress)]
-        [Display(Name = "Email address")]
+        [Display(Name = "Email", ResourceType = typeof(AccountModelResources))]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessageResourceType = typeof(GlobalModelResources), ErrorMessageResourceName = "RequiredField")]
+        [StringLength(100, ErrorMessageResourceName = "NewPasswordError", ErrorMessageResourceType = typeof(AccountModelResources), MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password", ResourceType = typeof(AccountModelResources))]
         public string Password { get; set; }
 
+        [Required(ErrorMessageResourceType = typeof(GlobalModelResources), ErrorMessageResourceName = "RequiredField")]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(AccountModelResources))]
+        [Compare("Password", ErrorMessageResourceName = "ConfirmPasswordError", ErrorMessageResourceType = typeof(AccountModelResources))]
         public string ConfirmPassword { get; set; }
     }
 }

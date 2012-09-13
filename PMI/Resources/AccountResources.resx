@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChangePasswordDesc" xml:space="preserve">
+    <value>Gunakan formulir di bawah untuk mengganti password anda.</value>
+  </data>
+  <data name="ChangePasswordError" xml:space="preserve">
+    <value>Perubahan password gagal. Silahkan lihat kesalahan dan coba lagi.</value>
+  </data>
+  <data name="ChangePasswordLegend" xml:space="preserve">
+    <value>Informasi Password</value>
+  </data>
+  <data name="ChangePasswordSubmit" xml:space="preserve">
+    <value>Ganti Password</value>
+  </data>
+  <data name="ChangePasswordSuccessDesc" xml:space="preserve">
+    <value>Password anda telah berhasil diganti.</value>
+  </data>
+  <data name="ChangePasswordSuccessTitle" xml:space="preserve">
+    <value>Ganti Password</value>
+  </data>
+  <data name="ChangePasswordTitle" xml:space="preserve">
+    <value>Ganti Password</value>
+  </data>
   <data name="LoginTitle" xml:space="preserve">
     <value>Masukkan informasi akun anda</value>
   </data>
