@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using PMI.Application.Mvc.Controller;
 using PMI.Models;
+using PagedList;
 
 namespace PMI.Controllers
 {
@@ -16,6 +17,7 @@ namespace PMI.Controllers
         private pmiEntities db = new pmiEntities();
 
         private const int CATEGORY_PER_PAGE = 5;
+        private const int NEWS_PER_PAGE = 15;
 
         public ActionResult Index()
         {
@@ -42,6 +44,16 @@ namespace PMI.Controllers
         {
             var post = db.Posts.Find(id);
             return View(post);
+        }
+
+        public ActionResult NewsList(int? page)
+        {
+            var pageNumber = page ?? 1;
+            var posts = from p in db.Posts
+                        orderby p.created descending
+                        select p;
+
+            return View(posts.ToPagedList(pageNumber, NEWS_PER_PAGE));
         }
 
         public ActionResult About()

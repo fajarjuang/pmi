@@ -27,6 +27,14 @@ body
 }
 /* ASP.net MVC Form Errors style ends */
 
+.more-news
+{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 3em auto;
+    text-align: center;
+}
+
 .footer
 {
     border-top: 1px solid #DDD;

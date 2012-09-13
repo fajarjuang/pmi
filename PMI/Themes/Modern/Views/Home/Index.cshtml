@@ -27,12 +27,12 @@
                     {
                         <img src="@Url.Content(post.image)" class="gambar-post" />
                         <figcaption>
-                            @post.culturedTitle <small>@Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })</small>
+                            @post.culturedTitle <small>@Html.ActionLink(@PostListResources.ReadMore, "News", new { id = post.id }, new { @class = "read-more" })</small>
                         </figcaption>
                     } else
                     {
                         <h2>@post.culturedTitle</h2>
-                        <p>@post.getContentSummary() @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })</p>
+                        <p>@post.getContentSummary() @Html.ActionLink(@PostListResources.ReadMore, "News", new { id = post.id }, new { @class = "read-more" })</p>
                     }
                 </figure>
             }
@@ -59,7 +59,7 @@
                 }
                 <h3>@post.culturedTitle <small>@Html.DisplayFor(modelItem => post.created)</small></h3>
                 <div class="post-summary">
-                    @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })
+                    @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink(@PostListResources.ReadMore, "News", new { id = post.id }, new { @class = "read-more" })
                 </div>
             </div>
 
@@ -78,13 +78,19 @@
                 }
                 <h3>@post.culturedTitle <small>@Html.DisplayFor(modelItem => post.created)</small></h3>
                 <div class="post-summary">
-                    @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })
+                    @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink(@PostListResources.ReadMore, "News", new { id = post.id }, new { @class = "read-more" })
                 </div>
             </div>
 
             <hr />
         }
     </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="more-news">
+    @Html.ActionLink(@PostListResources.ToPostList, "NewsList")
 </div>
 
     <script src="@Url.ThemeContent("~/Scripts/jquery-box-slider/js/box-slider-all.jquery.min.js")" type="text/javascript"></script>

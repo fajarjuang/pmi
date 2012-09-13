@@ -117,64 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Cari" xml:space="preserve">
-    <value>Search</value>
+  <data name="ReadMore" xml:space="preserve">
+    <value>read more</value>
   </data>
-  <data name="English" xml:space="preserve">
-    <value>Inggris</value>
+  <data name="Title" xml:space="preserve">
+    <value>All News</value>
   </data>
-  <data name="Indonesian" xml:space="preserve">
-    <value>Indonesia</value>
-  </data>
-  <data name="LanguageSelection" xml:space="preserve">
-    <value>Pilih Bahasa</value>
-  </data>
-  <data name="MenuAdmin" xml:space="preserve">
-    <value>Administrasi Situs</value>
-  </data>
-  <data name="MenuBerita" xml:space="preserve">
-    <value>Berita</value>
-  </data>
-  <data name="MenuInformasi" xml:space="preserve">
-    <value>Informasi</value>
-  </data>
-  <data name="MenuKategori" xml:space="preserve">
-    <value>Kategori</value>
-  </data>
-  <data name="MenuKomunitas" xml:space="preserve">
-    <value>Komunitas</value>
-  </data>
-  <data name="MenuLogin" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="MenuLogout" xml:space="preserve">
-    <value>Logout</value>
-  </data>
-  <data name="MenuPartisipasi" xml:space="preserve">
-    <value>Partisipasi</value>
-  </data>
-  <data name="MenuPengaturan" xml:space="preserve">
-    <value>Pengaturan Situs</value>
-  </data>
-  <data name="MenuProgram" xml:space="preserve">
-    <value>Program</value>
-  </data>
-  <data name="MenuTulisan" xml:space="preserve">
-    <value>Tulisan</value>
-  </data>
-  <data name="PagingFirst" xml:space="preserve">
-    <value>Pertama</value>
-  </data>
-  <data name="PagingLast" xml:space="preserve">
-    <value>Terakhir</value>
-  </data>
-  <data name="PagingNext" xml:space="preserve">
-    <value>Selanjutnya</value>
-  </data>
-  <data name="PagingPrevious" xml:space="preserve">
-    <value>Sebelumnya</value>
-  </data>
-  <data name="SiteTitle" xml:space="preserve">
-    <value>Palang Merah Indonesia</value>
+  <data name="ToPostList" xml:space="preserve">
+    <value>Read more...</value>
   </data>
 </root>

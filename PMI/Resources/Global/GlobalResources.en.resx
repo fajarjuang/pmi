@@ -162,6 +162,18 @@
   <data name="MenuTulisan" xml:space="preserve">
     <value>Post</value>
   </data>
+  <data name="PagingFirst" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="PagingLast" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="PagingNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="PagingPrevious" xml:space="preserve">
+    <value>Previous</value>
+  </data>
   <data name="SiteTitle" xml:space="preserve">
     <value>Red Cross Indonesia</value>
   </data>

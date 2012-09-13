@@ -1,0 +1,46 @@
+﻿h1
+{
+    text-align: center;
+}
+
+.post-list
+{
+    margin: 0 auto;
+    max-width: 979px;
+}
+
+.single-post
+{
+    margin: 1em 3em;
+}
+
+.single-post > h2
+{
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 0;
+}
+
+.post-info 
+{
+    margin-bottom: 1em;
+    margin-left: 1.5em;
+    font-style: italic;
+}
+
+.single-post-content
+{
+    margin: 10px;
+}
+
+.single-post-content img
+{
+    float: left;
+    margin: 0 10px 5px 0;
+    max-height: 75px;
+}
+
+.post-paging
+{
+    text-align: center;
+}

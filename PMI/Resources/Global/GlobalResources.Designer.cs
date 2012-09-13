@@ -196,6 +196,42 @@ namespace PMI.Resources.Global {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pertama.
+        /// </summary>
+        public static string PagingFirst {
+            get {
+                return ResourceManager.GetString("PagingFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terakhir.
+        /// </summary>
+        public static string PagingLast {
+            get {
+                return ResourceManager.GetString("PagingLast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selanjutnya.
+        /// </summary>
+        public static string PagingNext {
+            get {
+                return ResourceManager.GetString("PagingNext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sebelumnya.
+        /// </summary>
+        public static string PagingPrevious {
+            get {
+                return ResourceManager.GetString("PagingPrevious", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Palang Merah Indonesia.
         /// </summary>
         public static string SiteTitle {
