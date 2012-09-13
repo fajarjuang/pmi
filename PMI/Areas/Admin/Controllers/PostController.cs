@@ -43,7 +43,7 @@ namespace PMI.Areas.Admin.Controllers
             }
             ViewBag.CurrentFilter = filter;
 
-            var posts = db.Posts.Include(p => p.aspnet_Users).Include(p => p.Category1);
+            var posts = db.Posts.Include(p => p.Category1);
             posts = sortPost(sort, posts);
             if(!String.IsNullOrEmpty(filter))
                 posts = posts.Where(p => p.title.Contains(filter));
@@ -110,7 +110,8 @@ namespace PMI.Areas.Admin.Controllers
                 try
                 {
                     post.SaveImage(postImage);
-                    post.writer = (Guid)Membership.GetUser().ProviderUserKey;
+                    //post.writer = (Guid)Membership.GetUser().ProviderUserKey;
+                    post.writer = Membership.GetUser().UserName;
                     db.Posts.Add(post);
                     db.SaveChanges();
                     return RedirectToAction("Index");  
@@ -124,7 +125,7 @@ namespace PMI.Areas.Admin.Controllers
                 }
             }
 
-            ViewBag.writer = new SelectList(db.aspnet_Users, "UserId", "UserName", post.writer);
+            //ViewBag.writer = new SelectList(db.aspnet_Users, "UserId", "UserName", post.writer);
             ViewBag.category = new SelectList(db.Categories, "id", "culturedDesc", post.category);
             return View(post);
         }
@@ -138,7 +139,8 @@ namespace PMI.Areas.Admin.Controllers
             ViewBag.category = new SelectList(db.Categories, "id", "culturedDesc", post.category);
 
             // if someone got here, they're trying to hack. No need to be nice.
-            if (post.writer != (Guid)Membership.GetUser().ProviderUserKey) 
+            //if (post.writer != (Guid)Membership.GetUser().ProviderUserKey) 
+            if (post.writer != Membership.GetUser().UserName) 
                 throw new HttpException(503, "Tidak boleh melakukan edit terhadap tulisan yang dibuat oleh orang lain");
 
             return View(post);
@@ -166,7 +168,7 @@ namespace PMI.Areas.Admin.Controllers
                     this.ModelState.AddModelError(errors.PropertyName, errors.ErrorMessage);
                 }
             }
-            ViewBag.writer = new SelectList(db.aspnet_Users, "UserId", "UserName", post.writer);
+            //ViewBag.writer = new SelectList(db.aspnet_Users, "UserId", "UserName", post.writer);
             ViewBag.category = new SelectList(db.Categories, "id", "culturedDesc", post.category);
             return View(post);
         }

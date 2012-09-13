@@ -186,9 +186,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\aspnet_Users.cs">
-      <DependentUpon>PMIModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Category.cs">
       <DependentUpon>PMIModels.tt</DependentUpon>
     </Compile>

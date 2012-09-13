@@ -25,7 +25,6 @@ namespace PMI.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<aspnet_Users> aspnet_Users { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<SiteInfo> SiteInfoes { get; set; }

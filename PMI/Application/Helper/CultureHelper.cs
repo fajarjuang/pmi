@@ -25,9 +25,6 @@ namespace PMI.Application.Helper
                 return GetNeutralCulture(culture);
             else
                 return GetDefaultNeutralCulture();
-
-            // failsafe
-            return GetDefaultNeutralCulture();
         }
 
         public static string GetCurrentCulture()
