@@ -31,9 +31,12 @@
 
             </ul>
 
-            <form class="navbar-search pull-right">
-                <input type="text" placeholder="cari" class="input-medium search-query">
-            </form>
+            <!--<form class="navbar-search pull-right">-->
+            @using (Html.BeginForm("Result", "Search", FormMethod.Get, new { @class = "navbar-search pull-right" }))
+            {
+                <input type="text" placeholder="cari berdasarkan judul..." class="input-medium search-query" name="query" />
+            }
+            <!--</form>-->
 
             @if (HttpContext.Current.User.IsInRole("CanPostNews"))
             { 
