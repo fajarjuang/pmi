@@ -5,11 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 
 using PagedList;
+using PMI.Application.Mvc.Controller;
 using PMI.Models;
 
 namespace PMI.Controllers
 {
-    public class SearchController : Controller
+    public class SearchController : PMIController
     {
         private pmiEntities db = new pmiEntities();
 
@@ -35,6 +36,7 @@ namespace PMI.Controllers
 
             var pageNumber = page ?? 1;
 
+            ViewBag.Query = query;
             return View(searchResult.ToPagedList(pageNumber, RESULT_PER_PAGE));
         }
 

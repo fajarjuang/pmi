@@ -247,6 +247,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Resources\SearchResources.en.Designer.cs">
+      <DependentUpon>SearchResources.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\Model\AccountModelResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -286,6 +291,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PostListResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SearchResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\SiteInfoAdminResources.en.Designer.cs">
       <DependentUpon>SiteInfoAdminResources.en.resx</DependentUpon>
@@ -895,6 +905,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CategoryAdminResources.en.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SearchResources.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SearchResources.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Model\AccountModelResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AccountModelResources.Designer.cs</LastGenOutput>
@@ -926,6 +940,10 @@
     <EmbeddedResource Include="Resources\PostListResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>PostListResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SearchResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SearchResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\SiteInfoAdminResources.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

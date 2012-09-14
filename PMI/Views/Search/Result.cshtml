@@ -1,7 +1,7 @@
 ﻿@model IPagedList<PMI.Models.Post>
 
 @{
-    ViewBag.Title = "Search Result";
+    ViewBag.Title = SearchResources.Result;
 }
 
 @section stylesheet{
@@ -9,7 +9,7 @@
     <link href="@Url.ThemeContent("~/Content/postlist-responsive.css")" rel="stylesheet" type="text/css">
 }
 
-<h1>Hasil Pencarian</h1>
+<h1>@String.Format(SearchResources.ResultFor, ViewBag.Query)</h1>
 
 <div class="row-fluid post-list">
     @foreach(var post in Model)
@@ -25,7 +25,7 @@
                 { 
                     <img src="@Url.Content(post.image)" class="gambar-single-post" />
                 }
-                @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink(@PostListResources.ReadMore, "News", new { id = post.id }, new { @class = "read-more" })
+                @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink(@PostListResources.ReadMore, "News", "Home", new { id = post.id }, new { @class = "read-more" })
             </div>
         </div>
         <div class="clearfix"></div>
@@ -34,7 +34,7 @@
 
 <div class="row-fluid post-paging">
     @Html.PagedListPager((IPagedList)Model, 
-                         page => Url.Action("NewsList", new { page }), 
+                         page => Url.Action("Result", new { page, query = ViewBag.Query }), 
                          new PagedListRenderOptions { 
                              LinkToFirstPageFormat = GlobalResources.PagingFirst, 
                              LinkToPreviousPageFormat = GlobalResources.PagingPrevious, 
