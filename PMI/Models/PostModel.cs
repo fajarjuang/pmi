@@ -8,12 +8,16 @@ using System.Web;
 using System.Web.Mvc;
 using HtmlAgilityPack;
 using PMI.Application.Mvc.Controller;
+using PMI.Application.Translation.Bing;
+using Microsoft;
 using PMI.Application.Helper;
 using PMI.Application.Utils;
 using PMI.Resources.Model;
 
 namespace PMI.Models
 {
+    
+
     [MetadataTypeAttribute(typeof(PostMetadata))]
     public partial class Post : IValidatableObject
     {
@@ -132,6 +136,16 @@ namespace PMI.Models
                 this.created = DateTime.Now;
                 this.updated = DateTime.Now;
             }
+
+            if (String.IsNullOrEmpty(this.englishTitle))
+            {
+                this.englishTitle = BingTranslator.Translate(this.title, "id", "en");
+            }
+
+            if (String.IsNullOrEmpty(this.englishContent))
+            {
+                this.englishContent = BingTranslator.Translate(this.content, "id", "en");
+            }
         }
     }
 
@@ -165,4 +179,6 @@ namespace PMI.Models
         [Display(Name = "EnglishContent", ResourceType = typeof(PostModelResources))]
         public string englishContent { get; set; }
     }
+
+    
 }
