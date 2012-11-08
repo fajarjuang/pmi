@@ -56,6 +56,39 @@ namespace PMI.Controllers
             return View(posts.ToPagedList(pageNumber, NEWS_PER_PAGE));
         }
 
+        public ActionResult Headline(int? page)
+        {
+            var pageNumber = page ?? 1;
+            var headline = from p in db.Posts
+                         where p.Category1.desc.Equals("Berita Utama")
+                         orderby p.created descending
+                         select p;
+
+            return View(headline.ToPagedList(pageNumber, NEWS_PER_PAGE));
+        }
+
+        public ActionResult Events(int? page)
+        {
+            var pageNumber = page ?? 1;
+            var events = from p in db.Posts
+                         where p.Category1.desc.Equals("Peristiwa")
+                         orderby p.created descending
+                         select p;
+
+            return View(events.ToPagedList(pageNumber, NEWS_PER_PAGE));
+        }
+
+        public ActionResult PressRelease(int? page)
+        {
+            var pageNumber = page ?? 1;
+            var press = from p in db.Posts
+                        where p.Category1.desc.Equals("Siaran Pers")
+                        orderby p.created descending
+                        select p;
+
+            return View(press.ToPagedList(pageNumber, NEWS_PER_PAGE));
+        }
+
         public ActionResult About()
         {
             return View();

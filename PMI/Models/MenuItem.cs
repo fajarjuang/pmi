@@ -18,10 +18,9 @@ namespace PMI.Models
         {
             var mainMenu = new List<MenuItem>();
             mainMenu.Add(new MenuItem { Text = GlobalResources.MenuBerita, Controller = "Home", Action = "Index", Active = false, Area = "" });
-            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuPartisipasi, Controller = "Participation", Action = "Index", Active = false, Area = "" });
-            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuProgram, Controller = "Programs", Action = "Index", Active = false, Area = "" });
-            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuInformasi, Controller = "Information", Action = "Index", Active = false, Area = "" });
-            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuKomunitas, Controller = "Community", Action = "Index", Active = false, Area = "" });
+            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuHeadline, Controller = "Home", Action = "Headline", Active = false, Area = "" });
+            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuEvent, Controller = "Home", Action = "Events", Active = false, Area = "" });
+            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuPR, Controller = "Home", Action = "PressRelease", Active = false, Area = "" });
 
             return mainMenu;
         }

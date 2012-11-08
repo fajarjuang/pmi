@@ -115,6 +115,24 @@ namespace PMI.Resources.Global {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Peristiwa.
+        /// </summary>
+        public static string MenuEvent {
+            get {
+                return ResourceManager.GetString("MenuEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Utama.
+        /// </summary>
+        public static string MenuHeadline {
+            get {
+                return ResourceManager.GetString("MenuHeadline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Informasi.
         /// </summary>
         public static string MenuInformasi {
@@ -174,6 +192,15 @@ namespace PMI.Resources.Global {
         public static string MenuPengaturan {
             get {
                 return ResourceManager.GetString("MenuPengaturan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Siaran Pers.
+        /// </summary>
+        public static string MenuPR {
+            get {
+                return ResourceManager.GetString("MenuPR", resourceCulture);
             }
         }
         

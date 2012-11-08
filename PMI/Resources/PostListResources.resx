@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EventListTitle" xml:space="preserve">
+    <value>Daftar Berita Peristiwa PMI</value>
+  </data>
+  <data name="HeadlineTitle" xml:space="preserve">
+    <value>Daftar Berita Utama PMI</value>
+  </data>
+  <data name="PRTitle" xml:space="preserve">
+    <value>Daftar Berita Siaran Pers PMI</value>
+  </data>
   <data name="ReadMore" xml:space="preserve">
     <value>baca selengkapnya</value>
   </data>

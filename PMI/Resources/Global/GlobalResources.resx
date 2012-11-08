@@ -135,6 +135,12 @@
   <data name="MenuBerita" xml:space="preserve">
     <value>Berita</value>
   </data>
+  <data name="MenuEvent" xml:space="preserve">
+    <value>Peristiwa</value>
+  </data>
+  <data name="MenuHeadline" xml:space="preserve">
+    <value>Utama</value>
+  </data>
   <data name="MenuInformasi" xml:space="preserve">
     <value>Informasi</value>
   </data>
@@ -155,6 +161,9 @@
   </data>
   <data name="MenuPengaturan" xml:space="preserve">
     <value>Pengaturan Situs</value>
+  </data>
+  <data name="MenuPR" xml:space="preserve">
+    <value>Siaran Pers</value>
   </data>
   <data name="MenuProgram" xml:space="preserve">
     <value>Program</value>

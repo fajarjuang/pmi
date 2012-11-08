@@ -1,0 +1,44 @@
+﻿@model IPagedList<PMI.Models.Post>
+
+@{
+    ViewBag.Title = @PostListResources.PRTitle;
+}
+
+@section stylesheet{
+    <link href="@Url.ThemeContent("~/Content/postlist.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.ThemeContent("~/Content/postlist-responsive.css")" rel="stylesheet" type="text/css">
+}
+
+<h1>@PostListResources.PRTitle</h1>
+
+<div class="row-fluid post-list">
+    @foreach(var post in Model)
+    {
+        <div class="single-post">
+            <h2>@post.culturedTitle</h2>
+            <span class="post-info">
+                <i class="icon-calendar"></i> @Html.DisplayFor(p => post.created) &nbsp;
+                <i class="icon-tags"></i> @Html.DisplayFor(p => post.Category1.culturedDesc)
+            </span>
+            <div class="single-post-content">
+                @if (!String.IsNullOrEmpty(post.image))
+                { 
+                    <img src="@Url.Content(post.image)" class="gambar-single-post" />
+                }
+                @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink(@PostListResources.ReadMore, "News", new { id = post.id }, new { @class = "read-more" })
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    }
+</div>
+
+<div class="row-fluid post-paging">
+    @Html.PagedListPager((IPagedList)Model, 
+                         page => Url.Action("PressRelease", new { page }), 
+                         new PagedListRenderOptions { 
+                             LinkToFirstPageFormat = GlobalResources.PagingFirst, 
+                             LinkToPreviousPageFormat = GlobalResources.PagingPrevious, 
+                             LinkToNextPageFormat = GlobalResources.PagingNext, 
+                             LinkToLastPageFormat = GlobalResources.PagingLast 
+                         })
+</div>

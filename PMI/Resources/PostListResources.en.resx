@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EventListTitle" xml:space="preserve">
+    <value>PMI Events</value>
+  </data>
+  <data name="HeadlineTitle" xml:space="preserve">
+    <value>PMI Headlines</value>
+  </data>
+  <data name="PRTItle" xml:space="preserve">
+    <value>PMI Press Release</value>
+  </data>
   <data name="ReadMore" xml:space="preserve">
     <value>read more</value>
   </data>

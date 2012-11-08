@@ -61,6 +61,33 @@ namespace PMI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daftar Berita Peristiwa PMI.
+        /// </summary>
+        public static string EventListTitle {
+            get {
+                return ResourceManager.GetString("EventListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daftar Berita Utama PMI.
+        /// </summary>
+        public static string HeadlineTitle {
+            get {
+                return ResourceManager.GetString("HeadlineTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daftar Berita Siaran Pers PMI.
+        /// </summary>
+        public static string PRTitle {
+            get {
+                return ResourceManager.GetString("PRTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to baca selengkapnya.
         /// </summary>
         public static string ReadMore {
