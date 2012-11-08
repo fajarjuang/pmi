@@ -95,3 +95,17 @@
 {
     text-align: center;
 }
+
+/* Bootstrap Menu */
+
+.nav-list > .active > a, .nav-list > .active > a:hover 
+{
+    background-color: #F20;
+}
+
+/* Bootstrap Menu Ends */
+
+.jumbotron 
+{
+    text-align: center;
+}
