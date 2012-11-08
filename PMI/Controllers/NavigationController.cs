@@ -21,7 +21,8 @@ namespace PMI.Controllers
         public PartialViewResult Menu(string controller, string action)
         {
             var menu = MainMenu;
-            menu.Add(AuthMenu());
+            // -- Login menu disabled. Uncomment to enable.
+            // menu.Add(AuthMenu()); 
             if (User.IsInRole("CanPostNews"))
                 menu.AddRange(AdminMenu);
 
