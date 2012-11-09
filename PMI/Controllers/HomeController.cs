@@ -21,6 +21,11 @@ namespace PMI.Controllers
 
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult AllNews()
+        {
             var categories = from c in db.Categories
                              select c;
 
