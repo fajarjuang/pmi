@@ -39,7 +39,7 @@
 {
     /*width: 125px;*/
     width: 14.52991452991453%;
-    *width: 14.52991452991453%;
+    *width: 14.476723040552828%;
     text-align: center;
 }
 
@@ -50,6 +50,7 @@
 
 #portal-menu 
 {
+    float: right;
     text-align: right;
 }
 
