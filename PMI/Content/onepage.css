@@ -1,0 +1,157 @@
+﻿body 
+{
+    margin: 2em;
+}
+
+.row 
+{
+    margin: 0.75em;
+}
+
+.tile 
+{
+    display: inline;
+}
+
+.tile-focus 
+{
+    font-size: xx-large;
+    text-align: center;
+}
+
+.tile-logo 
+{
+    margin: 5px;
+}
+
+#logo 
+{
+    text-align: center;
+    margin: 2em;
+}
+
+#logo > img 
+{
+    height: 100px;
+}
+
+#call-center 
+{
+    /*width: 125px;*/
+    width: 14.52991452991453%;
+    *width: 14.52991452991453%;
+    text-align: center;
+}
+
+#call-center > .tile-focus
+{
+    font-weight: bolder;
+}
+
+#portal-menu 
+{
+    text-align: right;
+}
+
+#portal-menu > .slide 
+{
+    background: #1E786C;
+    color: White;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.slide a 
+{
+    color: #D0F86F;
+    font-weight: bold;
+}
+
+.slide p, .slide h1 
+{
+    margin-right: 30px;
+}
+
+#menu 
+{
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+#headline 
+{
+    border: 1px solid #A0000F;
+    padding: 1em;
+}
+
+#headline > img 
+{
+    float: left;
+    margin: 10px;
+}
+
+#headline > h1, #headline > p
+{
+    text-align: justify;
+}
+
+#social-media1 
+{
+    background: #C2F83E;
+}
+
+#social-media1 > h3 
+{
+    margin: 1em 0 0 1em;
+}
+
+.icons 
+{
+    margin: 0 0 2em 2em;
+}
+
+#tag-cloud 
+{
+    background: gray;
+    color: White;
+    text-align: center;
+}
+
+#tag-cloud > h4, #tag-cloud > #cloud
+{
+    margin: 15px;
+}
+
+#cloud 
+{
+    line-height: 2em;
+}
+
+#cloud a 
+{
+    color: White;
+    margin: 2px;
+    text-decoration: underline;
+}
+
+#content 
+{
+    border: 1px dashed #CCC;
+    text-align: center;
+}
+
+#education 
+{
+    background: #00A0BA;
+    color: White;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#education > img 
+{
+    margin-left: 20px;
+}

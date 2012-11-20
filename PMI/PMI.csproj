@@ -364,6 +364,23 @@
     <Content Include="App_Data\pmi_log.ldf">
       <DependentUpon>pmi.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\images\book.png" />
+    <Content Include="Content\images\icons\icon-book.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\images\icons\icon-facebook.png" />
+    <Content Include="Content\images\icons\icon-googleplus.png" />
+    <Content Include="Content\images\icons\icon-call.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\images\icons\icon-rss.png" />
+    <Content Include="Content\images\icons\icon-twitter.png" />
+    <Content Include="Content\images\icons\icon-youtube.png" />
+    <Content Include="Content\images\video-placeholder.jpg" />
+    <Content Include="Images\wtsn.JPG" />
+    <Content Include="Scripts\jquery.cycle.all.js" />
+    <Content Include="Scripts\jquery.cycle.lite.js" />
+    <Content Include="Content\onepage.css" />
     <Content Include="Content\images\pmi-mini.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
