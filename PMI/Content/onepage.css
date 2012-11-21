@@ -156,3 +156,49 @@
 {
     margin-left: 20px;
 }
+
+#public-info > .buttons 
+{
+    text-align: center;
+}
+
+#sponsor 
+{
+    background: rgba(97, 183, 207, 0.5);
+    border: 3px solid #025167;
+}
+
+#sponsor > h2 
+{
+    text-align: center;
+    color: #025167;
+}
+
+#sponsor > #sponsor-list 
+{
+    text-align: center;
+    margin: 1em;
+}
+
+#sponsor > #sponsor-list > img 
+{
+    max-width: 200px;
+}
+
+#map-left 
+{
+    background: #FF8673;
+    color: White;
+    padding: 1em;
+}
+
+#map-left a 
+{
+    color: White;
+}
+
+#map-right 
+{
+    background: #BEF56E;
+    padding: 1em;
+}
