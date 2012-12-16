@@ -22,7 +22,7 @@ namespace PMI.Controllers
         {
             var menu = MainMenu;
             // -- Login menu disabled. Uncomment to enable.
-            // menu.Add(AuthMenu()); 
+            menu.Add(AuthMenu()); 
             if (User.IsInRole("CanPostNews"))
                 menu.AddRange(AdminMenu);
 
