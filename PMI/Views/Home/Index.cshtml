@@ -45,9 +45,9 @@
         <div class="navbar-inner">
             <ul class="nav">
                 <li class="active"><a href="/">Home</a></li>
-                <li><a href="/Home/AllNews">News</a></li>
-                <li><a href="#">Who We Are</a></li>
-                <li><a href="#">What We Do</a></li>
+                <li>@Html.ActionLink("News", "AllNews", "Home")</li>
+                <li>@Html.ActionLink("Who We Are", "Index", "Informaion")</li>
+                <li>@Html.ActionLink("What We Do", "Index", "Programs")</li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
             <ul class="nav pull-right">
@@ -207,7 +207,7 @@
                 <li><a href="#">Information</a></li>
             </ul>
             <ul class="nav pull-right">
-                <li><a href="#">Authentication</a></li>
+                <li>@Html.ActionLink("Authentication", "LogOn", "Account")</li>
             </ul>
         </div>
     </div>
