@@ -21,7 +21,10 @@ namespace PMI.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var headline = (from p in db.Posts
+                           orderby p.created ascending
+                           select p).FirstOrDefault();
+            return View(headline);
         }
 
         public ActionResult AllNews()

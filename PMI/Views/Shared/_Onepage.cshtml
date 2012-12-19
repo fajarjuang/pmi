@@ -44,6 +44,13 @@
         <div class="row-fluid">
             <div class="row">
                 <div id="logo"><img src="@Url.Content("~/Content/images/logo-pmi.png")" /></div>
+                <form class="form-inline" id="language-selection">
+                    <label for="lang-change">@GlobalResources.LanguageSelection :</label>
+                    <select id="lang-change" name="lang-change">
+                        <option value="id">@GlobalResources.Indonesian</option>
+                        <option value="en">@GlobalResources.English</option>
+                    </select>
+                </form>
             </div>
             <div class="row">
                 <div id="call-center" class="tile span3">

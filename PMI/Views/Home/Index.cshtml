@@ -1,4 +1,6 @@
-﻿@{
+﻿@model PMI.Models.Post
+
+@{
     ViewBag.Title = "Palang Merah Indonesia";
     Layout = "~/Views/Shared/_Onepage.cshtml";
 }
@@ -25,23 +27,16 @@
 
 <div class="row">
     <div id="headline" class="span8">
-        <img src="@Url.Content("~/Images/wtsn.JPG")" />
-        <h1>PMI Aids the Chaung Camp</h1>
+        @if (!String.IsNullOrEmpty(Model.image))
+        {
+            <img src="@Url.Content(Model.image)" />
+        }
+        <h1>@Model.culturedTitle</h1>
         <p>
-            PMI's humanity operation in Myanmar continues. This time, PMI aids on clean water supply for the Myanmar people. 
-            The Watsan team of PMI and MRCS join hands to build an emergency latrine, hand-pump well, and water stock in the Chaung Camp
-            which is inhabited by 4000 families.
+            @Html.SanitizeHTML(Model.getContentSummary())
         </p>
         <p>
-            Enim magna lundium urna, montes sed in aliquam nunc integer odio aliquet! 
-            Sed mid pulvinar nec, dignissim, lacus, tempor adipiscing enim, facilisis? 
-            Arcu sagittis, montes arcu velit urna, tortor lundium, massa enim urna lectus.
-            Magna pellentesque, magna magna porttitor porttitor porttitor eu nec, 
-            dapibus elementum nec et sed mus montes, massa tempor tincidunt, 
-            vel augue mus mus. Aenean. Natoque dis quis placerat risus ridiculus? In a parturient?
-        </p>
-        <p>
-            <a href="#">read more</a>
+            @Html.ActionLink("read more...", "News", new { id = Model.id }, new { @class = "read-more" })
         </p>
     </div>
     <div id="social-media1" class="span4">
