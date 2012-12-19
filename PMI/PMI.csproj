@@ -193,14 +193,15 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Areas\Admin\Controllers\SiteInfoController.cs" />
+    <Compile Include="Areas\Portal\PortalAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
-    <Compile Include="Controllers\CommunityController.cs" />
+    <Compile Include="Areas\Portal\Controllers\CommunityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\InformationController.cs" />
+    <Compile Include="Areas\Portal\Controllers\InformationController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
-    <Compile Include="Controllers\ParticipationController.cs" />
-    <Compile Include="Controllers\ProgramsController.cs" />
+    <Compile Include="Areas\Portal\Controllers\ParticipationController.cs" />
+    <Compile Include="Areas\Portal\Controllers\ProgramsController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -801,10 +802,10 @@
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\Home\NewsList.cshtml" />
     <Content Include="Views\Search\Result.cshtml" />
-    <Content Include="Views\Participation\Index.cshtml" />
-    <Content Include="Views\Programs\Index.cshtml" />
-    <Content Include="Views\Information\Index.cshtml" />
-    <Content Include="Views\Community\Index.cshtml" />
+    <Content Include="Areas\Portal\Views\Participation\Index.cshtml" />
+    <Content Include="Areas\Portal\Views\Programs\Index.cshtml" />
+    <Content Include="Areas\Portal\Views\Information\Index.cshtml" />
+    <Content Include="Areas\Portal\Views\Community\Index.cshtml" />
     <Content Include="Views\Home\Events.cshtml" />
     <Content Include="Views\Home\PressRelease.cshtml" />
     <Content Include="Views\Home\Headline.cshtml" />
@@ -813,6 +814,8 @@
     <Content Include="Views\Chat\ChatSession.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Onepage.cshtml" />
+    <Content Include="Areas\Portal\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Portal\Views\Web.config" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
@@ -858,6 +861,8 @@
     <Folder Include="App_Code\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Portal\Models\" />
+    <Folder Include="Areas\Portal\Views\Shared\" />
     <Folder Include="Images\Uploads\" />
   </ItemGroup>
   <ItemGroup>

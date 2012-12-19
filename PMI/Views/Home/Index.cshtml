@@ -4,41 +4,7 @@
 }
 
 @section javascripts {
-    <script src="@Url.Content("~/Scripts/jquery.cycle.all.js")" type="text/javascript"></script>
-    <script type="text/javascript">
-        $('#portal-menu').cycle({
-            fit: true,
-            // width: ($(window).width() * 74.35897435897436 / 100), // 0.74... is span9's percentage on bootstrap
-            width: ($(window).width() * 0.72), // 0.74... is span9's percentage on bootstrap
-            // width: ($(window).width() * 65.81196581196582 / 100), // 0.74... is span9's percentage on bootstrap
-        });
-    </script>
 }
-
-<div class="row">
-    <div id="logo"><img src="@Url.Content("~/Content/images/logo-pmi.png")" /></div>
-</div>
-<div class="row">
-    <div id="call-center" class="tile span3">
-        <img src="@Url.Content("~/Content/images/icons/icon-call.png")" width="40px" class="tile-logo" /><br />
-        Layanan Nasional PMI <br /><br />
-        <span class="tile-focus">179</span>
-    </div>
-    <div id="portal-menu" class="tile span9">
-        <div class="slide">
-            <h1>Our Portal</h1>
-            <p><a href="#">Join us.</a> Communicate. Work together. Discuss.</p>
-        </div>
-        <div class="slide">
-            <h1 class="warning">Alert!</h1>
-            <p>Notification: There is a big flood in X. <a href="#">Donation needed.</a></p>
-        </div>
-        <div class="slide">
-            <h1>Connections</h1>
-            <p><a href="#">Local Governer</a> - <a href="#">NGO</a></p>
-        </div>
-    </div>
-</div>
 
 <div class="row" id="menu">
     <div class="navbar">
@@ -46,8 +12,8 @@
             <ul class="nav">
                 <li class="active"><a href="/">Home</a></li>
                 <li>@Html.ActionLink("News", "AllNews", "Home")</li>
-                <li>@Html.ActionLink("Who We Are", "Index", "Informaion")</li>
-                <li>@Html.ActionLink("What We Do", "Index", "Programs")</li>
+                <li>@Html.ActionLink("Who We Are", "Index", "Information", new { area = "Portal" }, null)</li>
+                <li>@Html.ActionLink("What We Do", "Index", "Programs", new { area = "Portal" }, null)</li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
             <ul class="nav pull-right">

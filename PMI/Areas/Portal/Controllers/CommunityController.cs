@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace PMI.Controllers
+using PMI.Application.Mvc.Controller;
+
+namespace PMI.Areas.Portal.Controllers
 {
-    public class ProgramsController : Controller
+    public class CommunityController : PMIController
     {
         //
-        // GET: /Programs/
+        // GET: /Community/
 
         public ActionResult Index()
         {
