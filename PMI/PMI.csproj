@@ -259,6 +259,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Resources\MainPageResources.en.Designer.cs">
+      <DependentUpon>MainPageResources.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\MainPageResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainPageResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\SearchResources.en.Designer.cs">
       <DependentUpon>SearchResources.en.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -955,6 +965,14 @@
     <EmbeddedResource Include="Resources\CategoryAdminResources.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CategoryAdminResources.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MainPageResources.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MainPageResources.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MainPageResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MainPageResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\SearchResources.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

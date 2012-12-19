@@ -1,7 +1,7 @@
 ﻿@model PMI.Models.Post
 
 @{
-    ViewBag.Title = "Palang Merah Indonesia";
+    ViewBag.Title = GlobalResources.SiteTitle;
     Layout = "~/Views/Shared/_Onepage.cshtml";
 }
 
@@ -12,14 +12,14 @@
     <div class="navbar">
         <div class="navbar-inner">
             <ul class="nav">
-                <li class="active"><a href="/">Home</a></li>
-                <li>@Html.ActionLink("News", "AllNews", "Home")</li>
-                <li>@Html.ActionLink("Who We Are", "Index", "Information", new { area = "Portal" }, null)</li>
-                <li>@Html.ActionLink("What We Do", "Index", "Programs", new { area = "Portal" }, null)</li>
-                <li><a href="#">Contact Us</a></li>
+                <li class="active">@Html.ActionLink(@MainPageResources.HomeMenu, "Index", "Home")</li>
+                <li>@Html.ActionLink(@MainPageResources.NewsMenu, "AllNews", "Home")</li>
+                <li>@Html.ActionLink(@MainPageResources.WhoWeAreMenu, "Index", "Information", new { area = "Portal" }, null)</li>
+                <li>@Html.ActionLink(@MainPageResources.WhatWeDoMenu, "Index", "Programs", new { area = "Portal" }, null)</li>
+                <li><a href="#">@MainPageResources.ContactUsMenu</a></li>
             </ul>
             <ul class="nav pull-right">
-                <li><a href="#">Public / PMI Members</a></li>
+                <li><a href="#">@MainPageResources.PublicMemberMenu</a></li>
             </ul>
         </div>
     </div>
@@ -40,23 +40,23 @@
         </p>
     </div>
     <div id="social-media1" class="span4">
-        <h3>Talk to us!</h3>
+        <h3>@MainPageResources.TalkToUs</h3>
         <div class="icons">
-            <a href="#"><img src="@Url.Content("~/Content/images/icons/icon-facebook.png")" /></a>
-            <a href="#"><img src="@Url.Content("~/Content/images/icons/icon-twitter.png")" /></a>
+            <a href="https://www.facebook.com/palangmerah"><img src="@Url.Content("~/Content/images/icons/icon-facebook.png")" /></a>
+            <a href="https://twitter.com/palangmerah"><img src="@Url.Content("~/Content/images/icons/icon-twitter.png")" /></a>
             <a href="#"><img src="@Url.Content("~/Content/images/icons/icon-googleplus.png")" /></a>
             <a href="#"><img src="@Url.Content("~/Content/images/icons/icon-youtube.png")" /></a>
         </div>
     </div>
     <div id="social-media2" class="span4">
-        <h4>What They Said</h4>
+        <h4>@MainPageResources.WhatTheySaid</h4>
         <img src="@Url.Content("~/Content/images/video-placeholder.jpg")" />
     </div>
 </div>
 
 <div class="row">
     <div id="tag-cloud" class="span4">
-        <h4>What People Talk About</h4>
+        <h4>@MainPageResources.WhatPeopleTalkAbout</h4>
         <div id="cloud">
             <a href="#">Red Cross</a> 
             <span style="font-size: x-large;"><a href="#">aid</a></span> 
@@ -72,7 +72,7 @@
         </div>
     </div>
     <div id="content" class="span4">
-        <h4>Our Topic</h4>
+        <h4>@MainPageResources.OurTopic</h4>
         <p>
         <a href="#">News</a> <br />
         <a href="#">Events</a> <br />
@@ -82,28 +82,27 @@
     </div>
     <a href="#" class="span4">
         <div id="education">
-            <img src="@Url.Content("~/Content/images/book.png")" width="65px" /> Learn with us!
+            <img src="@Url.Content("~/Content/images/book.png")" width="65px" /> @MainPageResources.LearnWithUs
         </div>
     </a>
 </div>
 
 <div class="row hero-unit" id="public-info">
-    <h1>Public Information</h1>
+    <h1>@MainPageResources.PublicInfoTitle</h1>
     <p>
-        As a non-profit and for public organization, PMI believes in an open
-        administration. Check our public reports at:
+        @MainPageResources.PublicInfoDesc
     </p>
     <p class="buttons">
-        <a class="btn btn-primary btn-large">Reporting</a>
-        <a class="btn btn-info btn-large">Finance</a>
-        <a class="btn btn-success btn-large">Donation</a>
-        <a class="btn btn-inverse btn-large">Others</a>
+        <a class="btn btn-primary btn-large">@MainPageResources.Reporting</a>
+        <a class="btn btn-info btn-large">@MainPageResources.Finance</a>
+        <a class="btn btn-success btn-large">@MainPageResources.Donation</a>
+        <a class="btn btn-inverse btn-large">@MainPageResources.Others</a>
     </p>
 </div>
 
 <div class="row">
     <div id="sponsor" class="span6">
-        <h2>Our Sponsors:</h2>
+        <h2>@MainPageResources.Sponsors</h2>
         <div id="sponsor-list">
             <img src="http://i.imgur.com/29Rhn.png" /> <br /><br />
             <img src="http://i.imgur.com/OHm0Q.png" />
@@ -112,7 +111,7 @@
     <div id="site-map" class="span6">
         <div class="span6" id="map-left">
             <h4>
-                Site Map</h4>
+                @MainPageResources.SiteMap</h4>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Donation</a>
@@ -133,7 +132,7 @@
             </ul>
         </div>
         <div class="span6" id="map-right">
-            <h4>Other Menu</h4>
+            <h4>@MainPageResources.OtherMenu</h4>
             <ul>
                 <li><a href="#">Lorem</a></li>
                 <li><a href="#">Ipsum</a>
@@ -162,13 +161,13 @@
     <div class="navbar navbar-inverse">
         <div class="navbar-inner">
             <ul class="nav">
-                <li><a href="/">Administration</a></li>
-                <li><a href="/Home/AllNews">Terms and Conditions</a></li>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Information</a></li>
+                <li>@Html.ActionLink(MainPageResources.AdministrationMenu, "Index")</li>
+                <li>@Html.ActionLink(MainPageResources.TermsMenu, "Index")</li>
+                <li>@Html.ActionLink(MainPageResources.HelpMenu, "Index")</li>
+                <li>@Html.ActionLink(MainPageResources.InformationMenu, "Index")</li>
             </ul>
             <ul class="nav pull-right">
-                <li>@Html.ActionLink("Authentication", "LogOn", "Account")</li>
+                <li>@Html.ActionLink(MainPageResources.AuthenticationMenu, "LogOn", "Account")</li>
             </ul>
         </div>
     </div>
