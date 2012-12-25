@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using PMI.Resources;
 using PMI.Resources.Global;
 
 namespace PMI.Models
@@ -14,15 +15,28 @@ namespace PMI.Models
         public string Area { get; set; }
         public bool Active { get; set; }
 
-        public static List<MenuItem> MainMenu()
+        public static List<MenuItem> PortalMainMenu()
         {
-            var mainMenu = new List<MenuItem>();
-            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuBerita, Controller = "Home", Action = "Index", Active = false, Area = "" });
-            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuHeadline, Controller = "Home", Action = "Headline", Active = false, Area = "" });
-            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuEvent, Controller = "Home", Action = "Events", Active = false, Area = "" });
-            mainMenu.Add(new MenuItem { Text = GlobalResources.MenuPR, Controller = "Home", Action = "PressRelease", Active = false, Area = "" });
+            var portalMainMenu = new List<MenuItem>();
+            portalMainMenu.Add(new MenuItem { Text = MainPageResources.HomeMenu, Controller = "Home", Action = "Index", Active = false, Area = "" });
+            portalMainMenu.Add(new MenuItem { Text = MainPageResources.NewsMenu, Controller = "Home", Action = "AllNews", Active = false, Area = "" });
+            portalMainMenu.Add(new MenuItem { Text = MainPageResources.WhoWeAreMenu, Controller = "WhoWeAre", Action = "Index", Active = false, Area = "Portal" });
+            portalMainMenu.Add(new MenuItem { Text = MainPageResources.WhatWeDoMenu, Controller = "Programs", Action = "Index", Active = false, Area = "Portal" });
+            portalMainMenu.Add(new MenuItem { Text = MainPageResources.ContactUsMenu, Controller = "Community", Action = "Index", Active = false, Area = "Portal" });
+            portalMainMenu.Add(new MenuItem { Text = MainPageResources.PublicMemberMenu, Controller = "Account", Action = "Logon", Active = false, Area = "" });
 
-            return mainMenu;
+            return portalMainMenu;
+        }
+
+        public static List<MenuItem> NewsMainMenu()
+        {
+            var newsMainMenu = new List<MenuItem>();
+            newsMainMenu.Add(new MenuItem { Text = GlobalResources.MenuBerita, Controller = "Home", Action = "AllNews", Active = false, Area = "" });
+            newsMainMenu.Add(new MenuItem { Text = GlobalResources.MenuHeadline, Controller = "Home", Action = "Headline", Active = false, Area = "" });
+            newsMainMenu.Add(new MenuItem { Text = GlobalResources.MenuEvent, Controller = "Home", Action = "Events", Active = false, Area = "" });
+            newsMainMenu.Add(new MenuItem { Text = GlobalResources.MenuPR, Controller = "Home", Action = "PressRelease", Active = false, Area = "" });
+
+            return newsMainMenu;
         }
 
         public static List<MenuItem> AdminMenu()

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<PMI.Models.MenuItem>
+@functions {
+    public string ActiveClass(bool status)
+    {
+        return status ? "class=active" : "";
+    }
+}
+<div class="navbar">
+    <div class="navbar-inner">
+        <ul class="nav">
+            @foreach (var item in Model.Where(p => p.Controller != "Account"))
+            {
+                <li @ActiveClass(item.Active)>@Html.ActionLink(item.Text, item.Action, item.Controller, new { area = item.Area }, null)</li>
+            }
+        </ul>
+        <ul class="nav pull-right">
+            @foreach (var item in Model.Where(p => p.Controller == "Account"))
+            {
+                <li @ActiveClass(item.Active)>@Html.ActionLink(item.Text, item.Action, item.Controller, new { area = item.Area }, null)</li>
+            }
+        </ul>
+    </div>
+</div>

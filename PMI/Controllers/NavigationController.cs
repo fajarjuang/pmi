@@ -15,12 +15,13 @@ namespace PMI.Controllers
     {
         private pmiEntities db = new pmiEntities();
 
-        private List<MenuItem> MainMenu = MenuItem.MainMenu();
+        private List<MenuItem> PortalMainMenu = MenuItem.PortalMainMenu();
+        private List<MenuItem> NewsMainMenu = MenuItem.NewsMainMenu();
         private List<MenuItem> AdminMenu = MenuItem.AdminMenu();
 
         public PartialViewResult Menu(string controller, string action)
         {
-            var menu = MainMenu;
+            var menu = NewsMainMenu;
             // -- Login menu disabled. Uncomment to enable.
             menu.Add(AuthMenu()); 
             if (User.IsInRole("CanPostNews"))
@@ -29,6 +30,17 @@ namespace PMI.Controllers
             menu.Where(p => p.Action == action && p.Controller == controller)
                 .Select(p => { p.Active = true; return p; })
                 .ToList(); // to activate the lazy evaluation
+            return PartialView(menu);
+        }
+
+        public PartialViewResult MainMenu(String controller, string action)
+        {
+            var menu = PortalMainMenu;
+
+            menu.Where(p => p.Action == action && p.Controller == controller)
+                .Select(p => { p.Active = true; return p; })
+                .ToList(); // lazy eval
+
             return PartialView(menu);
         }
 
