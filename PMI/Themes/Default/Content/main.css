@@ -5,6 +5,11 @@
     margin-bottom: 15px;
 }
 
+#ifrc-logo
+{
+    width: 100px;
+}
+
 .nav-pmi
 {
     border-bottom: 1px solid #FF1E00;

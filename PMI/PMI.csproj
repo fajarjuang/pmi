@@ -376,6 +376,7 @@
       <DependentUpon>pmi.mdf</DependentUpon>
     </Content>
     <Content Include="Content\images\book.png" />
+    <Content Include="Content\images\logo-ifrc.png" />
     <Content Include="Content\images\icons\icon-book.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

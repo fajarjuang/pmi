@@ -39,7 +39,11 @@
         <div class="row-fluid">
             <div class="row">
                 <div id="logo">
-                    <img src="@Url.Content("~/Content/images/logo-pmi.png")" /></div>
+                    <img id="logo-pmi" src="@Url.Content("~/Content/images/logo-pmi.png")" />
+                    <div id="logo-ifrc">
+                        <b>A member of</b> <a href="http://www.ifrc.org"><img src="@Url.Content("~/Content/images/logo-ifrc.png")" title="IFRC - International Federation of Red Cross and Red Crescent Society" /></a>
+                    </div>
+                </div>
                 <form class="form-inline" id="language-selection">
                 <label for="lang-change">@GlobalResources.LanguageSelection :</label>
                 <select id="lang-change" name="lang-change">
