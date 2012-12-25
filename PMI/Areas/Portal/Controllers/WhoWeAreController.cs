@@ -23,5 +23,10 @@ namespace PMI.Areas.Portal.Controllers
             return View();
         }
 
+        public ActionResult Services()
+        {
+            return View();
+        }
+
     }
 }

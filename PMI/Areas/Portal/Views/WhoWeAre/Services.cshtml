@@ -1,0 +1,228 @@
+﻿@{
+    ViewBag.Title = MainPageResources.WhoWeAreMenu + " - " + WhoWeAre.Services;
+}
+
+<div class="row">
+    <div class="span3">
+        @Html.Action("WhoWeAreMenu", "Navigation", new { controller = ViewContext.Controller.ValueProvider.GetValue("controller").RawValue, action = ViewContext.Controller.ValueProvider.GetValue("action").RawValue, area = "" })
+    </div>
+
+    <div class="span9">
+        <ol>
+            <li>
+               <h3>PENANGGULANGAN BENCANA (DISASTER MANAGEMENT)</h3>
+               <p>
+                   Mandat utama PMI adalah melakukan kegiatan penanggulangan bencana yang mencakup
+                   saat terjadi bencana (respon) PMI melakukan asesmen, pencarian dan pertolongan pertama,
+                   dan evakuasi. Sementara pascabencana, PMI memberikan pelayanan kesehatan dan ambulans,
+                   penampungan darurat, distribusi bantuan, dapur umum, air dan sansitasi, dukungan
+                   psikososial, serta pemulihan hubungan keluarga yang terpisah akibat bencana.
+               </p>
+               <p>
+                    Disamping respon bencana, PMI turut memberdayakan masyarakat dengan melakukan gerakan
+                   penghijauan dan kebersihan lingkungan dan kesiapsiagaan agar masyarakat mampu mengatasi
+                   permasalahan di lingkungannya secara mandiri
+               </p>
+            </li>
+            <li>
+                <h3>PELAYANAN KESEHATAN (HEALTH)</h3>
+                <p>
+                    Pelayanan kesehatan diutamakan saat respon bencana dan juga pada saat normal, termasuk
+                    melakukan upaya meningkatkan kapasitas masyarakat di bidang kesehatan. Salah satunya
+                    dengan memberikan pelatihan pertolongan pertama kepada pengemudi angkutan umum guna
+                    mengurangi risiko cacat dan kematian akibat kecelakaan lalu lintas.
+                </p>
+                <p>
+                    Kegiatan lainnya adalah memberikan bantuan kacamata kepada guru dan siswa untuk
+                    meningkatkan kualitas belajar mengajar.
+                </p>
+            </li>
+            <li>
+                <h3>DONOR DARAH (BLOOD DONOR)</h3>
+                <h4>Kebutuhan Darah Nasional</h4>
+                <p>
+                    PMI tengah mengampanyekan donor darah sebagai bagian dari gaya hidup (lifestyle).
+                    Setiap tahunnya, PMI menargetkan 4,5 juta kantong darah sesuai dengan kebutuhan
+                    darah nasional, disesuaikan dengan standar Lembaga Kesehatan Internasional yaitu
+                    2% dari jumlah penduduk untuk setiap harinya. Hingga tahun 2011, PMI baru mengumpulkan
+                    hingga 3,5 juta kantong darah.
+                </p>
+
+                <h4>Kemudahan Berdonor Darah</h4>
+                <ul>
+                    <li>
+                        Gerai Donor Darah
+                        <p>
+                            Selain bisa mendonorkan darah melalui 212 Unit Donor Darah (UDD) di 210 kabupaten
+                            dan kota se-Indonesia, PMI juga menyediakan kemudahan lainnya. Sejak pertengahan
+                            Juni 2010, PMI resmi meluncurkan program Gerai Donor Darah PMI. Melalui program
+                            ini, diharapkan akan memudahkan masyarakat untuk mendonorkan darahnya di tempat-tempat
+                            publik dan pusat-pusat keramaian di tengah kota, yaitu Mal dan Kampus.
+                        </p>
+                        <p>
+                            Hingga kini telah beroperasi Gerai Donor Darah PMI di Mal Senayan City dan di Pasar
+                            Tanah Abang Jakarta, Mal Metropolitan Bekasi Jawa Barat, Mal Tunjungan Plaza 2 (TP2)
+                            di Surabaya Jawa Timur, dan di Mal Ratu Indah Makassar Sulawesi Selatan. Untuk Gerai
+                            Donor Darah di kampus terdapat di Universitas Trisakti Gedung C Jakarta dan Kampus
+                            Universitas Hasanuddin Makassar Sulawesi Selatan.
+                        </p>
+                    </li>
+                    <li>
+                        Mobil Donor Darah
+                        <p>
+                            Kemudahan lainnya bagi masyarakat untuk donor darah adalah PMI memobilisasi 100
+                            unit mobil donor darah. PMI menggandeng para mitra kerjanya untuk membantu menyediakan
+                            mobil donor darah ini yang akan disebar di UDD PMI di 33 propinsi. Dengan adanya
+                            mobil donor darah ini, akan tercapai penyediaan darah rutin dan mencukupi kebutuhan
+                            sampai dengan 4 hari, sesuai dengan semboyan 4 x 4; 4 juta kantong darah dengan
+                            4 hari persediaan darah di seluruh Indonesia.
+                        </p>
+                    </li>
+                    <li>
+                        Ayo Donor Darah
+                        <p>
+                            Dalam pelaksaan teknisnya, donor darah dapat dilakukan secara:
+                            <ul>
+                                <li>Donor darah sukarela, apabila pendonor sukarela datang ke UDD PMI dengan senang hati dan sukarela menyumbangkan darahnya tanpa meminta imbalan apapun</li>
+                                <li>Donor darah pengganti, apabila dilakukan anggota keluarga atau saudara yang mengalami kekurangan darah. Intinya, darah itu berasal dari keluarga pribadi pendonor sendiri.</li>
+                            </ul>
+                        </p>
+                    </li>
+                    <li>
+                        Jenis Golongan Darah
+                        <p>
+                            Jenis golongan darah adalah:
+                            <ol>
+                                <li>A</li>
+                                <li>B</li>
+                                <li>AB</li>
+                                <li>O</li>
+                            </ol>
+                        </p>
+                    </li>
+                    <li>
+                        Syarat Pendonor
+                        <p>
+                             Syarat-syarat untuk donor darah adalah sebagai berikut:
+                             <ul>
+                                <li>Usia 17-60 tahun (usia 17 tahun diperbolehkan menjadi donor bila mendapat izin tertulis dari orangtua)</li>
+                                <li>Berat badan minimal 45 kg</li>
+                                <li>Temperatur tubuh 36,6 – 37,5 derajat Celcius</li>
+                                <li>an darah baik yaitu sistole = 110-160 mmHg, diastole = 70-100 mmHgTekan</li>
+                                <li>Denyut nadi teratur yaitu sekitar 50-100 kali/menit</li>
+                                <li>Hemoglobin perempuan minimal 12 gram, sedangkan untuk laki-laki minimal 12,5 gram</li>
+                                <li>Jumlah penyumbangan per tahun paling banyak 5 kali dengan jarak penyumbangan sekurang-kurangnya 3 bulan</li>
+                                <li>Calon donor dapat mengambil dan menandatangani formulir pendaftaran, lalu menjalani pemeriksaan pendahuluan, seperti kondisi berat badan, HB, golongan darah, dan dilanjutkan dengan pemeriksaan dokter</li>
+                             </ul>
+                        </p>
+                    </li>
+                    <li>
+                        Dilarang Donor Darah
+                        <p>
+                             Donor darah tidak boleh dilakukan pada saat:
+                             <ul>
+                                 <li>Pernah menderita Hepatitis B</li>
+                                 <li>Dalam jangka waktu 6 bulan sesudah kontak erat dengan penderita hepatitis</li>
+                                 <li>Dalam jangka waktu 6 bulan sesudah transfusi</li>
+                                 <li>Dalam jangka waktu 6 bulan sesudah tato/tindik telinga</li>
+                                 <li>Dalam jangka waktu 72 jam sesudah operasi gigi</li>
+                                 <li>Dalam jangka waktu 6 bulan sesudah operasi kecil</li>
+                                 <li>Dalam jangka waktu 12 bulan sesudah operasi kecil</li>
+                                 <li>Dalam jangka waktu 24 jam sesudah vaksinasi polio, influenza, kolera, stetanus dipteria atau profilaksis</li>
+                                 <li>Dalam jangka waktu 2 minggu sesudah vaksinasi virus hidup parotitis epidemica, measles dan tetanus toxin</li>
+                                 <li>Dalam jangka waktu 1 tahun sesudah injeksi terakhir imunisasi rabies therapeutic</li>
+                                 <li>Dalam jangka waktu 1 minggu sesudah gejala alergi menghilang</li>
+                                 <li>Dalam jangka waktu 1 tahun sesudah transplantasi kulit</li>
+                                 <li>Sedang hamil dan dalam jangka waktu 6 bulan sesudah persalinan</li>
+                                 <li>Sedang menyusui</li>
+                                 <li>Ketergantungan obat</li>
+                                 <li>Alkoholisme akut dan kronis</li>
+                                 <li>Mengidap Sifilis</li>
+                                 <li>Menderita Tuberkulosis secara klinis</li>
+                                 <li>Menderita epilepsi dan sering kejang</li>
+                                 <li>Menderita penyakit kulit pada vena (pembuluh darah balik) yang akan ditusuk</li>
+                                 <li>Mempunyai kecenderungan perdarahan atau penyakit darah, misalnya thalasemia</li>
+                                 <li>Seseorang yang termasuk kelompok masyarakat yang berisiko tinggi mendapatkan HIV dan AIDS (homoseks, morfinis, berganti-ganti pasangan seks dan pemakai jarum suntik tidak steril)</li>
+                                 <li>Pengidap HIV dan AIDS menurut hasil pemeriksaan saat donor darah</li>
+                             </ul>
+                        </p>
+                    </li>
+                    <li>
+                        Manfaat Donor Darah
+                        <p>
+                            <ul>
+                                <li>
+                                    Menjaga Kesehatan Jantung
+                                    <p>
+                                        Tingginya kadar zat besi dalam darah akan membuat seseorang menjadi lebih rentan
+                                        terhadap penyakit jantung. Zat besi yang berlebihan di dalam darah bisa menyebabkan
+                                        oksidasi kolesterol. Produk oksidasi tersebut akan menumpuk pada dinding arteri
+                                        dan ini sama dengan memperbesar peluang terkena serangan jantung dan stroke. Saat
+                                        kita rutin mendonorkan darah maka jumlah zat besi dalam darah bisa lebih stabil.
+                                        Ini artinya menurunkan risiko penyakit jantung.
+                                    </p>
+                                </li>
+                                <li>
+                                    Meningkatkan produksi sel darah merah
+                                    <p>
+                                        Donor darah juga akan membantu tubuh mengurangi jumlah sel darah merah dalam darah.
+                                        Tak perlu panik dengan berkurangnya sel darah merah, karena sumsum tulang belakang
+                                        akan segera mengisi ulang sel darah merah yang telah hilang. Hasilnya, sebagai pendonor
+                                        kita akan mendapatkan pasokan darah baru setiap kali kita mendonorkan darah. Oleh
+                                        karena itu, donor darah menjadi langkah yang baik untuk menstimulasi pembuatan darah
+                                        baru.
+                                    </p>
+                                </li>
+                                <li>
+                                    Membantu menurunkan berat badan
+                                    <p>
+                                        Menjadi donor darah adalah salah satu metode diet dan pembakaran kalori yang ampuh.
+                                        Sebab dengan memberikan sekitar 450 ml darah, akan membantu proses pembakaran kalori
+                                        kira-kira 650. Itu adalah jumlah kalori yang banyak untuk membuat pinggang kita
+                                        ramping.
+                                    </p>
+                                </li>
+                                <li>
+                                    Mendapatkan kesehatan psikologis
+                                    <p>
+                                        Menyumbangkan hal yang tidak ternilai harganya kepada yang membutuhkan akan membuat
+                                        kita merasakan kepuasan psikologis. Sebuah penelitian menemukan, orang usia lanjut
+                                        yang rutin menjadi pendonor darah akan merasakan tetap berenergi dan bugar.
+                                    </p>
+                                </li>
+                                <li>
+                                    Mendeteksi penyakit serius                                   
+                                    <p>
+                                        Setiap kali kita ingin mendonorkan darah, prosedur standarnya adalah darah kita
+                                        akan diperiksa dari berbagai macam penyakit seperti HIV, hepatitis B, hepatitis
+                                        C, sifilis, dan malaria. Bagi yang menerima donor darah, ini adalah informasi penting
+                                        untuk mengantisipasi penularan penyakit melalui transfusi darah. Sedangkan untuk
+                                        kita, ini adalah "rambu peringatan" yang baik agar kita lebih perhatian terhadap
+                                        kondisi kesehatan kita sendiri.
+                                    </p>
+                                </li>
+                                <li>
+                                    Rekrutmen & Penghargaan Untuk DDS
+                                    <p>
+                                        Hasil pengumpulan donasi kantong darah mengalami peningkatan dari tahun ke tahun.
+                                        Berawal dari 28.265 kantong darah pada tahun 1969 hingga 3 juta kantong darah di
+                                        tahun 2011. Darah disumbangkan oleh donor darah sukarela (DDS) yang mendominasi
+                                        83 % dari seluruh donasi darah dibandingkan donor pengganti 13%.
+                                    </p>
+                                    <p>
+                                        Sebagai penghargaan terhadap para DDS, PMI memberikan piagam penghargaan kepada
+                                        DDS yang telah menyumbangkan darahnya sebanyak 15 kali, 30 kali, 50 kali, 75 kali,
+                                        dan 100 kali. Khusus untuk DDS 100 kali, PMI bekerjasama dengan Departemen Sosial
+                                        memberikan penghargaan berupa Satyalancana Kebaktian Sosial yang disematkan langsung
+                                        oleh Presiden RI. Diharapkan dengan bertambahnya donor darah sukarela akan membantu
+                                        PMI dalam mengumpulkan jumlah kantong darah nasional.
+                                    </p>
+                                </li>
+                            </ul>
+                        </p>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+</div>
