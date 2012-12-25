@@ -32,7 +32,7 @@
     <div class="container-fluid">
         <a href="@Url.Action("Index", "Home", new { area = "" })">
             <img src="@Url.Content("~/Content/images/logo-pmi.png")" id="site-logo" title="@GlobalResources.SiteTitle"></a>
-            <b>a member of</b> <a href="http://www.ifrc.org"><img src="@Url.Content("~/Content/images/logo-ifrc.png")" id="ifrc-logo" title="IFRC - International Federation of Red Cross and Red Crescent Society" /></a>
+            <b>@GlobalResources.MemberOf</b> <a href="http://www.ifrc.org"><img src="@Url.Content("~/Content/images/logo-ifrc.png")" id="ifrc-logo" title="IFRC - International Federation of Red Cross and Red Crescent Society" /></a>
 
             @Html.Action("Menu", "Navigation", new { controller = ViewContext.Controller.ValueProvider.GetValue("controller").RawValue, action = ViewContext.Controller.ValueProvider.GetValue("action").RawValue, area = "" })
         

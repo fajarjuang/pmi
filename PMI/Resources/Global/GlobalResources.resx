@@ -186,4 +186,7 @@
   <data name="SiteTitle" xml:space="preserve">
     <value>Palang Merah Indonesia</value>
   </data>
+  <data name="MemberOf" xml:space="preserve">
+    <value>Anggota</value>
+  </data>
 </root>

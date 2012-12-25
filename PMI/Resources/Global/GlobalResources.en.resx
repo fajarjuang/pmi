@@ -186,4 +186,7 @@
   <data name="SiteTitle" xml:space="preserve">
     <value>Red Cross Indonesia</value>
   </data>
+  <data name="MemberOf" xml:space="preserve">
+    <value>a member of</value>
+  </data>
 </root>
