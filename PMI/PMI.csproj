@@ -319,6 +319,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SearchResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\SideMenu\WhoWeAre.en.Designer.cs">
+      <DependentUpon>WhoWeAre.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\SideMenu\WhoWeAre.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WhoWeAre.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\SiteInfoAdminResources.en.Designer.cs">
       <DependentUpon>SiteInfoAdminResources.en.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -828,6 +838,7 @@
     <Content Include="Areas\Portal\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Portal\Views\Web.config" />
     <Content Include="Views\Navigation\MainMenu.cshtml" />
+    <Content Include="Views\Navigation\WhoWeAreMenu.cshtml" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
@@ -1015,6 +1026,14 @@
     <EmbeddedResource Include="Resources\SearchResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SearchResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SideMenu\WhoWeAre.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WhoWeAre.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SideMenu\WhoWeAre.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WhoWeAre.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\SiteInfoAdminResources.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

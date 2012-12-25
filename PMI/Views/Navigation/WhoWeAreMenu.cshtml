@@ -1,0 +1,15 @@
+﻿@model IEnumerable<PMI.Models.MenuItem>
+
+@functions {
+    public string ActiveClass(bool status)
+    {
+        return status ? "class=active" : "";
+    }
+}
+
+<ul class="nav nav-pills nav-stacked">
+    @foreach (var item in Model)
+    {
+        <li @ActiveClass(item.Active)>@Html.ActionLink(item.Text, item.Action, item.Controller, new { area = item.Area }, null)</li>
+    }
+</ul>

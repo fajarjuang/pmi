@@ -27,19 +27,15 @@ namespace PMI.Controllers
             if (User.IsInRole("CanPostNews"))
                 menu.AddRange(AdminMenu);
 
-            menu.Where(p => p.Action == action && p.Controller == controller)
-                .Select(p => { p.Active = true; return p; })
-                .ToList(); // to activate the lazy evaluation
+            menu = activateItem(menu, controller, action);
+
             return PartialView(menu);
         }
 
         public PartialViewResult MainMenu(String controller, string action)
         {
             var menu = PortalMainMenu;
-
-            menu.Where(p => p.Action == action && p.Controller == controller)
-                .Select(p => { p.Active = true; return p; })
-                .ToList(); // lazy eval
+            menu = activateItem(menu, controller, action);
 
             return PartialView(menu);
         }
@@ -50,6 +46,23 @@ namespace PMI.Controllers
             ViewBag.footer = HtmlUtils.SanitizeHtml(footer); // because you can't call extension method from partial view
 
             return PartialView();
+        }
+
+        public PartialViewResult WhoWeAreMenu(string controller, string action)
+        {
+            var wwa = MenuItem.WhoWeAreMenu(); // no private for lazy loading.
+            wwa = activateItem(wwa, controller, action);
+
+            return PartialView(wwa);
+        }
+
+        private List<MenuItem> activateItem(List<MenuItem> menu, string controller, string action)
+        {
+            menu.Where(p => p.Action == action && p.Controller == controller)
+                .Select(p => { p.Active = true; return p; })
+                .ToList(); // force lazy eval to run
+
+            return menu;
         }
 
         private MenuItem AuthMenu()

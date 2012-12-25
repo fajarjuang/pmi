@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using PMI.Resources;
 using PMI.Resources.Global;
+using PMI.Resources.SideMenu;
 
 namespace PMI.Models
 {
@@ -47,6 +48,17 @@ namespace PMI.Models
             adminMenu.Add(new MenuItem { Text = GlobalResources.MenuPengaturan, Controller = "SiteInfo", Action = "Index", Active = false, Area = "Admin" });
 
             return adminMenu;
+        }
+
+        public static List<MenuItem> WhoWeAreMenu()
+        {
+            var wwaMenu = new List<MenuItem>();
+            wwaMenu.Add(new MenuItem { Text = WhoWeAre.History, Controller = "WhoWeAre", Action = "Index", Active = false, Area = "Portal" });
+            wwaMenu.Add(new MenuItem { Text = WhoWeAre.VisionMission, Controller = "WhoWeAre", Action = "VisionAndMission", Active = false, Area = "Portal" });
+            wwaMenu.Add(new MenuItem { Text = WhoWeAre.Services, Controller = "WhoWeAre", Action = "Services", Active = false, Area = "Portal" });
+            wwaMenu.Add(new MenuItem { Text = WhoWeAre.DevelopmentWork, Controller = "WhoWeAre", Action = "DevelopmentWork", Active = false, Area = "Portal" });
+
+            return wwaMenu;
         }
     }
 }
