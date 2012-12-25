@@ -18,5 +18,10 @@ namespace PMI.Areas.Portal.Controllers
             return View();
         }
 
+        public ActionResult VisionAndMission()
+        {
+            return View();
+        }
+
     }
 }

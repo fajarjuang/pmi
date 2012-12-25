@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = MainPageResources.WhoWeAreMenu + " - " + WhoWeAre.VisionMission;
+}
+
+<div class="row">
+    <div class="span3">
+        @Html.Action("WhoWeAreMenu", "Navigation", new { controller = ViewContext.Controller.ValueProvider.GetValue("controller").RawValue, action = ViewContext.Controller.ValueProvider.GetValue("action").RawValue, area = "" })
+    </div>
+
+    <div class="span9">
+        <h2>Visi</h2>
+        <p>
+            Terwujudnya PMI sebagai organisasi kemanusiaan yang profesional, tanggap dan dicintai masyarakat.
+        </p>
+
+        <h2>Misi</h2>
+        <ul>
+            <li>Menguatkan dan mengembangkan organisasi</li>
+            <li>Meningkatkan dan mengembangkan kualitas SDM (Pengurus, Staf, PMR dan Relawan)</li>
+            <li>Meningkatkan kualitas pelayanan kepalangmerahan</li>
+            <li>Mengembangkan kegiatan kepalangmerahan yang berbasis masyarakat</li>
+            <li>Meningkatkan dan mengembangkan jejaring kerjasama</li>
+            <li>Menyebarluaskan, mengadvokasi, dan melaksanakan Prinsip-Prinsip Dasar Gerakan Internasional Palang Merah dan Bulan Sabit Merah serta Hukum Perikemanusiaan Internasional</li>
+            <li>Mengembangkan komunikasi, informasi dan edukasi kepalangmerahan</li>
+        </ul>
+    </div>
+</div>
