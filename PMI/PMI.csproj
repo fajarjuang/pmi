@@ -198,7 +198,7 @@
     <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Areas\Portal\Controllers\CommunityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Areas\Portal\Controllers\InformationController.cs" />
+    <Compile Include="Areas\Portal\Controllers\WhoWeAreController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Areas\Portal\Controllers\ParticipationController.cs" />
     <Compile Include="Areas\Portal\Controllers\ProgramsController.cs" />
@@ -814,7 +814,7 @@
     <Content Include="Views\Search\Result.cshtml" />
     <Content Include="Areas\Portal\Views\Participation\Index.cshtml" />
     <Content Include="Areas\Portal\Views\Programs\Index.cshtml" />
-    <Content Include="Areas\Portal\Views\Information\Index.cshtml" />
+    <Content Include="Areas\Portal\Views\WhoWeAre\Index.cshtml" />
     <Content Include="Areas\Portal\Views\Community\Index.cshtml" />
     <Content Include="Views\Home\Events.cshtml" />
     <Content Include="Views\Home\PressRelease.cshtml" />

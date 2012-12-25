@@ -8,7 +8,7 @@ using PMI.Application.Mvc.Controller;
 
 namespace PMI.Areas.Portal.Controllers
 {
-    public class InformationController : PMIController
+    public class WhoWeAreController : PMIController
     {
         //
         // GET: /Information/
