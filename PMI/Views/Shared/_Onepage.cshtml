@@ -12,18 +12,14 @@
     { 
         @RenderSection("stylesheet", false)
     }
-
     <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery-ui-1.8.23.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery-ui-i18n.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.cookie.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Content/bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
-
     <script src="@Url.Content("~/Scripts/pmi/language-selector.js")" type="text/javascript"></script>
-
     <script src="@Url.Content("~/Scripts/chat.js")" type="text/javascript"></script>
-
     <script src="@Url.Content("~/Scripts/jquery.cycle.all.js")" type="text/javascript"></script>
     <script type="text/javascript">
         $('#portal-menu').cycle({
@@ -33,7 +29,6 @@
             // width: ($(window).width() * 65.81196581196582 / 100), // 0.74... is span9's percentage on bootstrap
         });
     </script>
-
     @if (IsSectionDefined("javascripts"))
     { 
         @RenderSection("javascripts", false)
@@ -43,13 +38,14 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="row">
-                <div id="logo"><img src="@Url.Content("~/Content/images/logo-pmi.png")" /></div>
+                <div id="logo">
+                    <img src="@Url.Content("~/Content/images/logo-pmi.png")" /></div>
                 <form class="form-inline" id="language-selection">
-                    <label for="lang-change">@GlobalResources.LanguageSelection :</label>
-                    <select id="lang-change" name="lang-change">
-                        <option value="id">@GlobalResources.Indonesian</option>
-                        <option value="en">@GlobalResources.English</option>
-                    </select>
+                <label for="lang-change">@GlobalResources.LanguageSelection :</label>
+                <select id="lang-change" name="lang-change">
+                    <option value="id">@GlobalResources.Indonesian</option>
+                    <option value="en">@GlobalResources.English</option>
+                </select>
                 </form>
             </div>
             <div class="row">
@@ -78,6 +74,22 @@
                             Connections</h1>
                         <p>
                             <a href="#">Local Governer</a> - <a href="#">NGO</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="menu">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                            <li class="active">@Html.ActionLink(@MainPageResources.HomeMenu, "Index", "Home")</li>
+                            <li>@Html.ActionLink(@MainPageResources.NewsMenu, "AllNews", "Home")</li>
+                            <li>@Html.ActionLink(@MainPageResources.WhoWeAreMenu, "Index", "WhoWeAre", new { area = "Portal" }, null)</li>
+                            <li>@Html.ActionLink(@MainPageResources.WhatWeDoMenu, "Index", "Programs", new { area = "Portal" }, null)</li>
+                            <li><a href="#">@MainPageResources.ContactUsMenu</a></li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li><a href="#">@MainPageResources.PublicMemberMenu</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

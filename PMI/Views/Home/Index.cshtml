@@ -8,23 +8,6 @@
 @section javascripts {
 }
 
-<div class="row" id="menu">
-    <div class="navbar">
-        <div class="navbar-inner">
-            <ul class="nav">
-                <li class="active">@Html.ActionLink(@MainPageResources.HomeMenu, "Index", "Home")</li>
-                <li>@Html.ActionLink(@MainPageResources.NewsMenu, "AllNews", "Home")</li>
-                <li>@Html.ActionLink(@MainPageResources.WhoWeAreMenu, "Index", "WhoWeAre", new { area = "Portal" }, null)</li>
-                <li>@Html.ActionLink(@MainPageResources.WhatWeDoMenu, "Index", "Programs", new { area = "Portal" }, null)</li>
-                <li><a href="#">@MainPageResources.ContactUsMenu</a></li>
-            </ul>
-            <ul class="nav pull-right">
-                <li><a href="#">@MainPageResources.PublicMemberMenu</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
 <div class="row">
     <div id="headline" class="span8">
         @if (!String.IsNullOrEmpty(Model.image))
