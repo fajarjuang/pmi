@@ -150,6 +150,9 @@
   <data name="NewsMenu" xml:space="preserve">
     <value>Berita</value>
   </data>
+  <data name="NoNews" xml:space="preserve">
+    <value>Belum ada berita baru.</value>
+  </data>
   <data name="OtherMenu" xml:space="preserve">
     <value>Menu Lainnya</value>
   </data>

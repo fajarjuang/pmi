@@ -160,6 +160,15 @@ namespace PMI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Belum ada berita baru..
+        /// </summary>
+        public static string NoNews {
+            get {
+                return ResourceManager.GetString("NoNews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Menu Lainnya.
         /// </summary>
         public static string OtherMenu {

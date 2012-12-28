@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using PMI.Application.Mvc;
+using PMI.Models;
 
 namespace PMI
 {
@@ -50,6 +51,18 @@ namespace PMI
             {
                 Membership.CreateUser("admin", "admin@pmi.co.id", "admin@pmi.co.id");
                 Roles.AddUserToRole("admin", "CanPostNews");
+            }
+
+            var db = new pmiEntities();
+            var si = db.SiteInfoes.Find(1);
+
+            if (si == null)
+            {
+                var defaultSiteInfo = new SiteInfo();
+                defaultSiteInfo.theme = "Default";
+                defaultSiteInfo.footer = "footer";
+                db.SiteInfoes.Add(defaultSiteInfo);
+                db.SaveChanges();
             }
 
             AreaRegistration.RegisterAllAreas();

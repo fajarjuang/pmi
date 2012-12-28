@@ -10,17 +10,24 @@
 
 <div class="row">
     <div id="headline" class="span8">
-        @if (!String.IsNullOrEmpty(Model.image))
+        @if (Model != null)
         {
-            <img src="@Url.Content(Model.image)" />
+            if (!String.IsNullOrEmpty(Model.image))
+            {
+                <img src="@Url.Content(Model.image)" />
+            }
+            <h1>@Model.culturedTitle</h1>
+            <p>
+                @Html.SanitizeHTML(Model.getContentSummary())
+            </p>
+            <p>
+                @Html.ActionLink("read more...", "News", new { id = Model.id }, new { @class = "read-more" })
+            </p>
         }
-        <h1>@Model.culturedTitle</h1>
-        <p>
-            @Html.SanitizeHTML(Model.getContentSummary())
-        </p>
-        <p>
-            @Html.ActionLink("read more...", "News", new { id = Model.id }, new { @class = "read-more" })
-        </p>
+        else 
+        { 
+            <h1>@MainPageResources.NoNews</h1>
+        }
     </div>
     <div id="social-media1" class="span4">
         <h3>@MainPageResources.TalkToUs</h3>
