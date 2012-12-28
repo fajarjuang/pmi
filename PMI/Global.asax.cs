@@ -49,7 +49,7 @@ namespace PMI
 
             if (Membership.GetUser("admin") == null)
             {
-                Membership.CreateUser("admin", "admin@pmi.co.id", "admin@pmi.co.id");
+                Membership.CreateUser("admin", "admin@pmi.or.id", "admin@pmi.or.id");
                 Roles.AddUserToRole("admin", "CanPostNews");
             }
 
