@@ -14,78 +14,84 @@
     var pers = Model.Where(p => p.Category1.desc.Equals("Siaran Pers"));
 }
 
-<div class="span4 hidden-phone" id="peristiwa-container">
-    <div class="kategori">@ViewBag.Event</div>
-    @foreach (var post in peristiwa)
-    {
-        <div class="post peristiwa">
-            @if (!String.IsNullOrEmpty(post.image))
-            {
-                <img src="@Url.Content(post.image)" class="gambar-post" />
-            }
-            <h1>@post.culturedTitle</h1>
-            <span class="post-info">@post.created</span>
-            <div class="post-summary">
-                @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })
-            </div>
-        </div>
-    }
-</div>
-
-<div id="utama" class="span8 post">
-    <div class="kategori" id="kategori-utama">@ViewBag.Headline</div>
-    <div id="utama-content">
-        @if (!String.IsNullOrEmpty(headline.image))
+@if (!Model.Any())
+{
+    <h1>@MainPageResources.NoNews</h1>
+}
+else
+{ 
+    <div class="span4 hidden-phone" id="peristiwa-container">
+        <div class="kategori">@ViewBag.Event</div>
+        @foreach (var post in peristiwa)
         {
-            <img src="@Url.Content(headline.image)" class="gambar-post" />
+            <div class="post peristiwa">
+                @if (!String.IsNullOrEmpty(post.image))
+                {
+                    <img src="@Url.Content(post.image)" class="gambar-post" />
+                }
+                <h1>@post.culturedTitle</h1>
+                <span class="post-info">@post.created</span>
+                <div class="post-summary">
+                    @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })
+                </div>
+            </div>
         }
-        <h1>@headline.culturedTitle</h1>
-        <span class="post-info">@headline.created</span>
-        <div class="post-summary">
-            @Html.SanitizeHTML(headline.getContentSummary()) @Html.ActionLink("read more", "News", new { id = headline.id }, new { @class = "read-more" })
+    </div>
+
+    <div id="utama" class="span8 post">
+        <div class="kategori" id="kategori-utama">@ViewBag.Headline</div>
+        <div id="utama-content">
+            @if (!String.IsNullOrEmpty(headline.image))
+            {
+                <img src="@Url.Content(headline.image)" class="gambar-post" />
+            }
+            <h1>@headline.culturedTitle</h1>
+            <span class="post-info">@headline.created</span>
+            <div class="post-summary">
+                @Html.SanitizeHTML(headline.getContentSummary()) @Html.ActionLink("read more", "News", new { id = headline.id }, new { @class = "read-more" })
+            </div>
         </div>
     </div>
-</div>
 
-<div class="span4 hidden-phone" id="siaran-pers-container">
-    <div class="kategori">@ViewBag.PressRelease</div>
-    @foreach (var post in pers)
-    {
-        <div class="post siaran-pers">
-            @if (!String.IsNullOrEmpty(post.image))
-            {
-                <img src="@Url.Content(post.image)" class="gambar-post" />
-            }
-            <h1>@post.culturedTitle</h1>
-            <span class="post-info">@post.created</span>
-            <div class="post-summary">
-                @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })
+    <div class="span4 hidden-phone" id="siaran-pers-container">
+        <div class="kategori">@ViewBag.PressRelease</div>
+        @foreach (var post in pers)
+        {
+            <div class="post siaran-pers">
+                @if (!String.IsNullOrEmpty(post.image))
+                {
+                    <img src="@Url.Content(post.image)" class="gambar-post" />
+                }
+                <h1>@post.culturedTitle</h1>
+                <span class="post-info">@post.created</span>
+                <div class="post-summary">
+                    @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })
+                </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>
 
-<div class="span4" id="utama-container">
-    <div class="kategori">@ViewBag.Headline</div>
-    @foreach (var post in utama)
-    {
-        <div class="post utama">
-            @if (!String.IsNullOrEmpty(post.image))
-            {
-                <img src="@Url.Content(post.image)" class="gambar-post" />
-            }
-            <h1>@post.culturedTitle</h1>
-            <span class="post-info">@post.created</span>
-            <div class="post-summary">
-                @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more"})
+    <div class="span4" id="utama-container">
+        <div class="kategori">@ViewBag.Headline</div>
+        @foreach (var post in utama)
+        {
+            <div class="post utama">
+                @if (!String.IsNullOrEmpty(post.image))
+                {
+                    <img src="@Url.Content(post.image)" class="gambar-post" />
+                }
+                <h1>@post.culturedTitle</h1>
+                <span class="post-info">@post.created</span>
+                <div class="post-summary">
+                    @Html.SanitizeHTML(post.getContentSummary()) @Html.ActionLink("read more", "News", new { id = post.id }, new { @class = "read-more" })
+                </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>
 
-<div class="clearfix"></div>
+    <div class="clearfix"></div>
 
-<div class="row-fluid more-news">
-    @Html.ActionLink(@PostListResources.ToPostList, "NewsList")
-</div>
-
+    <div class="row-fluid more-news">
+        @Html.ActionLink(@PostListResources.ToPostList, "NewsList")
+    </div>
+}
